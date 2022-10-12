@@ -1,9 +1,0 @@
-
-Log Level|Time|MonotonicTime|PID|TID|ThreadName|File|Function(Line)|Message
-INFO|2022-10-09 13:08:38.710362539|1165.532|7474|7474|integration_tes|/home/fredric/code/common/message_helper/src/channel_info_config.cpp|550|The size of channels in pool is 117
-INFO|2022-10-09 13:08:38.710535848|1165.532|7474|7474|integration_tes|src/channel_info_config.cpp|570|The size of channels in pool is 117
-INFO|2022-10-09 13:08:40.947602206|1167.769|7474|7474|integration_tes|tmq/src/tmqNodeRtpsHandler.cpp|393|FastRtpsPublisher init domain ID: 112 port:10002
-INFO|2022-10-09 13:08:40.966446993|1167.788|7474|7477|integration_tes|tmq/src/tmqNodeRtpsHandler.cpp|106|PartListener participant  discovered participant 01.0f.d8.fb.b4.1c.00.00.04.00.00.00|0.0.1.c1 name : 10002_sub
-INFO|2022-10-09 13:08:46.448953897|1173.271|7474|7492|integration_tes|tmq/src/tmqNodeRtpsHandler.cpp|106|PartListener participant  discovered participant 01.0f.d8.fb.b4.1c.00.00.0a.00.00.00|0.0.1.c1 name : 20003_pub
-INFO|2022-10-09 13:08:46.521755051|1173.344|7474|7482|integration_tes|tmq/src/tmqNodeRtpsHandler.cpp|106|PartListener participant  discovered participant 01.0f.d8.fb.b4.1c.00.00.0b.00.00.00|0.0.1.c1 name : 20001_pub
-INFO|2022-10-09 13:08:46.594763022|1173.417|7474|7487|integration_tes|tmq/src/tmqNodeRtpsHandler.cpp|106|PartListener participant  discovered participant 01.0f.d8.fb.b4.1c.00.00.0c.00.00.00|0.0.1.c1 name : 20002_pub

@@ -1,4 +1,4 @@
-All Pass:,Yes,Total Case:,8,Passed:,8,Pass Rate100
+All Pass:,Yes,Total Case:,1,Passed:,1,Pass Rate100
 Case No.,Pass,Text Pass,Data Pass,Descriptions
 0,Yes,Yes,Yes,"Call Coverage : 85.4%
 Calls : hit: 217   total: 254
@@ -10,89 +10,5 @@ Description : To test stitching output of far/near overlook and perspective with
 Design Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
 JIRA ID : XW-52 XW-82
 Pass Criteria : 1, Output message's content and number are as expected. 2, Histogram similarity between actual and expected images is greater than 90%.
-Test Case ID : 0
-Test Method : Interface test and requirement test(3 TMQ interfaces simulation and image histogram similarity check)"
-1,Yes,Yes,Yes,"Call Coverage : 85.4%
-Calls : hit: 217   total: 254
-Control Flow Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
-Control Flow Verification : Pass
-Data Flow Document : https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770
-Data Flow Verification : Pass
-Description : To test stitching output of far/near overlook and perspective with 4 pre-shot images
-Design Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
-JIRA ID : XW-52 XW-82
-Pass Criteria : 1, Output message's content and number are as expected. 2, Histogram similarity between actual and expected images is greater than 90%.
 Test Case ID : 1
 Test Method : Interface test and requirement test(3 TMQ interfaces simulation and image histogram similarity check)"
-2,Yes,Yes,Yes,"Call Coverage : 85.4%
-Calls : hit: 217   total: 254
-Control Flow Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
-Control Flow Verification : Pass
-Data Flow Document : https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770
-Data Flow Verification : Pass
-Description : To test stitching output of far/near overlook and perspective with 4 pre-shot images
-Design Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
-JIRA ID : XW-52 XW-82
-Pass Criteria : 1, Output message's content and number are as expected. 2, Histogram similarity between actual and expected images is greater than 90%.
-Test Case ID : 2
-Test Method : Interface test and requirement test(3 TMQ interfaces simulation and image histogram similarity check)"
-3,Yes,Yes,Yes,"Call Coverage : 85.4%
-Calls : hit: 217   total: 254
-Control Flow Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
-Control Flow Verification : Pass
-Data Flow Document : https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770
-Data Flow Verification : Pass
-Description : To test stitching output of far/near overlook and perspective with 4 pre-shot images
-Design Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
-JIRA ID : XW-52 XW-82
-Pass Criteria : 1, Output message's content and number are as expected. 2, Histogram similarity between actual and expected images is greater than 90%.
-Test Case ID : 3
-Test Method : Interface test and requirement test(3 TMQ interfaces simulation and image histogram similarity check)"
-4,Yes,Yes,Yes,"Call Coverage : 85.4%
-Calls : hit: 217   total: 254
-Control Flow Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
-Control Flow Verification : Pass
-Data Flow Document : https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770
-Data Flow Verification : Pass
-Description : To test stitching output of far/near overlook and perspective with 4 pre-shot images
-Design Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
-JIRA ID : XW-52 XW-82
-Pass Criteria : 1, Output message's content and number are as expected. 2, Histogram similarity between actual and expected images is greater than 90%.
-Test Case ID : 4
-Test Method : Interface test and requirement test(3 TMQ interfaces simulation and image histogram similarity check)"
-5,Yes,Yes,Yes,"Call Coverage : 85.4%
-Calls : hit: 217   total: 254
-Control Flow Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
-Control Flow Verification : Pass
-Data Flow Document : https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770
-Data Flow Verification : Pass
-Description : To test stitching output of far/near overlook and perspective with 4 pre-shot images
-Design Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
-JIRA ID : XW-52 XW-82
-Pass Criteria : 1, Output message's content and number are as expected. 2, Histogram similarity between actual and expected images is greater than 90%.
-Test Case ID : 5
-Test Method : Interface test and requirement test(3 TMQ interfaces simulation and image histogram similarity check)"
-6,Yes,Yes,Yes,"Call Coverage : 85.4%
-Calls : hit: 217   total: 254
-Control Flow Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
-Control Flow Verification : Pass
-Data Flow Document : https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770
-Data Flow Verification : Pass
-Description : Add cases for StitchingSwitch message
-Design Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
-JIRA ID : XW-7748 XW-7763
-Pass Criteria : StitchedImageNear topic should have no messages output
-Test Case ID : 6
-Test Method : Send message to disable stitched_near_image, then send message to surroundingviewcamera,  check the switch disable successfully"
-7,Yes,Yes,Yes,"Call Coverage : 85.4%
-Calls : hit: 217   total: 254
-Control Flow Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
-Control Flow Verification : Pass
-Data Flow Document : https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770
-Data Flow Verification : Pass
-Description : To test stitching output of far/near overlook and perspective with 4 pre-shot images
-Design Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design
-JIRA ID : XW-52 XW-82
-Pass Criteria : PerspectiveImageList topic should have no messages output
-Test Case ID : 7
-Test Method : Send message to disable perspective_image, then send message to surroundingviewcamera,  check the switch disable successfully"

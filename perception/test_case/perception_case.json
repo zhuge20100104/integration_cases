@@ -24,7 +24,7 @@
                      [
                         {
                             "text" : "tmq_header { tmq_stamp: 0 } timestamp: 0 frame_descriptors { encode: RGB24 width: 512 height: 512 size_in_bytes: 786432 }",
-                            "data_files" : [{"is_image" : true, "path" : "./test_case/case0/stitched_far.jpeg"}]
+                            "data_files" : [{"is_image" : true, "path" : "./test_case/case1/stitched_far.jpeg"}]
                         }            
                     ]
                 },
@@ -33,8 +33,8 @@
                     "messages" :
                      [
                         {
-                            "text": "tmq_header { tmq_stamp: 1665711619358 } timestamp: 1665371143404090607 frame_descriptors { encode: RGB24 width: 480 height: 720 size_in_bytes: 1036800 }",
-                            "data_files": [{"is_image" : true, "path" : "./test_case/case0/stitched_near_raw.jpeg"}]
+                            "text": "tmq_header { tmq_stamp: 1665714464252 } timestamp: 1213272061555425836 frame_descriptors { encode: RGB24 width: 480 height: 720 size_in_bytes: 1036800 }",
+                            "data_files": [{"is_image" : true, "path" : "./test_case/case1/stitched_near_raw.jpeg"}]
                         }            
                     ]
                 },
@@ -43,14 +43,14 @@
                     "messages" :
                     [
                         {"text" : "tmq_header {   tmq_stamp: 1665371148720 } frame_list {   timestamp: 1665371143404090302   index_type: FRONT_CAMERA   name: \"front camera\"   frame_descriptors {     encode: RGBA32     width: 1280     height: 720   } } frame_list {   timestamp: 1665371143404090565   index_type: REAR_CAMERA   name: \"rear camera\"   frame_descriptors {     encode: RGBA32     width: 1280     height: 720   } } frame_list {   timestamp: 1665371143404090718   index_type: LEFT_CAMERA   name: \"left camera\"   frame_descriptors {     encode: RGBA32     width: 1280     height: 720   } } frame_list {   timestamp: 1665371143404090846   index_type: RIGHT_CAMERA   name: \"right camera\"   frame_descriptors {     encode: RGBA32     width: 1280     height: 720   } }",
-                            "data_files" : ["./test_case/case0/stitching_front.png", "./test_case/case0/stitching_rear.png", "./test_case/case0/stitching_left.png", "./test_case/case0/stitching_right.png"]}
+                            "data_files" : ["./test_case/case1/stitching_front.png", "./test_case/case1/stitching_rear.png", "./test_case/case1/stitching_left.png", "./test_case/case1/stitching_right.png"]}
                     ]
                 }
             ],
             "expectation" :
             [
                 {
-                    "topic_name" : "StitchedImageNear",
+                    "topic_name" : "PerspectiveImageList",
                     "messages" :
                     [
                     ]

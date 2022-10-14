@@ -1,0 +1,34 @@
+=== CameraParkingSpaceResult data ===
+tmq_header {
+  tmq_stamp: 1665736110962
+}
+
+
+=== CameraParkingSpaceResult data ===
+tmq_header {
+  tmq_stamp: 1665736116009
+}
+parkingspaces {
+  p0 {
+    x: 3.805
+    y: -2.435
+  }
+  p1 {
+    x: 4.29812479
+    y: -6.27875
+  }
+  p2 {
+    x: 6.14187479
+    y: -5.9075
+  }
+  p3 {
+    x: 5.72125
+    y: -2.19875
+  }
+  valid: true
+  confidence: 0.822759449
+  timestamp: 0
+  mechanical: true
+  handicap: false
+  precision: kParkingSpacePrecisionNormal
+}

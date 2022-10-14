@@ -24,7 +24,7 @@
                      [
                         {
                             "text" : "tmq_header { tmq_stamp: 0 } timestamp: 0 frame_descriptors { encode: RGB24 width: 512 height: 512 size_in_bytes: 786432 }",
-                            "data_files" : [{"is_image" : true, "path" : "./test_case/case0/stitched_far.png"}]
+                            "data_files" : [{"is_image" : true, "path" : "./test_case/case0/stitched_far.jpeg"}]
                         }            
                     ]
                 },
@@ -34,7 +34,7 @@
                      [
                         {
                             "text": "tmq_header { tmq_stamp: 1665711619358 } timestamp: 1665371143404090607 frame_descriptors { encode: RGB24 width: 480 height: 720 size_in_bytes: 1036800 }",
-                            "data_files": [{"is_image" : true, "path" : "./test_case/case0/stitched_near_raw.png"}]
+                            "data_files": [{"is_image" : true, "path" : "./test_case/case0/stitched_near_raw.jpeg"}]
                         }            
                     ]
                 },
@@ -80,7 +80,7 @@
                      [
                         {
                             "text" : "tmq_header { tmq_stamp: 0 } timestamp: 0 frame_descriptors { encode: RGB24 width: 512 height: 512 size_in_bytes: 786432 }",
-                            "data_files" : [{"is_image" : true, "path" : "./test_case/case1/stitched_far.png"}]
+                            "data_files" : [{"is_image" : true, "path" : "./test_case/case1/stitched_far.jpeg"}]
                         }            
                     ]
                 },
@@ -90,7 +90,7 @@
                      [
                         {
                             "text": "tmq_header { tmq_stamp: 1665714464252 } timestamp: 1213272061555425836 frame_descriptors { encode: RGB24 width: 480 height: 720 size_in_bytes: 1036800 }",
-                            "data_files": [{"is_image" : true, "path" : "./test_case/case1/stitched_near_raw.png"}]
+                            "data_files": [{"is_image" : true, "path" : "./test_case/case1/stitched_near_raw.jpeg"}]
                         }            
                     ]
                 },

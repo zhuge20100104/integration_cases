@@ -23,7 +23,7 @@
                     "messages" :
                      [
                         {
-                            "text" : "tmq_header { tmq_stamp: 0 } timestamp: 0 frame_descriptors { encode: RGB24 width: 512 height: 512 size_in_bytes: 786432 }",
+                            "text" : "tmq_header { tmq_stamp: 1665714464231 } timestamp: 1213272061555425721 frame_descriptors { encode: RGB24 width: 512 height: 512 size_in_bytes: 786432 }",
                             "data_files" : [{"is_image" : true, "path" : "./test_case/case1/stitched_far.jpeg"}]
                         }            
                     ]

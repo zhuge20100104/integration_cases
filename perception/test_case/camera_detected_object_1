@@ -1,6 +1,5 @@
-=== CameraDetectedObject data ===
 tmq_header {
-  tmq_stamp: 1665736810225
+  tmq_stamp: 1665739021781
 }
 objects {
   points {
@@ -48,28 +47,6 @@ objects {
 }
 objects {
   points {
-    x: -1.11714697
-    y: 5.43932152
-  }
-  points {
-    x: -2.82414651
-    y: 12.1255827
-  }
-  points {
-    x: -4.683424
-    y: 11.6509104
-  }
-  points {
-    x: -2.97642422
-    y: 4.9646492
-  }
-  classification: kCar
-  confidence: 0.857290864
-  timestamp: 1665371143404090718
-  precision: kDetectedObjectPrecisionLow
-}
-objects {
-  points {
     x: 4.55122471
     y: 5.88623428
   }
@@ -87,6 +64,28 @@ objects {
   }
   classification: kCar
   confidence: 0.892936528
+  timestamp: 1665371143404090718
+  precision: kDetectedObjectPrecisionLow
+}
+objects {
+  points {
+    x: -1.11714697
+    y: 5.43932152
+  }
+  points {
+    x: -2.82414651
+    y: 12.1255827
+  }
+  points {
+    x: -4.683424
+    y: 11.6509104
+  }
+  points {
+    x: -2.97642422
+    y: 4.9646492
+  }
+  classification: kCar
+  confidence: 0.857290864
   timestamp: 1665371143404090718
   precision: kDetectedObjectPrecisionLow
 }

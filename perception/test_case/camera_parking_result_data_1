@@ -1,5 +1,5 @@
 tmq_header {
-  tmq_stamp: 1665736810170
+  tmq_stamp: 1665739021793
 }
 parkingspaces {
   p0 {
@@ -20,7 +20,7 @@ parkingspaces {
   }
   valid: true
   confidence: 0.822759449
-  timestamp: 0
+  timestamp: 1213272061555425721
   mechanical: true
   handicap: false
   precision: kParkingSpacePrecisionNormal

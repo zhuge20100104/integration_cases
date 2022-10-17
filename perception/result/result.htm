@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2> Test Result </h2>
+<ul>
+<li>#all indices start from : 0</li>
+<li>all pass : yes</li>
+<li>passed cases : 2</li>
+<li>failed cases : 0</li>
+<li>pass rate : 100</li>
+</ul>
+<table border="1" style="width:100%">
+<tr>
+<th> Test Case No. </th><th> Details </th>
+</tr>
+<tr>
+<td>0</td>
+<td>
+<table border="1" style="width:100%">
+<tr>
+<th> pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> text pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> data pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> Descriptions </th>
+<td>
+<ul>
+<li>Call Coverage : 85.4%</li>
+<li>Calls : hit: 217   total: 254</li>
+<li>Control Flow Document : https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design</li>
+<li>Control Flow Verification : Pass</li>
+<li>Data Flow Document : https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770</li>
+<li>Data Flow Verification : Pass</li>
+<li>Description : Test perception module can generate correct MOD and parking lots info using StitchedImage/StitchedImageNearRaw and SurroundViewCameraFrames message</li>
+<li>Design Document : https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design</li>
+<li>JIRA ID : XW-7764</li>
+<li>Pass Criteria : 1, Output message's numer is as expected. 2, Point equal similarity between actual and expected output is greater than 90%.</li>
+<li>Test Case ID : 0</li>
+<li>Test Method : Interface test and requirement test(5 TMQ interfaces simulation and points equal similarity check)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> Output No. </th><th> Details </th>
+</tr>
+<tr>
+<td>0</td>
+<td>
+<table border="1" style="width:100%">
+<tr>
+<th> channel id </th>
+<td>20004</td>
+</tr>
+<tr>
+<th> topic name </th>
+<td>CameraParkingSpaceResult</td>
+</tr>
+<tr>
+<th> text pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> data pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> failed text indices </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> failed data indices </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> image similaritiy </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> saved images </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> expected messages </th>
+<td>
+<ul>
+<li>tmq_header {   tmq_stamp: 1665739189255 }</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> actual messages </th>
+<td>
+<ul>
+<li>{"tmq_header":{"tmq_stamp":"1665999485056"}}</li>
+</ul>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>1</td>
+<td>
+<table border="1" style="width:100%">
+<tr>
+<th> channel id </th>
+<td>20100</td>
+</tr>
+<tr>
+<th> topic name </th>
+<td>CameraDetectedObject</td>
+</tr>
+<tr>
+<th> text pass </th>
+<td style="background-color:#FF0000"> No </td>
+</tr>
+<tr>
+<th> data pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> failed text indices </th>
+<td>
+<ul>
+<li>0</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> failed data indices </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> image similaritiy </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> saved images </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> expected messages </th>
+<td>
+<ul>
+<li>Expected: [5.26251,-4], [5.57182,-5], [6.44886,-5], [6.13955,-4]
+[5.82506,4.1847], [6.25272,5.42234], [5.50846,5.67951], [5.0808,4.44188]
+[5.11972,3.95861], [5.92809,3.95842], [5.9283,4.87192], [5.11992,4.8721]
+[-3,4.62621], [-3,4.77878], [-3,4.02334], [-3,3.87077]
+[-2,4.17614], [-2,4.93567], [-3,4.71127], [-3,3.95174]
+[-3,-4], [-3,-4], [-2,-4], [-2,-4]
+[4.00539,-10], [9.8285,-11], [10.5293,-9], [4.70619,-7]
+[0,-8], [-1,-8], [-1,-9], [-1,-9]
+[5.18575,-4], [5.75225,-4], [6.1826,-4], [5.6161,-3]
+[-2,-3], [-3,-3], [-3,-4], [-2,-4]
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> actual messages </th>
+<td>
+<ul>
+<li>Predicted: [5.26251,-4.49486], [5.57182,-5.78791], [6.44886,-5.57812], [6.13955,-4.28506]
+[5.82506,4.1847], [6.25272,5.42234], [5.50846,5.67951], [5.0808,4.44188]
+[-3.02439,4.62621], [-3.76761,4.77878], [-3.92269,4.02334], [-3.17947,3.87077]
+[5.11972,3.95861], [5.92809,3.95842], [5.9283,4.87192], [5.11992,4.8721]
+[-3.09234,-4.01135], [-3.49469,-4.57343], [-2.97651,-4.94436], [-2.57416,-4.38228]
+[-2.7294,4.17614], [-2.96783,4.93567], [-3.68267,4.71127], [-3.44425,3.95174]
+[4.00539,-10.0055], [9.8285,-11.6624], [10.5293,-9.19963], [4.70619,-7.54265]
+[-0.936284,-8.88956], [-1.36968,-8.57334], [-1.83445,-9.21035], [-1.40105,-9.52657]
+[5.18575,-4.43857], [5.75225,-4.94642], [6.1826,-4.46636], [5.6161,-3.95852]
+[-2.69482,-3.991], [-3.38411,-3.93131], [-3.46494,-4.86474], [-2.77565,-4.92443]
+
+Matched: [5.82506,4.1847], [6.25272,5.42234], [5.50846,5.67951], [5.0808,4.44188]
+[5.11972,3.95861], [5.92809,3.95842], [5.9283,4.87192], [5.11992,4.8721]
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>1</td>
+<td>
+<table border="1" style="width:100%">
+<tr>
+<th> pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> text pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> data pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> Descriptions </th>
+<td>
+<ul>
+<li>Call Coverage : 85.4%</li>
+<li>Calls : hit: 217   total: 254</li>
+<li>Control Flow Document : https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design</li>
+<li>Control Flow Verification : Pass</li>
+<li>Data Flow Document : https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770</li>
+<li>Data Flow Verification : Pass</li>
+<li>Description : Test perception module can generate correct MOD and parking lots info using StitchedImage/StitchedImageNearRaw and SurroundViewCameraFrames message</li>
+<li>Design Document : https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design</li>
+<li>JIRA ID : XW-7764</li>
+<li>Pass Criteria : 1, Output message's numer is as expected. 2, Point equal similarity between actual and expected output is greater than 90%.</li>
+<li>Test Case ID : 1</li>
+<li>Test Method : Interface test and requirement test(5 TMQ interfaces simulation and points equal similarity check)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> Output No. </th><th> Details </th>
+</tr>
+<tr>
+<td>0</td>
+<td>
+<table border="1" style="width:100%">
+<tr>
+<th> channel id </th>
+<td>20004</td>
+</tr>
+<tr>
+<th> topic name </th>
+<td>CameraParkingSpaceResult</td>
+</tr>
+<tr>
+<th> text pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> data pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> failed text indices </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> failed data indices </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> image similaritiy </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> saved images </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> expected messages </th>
+<td>
+<ul>
+<li>tmq_header {   tmq_stamp: 1665739021793 } parkingspaces {   p0 {     x: 3.805     y: -2.435   }   p1 {     x: 4.29812479     y: -6.27875   }   p2 {     x: 6.14187479     y: -5.9075   }   p3 {     x: 5.72125     y: -2.19875   }   valid: true   confidence: 0.822759449   timestamp: 1213272061555425721   mechanical: true   handicap: false   precision: kParkingSpacePrecisionNormal }</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> actual messages </th>
+<td>
+<ul>
+<li>{"tmq_header":{"tmq_stamp":"1665999493090"},"parkingspaces":[{"p0":{"x":3.805,"y":-2.435},"p1":{"x":4.29812479,"y":-6.27875},"p2":{"x":6.14187479,"y":-5.9075},"p3":{"x":5.72125,"y":-2.19875},"valid":true,"confidence":0.822759449,"timestamp":"1213272061555425930","mechanical":true,"handicap":false,"precision":"kParkingSpacePrecisionNormal"}]}</li>
+</ul>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>1</td>
+<td>
+<table border="1" style="width:100%">
+<tr>
+<th> channel id </th>
+<td>20100</td>
+</tr>
+<tr>
+<th> topic name </th>
+<td>CameraDetectedObject</td>
+</tr>
+<tr>
+<th> text pass </th>
+<td style="background-color:#FF0000"> No </td>
+</tr>
+<tr>
+<th> data pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> failed text indices </th>
+<td>
+<ul>
+<li>0</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> failed data indices </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> image similaritiy </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> saved images </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> expected messages </th>
+<td>
+<ul>
+<li>Expected: [6.00327,-2], [6.48357,-5], [8.12445,-5], [7.64416,-2]
+[9.34104,0], [9.48889,-1], [10.1363,-1], [9.98845,0]
+[4.55122,5.88623], [4.39919,11.7245], [2.37348,11.6717], [2.52551,5.83348]
+[-1,5.43932], [-2,12.1256], [-4,11.6509], [-2,4.96465]
+[-3,5.03274], [-5,11.2367], [-7,10.6601], [-5,4.45613]
+[0,5.75462], [0,6.48072], [0,6.32622], [0,5.60012]
+[1.08528,5.39864], [0.982544,5.98975], [0.622911,5.92725], [0.725644,5.33614]
+[2.23279,5.20717], [1.72082,11.7019], [0,11.5122], [0,5.01749]
+[-3,4.67208], [-4,9.3449], [-6,9.07705], [-5,4.40423]
+[-9,5.3536], [-9,6.1147], [-10,6.31431], [-10,5.55321]
+[-7,4.58026], [-7,4.75405], [-7,4.797], [-7,4.62321]
+[6.51145,-2], [6.65556,-5], [8.44114,-5], [8.29704,-2]
+[1.53097,-2], [1.86437,-5], [3.55313,-5], [3.21973,-2]
+[0.535884,-1], [0.196461,-1], [0.546196,-2], [0.885619,-1]
+[3.76973,-2], [3.98812,-5], [5.99378,-5], [5.77539,-2]
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> actual messages </th>
+<td>
+<ul>
+<li>Predicted: [6.00327,-2.27984], [6.48357,-5.74041], [8.12445,-5.51267], [7.64416,-2.0521]
+[9.34104,-0.777821], [9.48889,-1.4151], [10.1363,-1.2649], [9.98845,-0.627621]
+[-1.11715,5.43932], [-2.82415,12.1256], [-4.68342,11.6509], [-2.97642,4.96465]
+[4.55122,5.88623], [4.39919,11.7245], [2.37348,11.6717], [2.52551,5.83348]
+[-3.87597,5.03274], [-5.79428,11.2367], [-7.65907,10.6601], [-5.74076,4.45613]
+[-0.220032,5.75462], [-0.446488,6.48072], [-0.941875,6.32622], [-0.715419,5.60012]
+[1.08528,5.39864], [0.982544,5.98975], [0.622911,5.92725], [0.725644,5.33614]
+[2.23279,5.20717], [1.72082,11.7019], [-0.685466,11.5122], [-0.173499,5.01749]
+[-7.68517,4.58026], [-7.64031,4.75405], [-7.8067,4.797], [-7.85156,4.62321]
+[-3.43807,4.67208], [-4.09475,9.3449], [-6.00072,9.07705], [-5.34405,4.40423]
+[-9.61486,5.3536], [-9.48052,6.1147], [-10.6115,6.31431], [-10.7458,5.55321]
+[6.51145,-2.34687], [6.65556,-5.91047], [8.44114,-5.83826], [8.29704,-2.27466]
+[1.53097,-2.67822], [1.86437,-5.75649], [3.55313,-5.57359], [3.21973,-2.49531]
+[0.535884,-1.4636], [0.196461,-1.84473], [0.546196,-2.1562], [0.885619,-1.77507]
+[3.76973,-2.49625], [3.98812,-5.97443], [5.99378,-5.8485], [5.77539,-2.37032]
+
+Matched: [4.55122,5.88623], [4.39919,11.7245], [2.37348,11.6717], [2.52551,5.83348]
+[1.08528,5.39864], [0.982544,5.98975], [0.622911,5.92725], [0.725644,5.33614]
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>

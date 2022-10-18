@@ -5,7 +5,7 @@
             "descriptions" : {
                 "JIRA ID" : "XW-7764",
                 "Description" : "Test perception module can generate correct MOD and parking lots info using StitchedImage/StitchedImageNearRaw and SurroundViewCameraFrames message",
-                "Test Case ID" : "0",
+                "Test Case ID" : "1",
                 "Test Method" : "Interface test and requirement test(5 TMQ interfaces simulation and points equal similarity check)",
                 "Pass Criteria" : "1, Output message's numer is as expected. 2, Point equal similarity between actual and expected output is greater than 90%.",
                 "Design Document" : "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design",
@@ -23,7 +23,7 @@
                     "messages" :
                      [
                         {
-                            "text" : "tmq_header { tmq_stamp: 1665714464231 } timestamp: 1213272061555425721 frame_descriptors { encode: RGB24 width: 512 height: 512 size_in_bytes: 786432 }",
+                            "text" : "tmq_header { tmq_stamp: 1665714464500 } timestamp: 1213272061555425930 frame_descriptors { encode: RGB24 width: 512 height: 512 size_in_bytes: 786432 }",
                             "data_files" : [{"is_image" : true, "path" : "./test_case/case1/stitched_far.jpeg"}]
                         }            
                     ]
@@ -33,7 +33,7 @@
                     "messages" :
                      [
                         {
-                            "text": "tmq_header { tmq_stamp: 1665714464252 } timestamp: 1213272061555425836 frame_descriptors { encode: RGB24 width: 480 height: 720 size_in_bytes: 1036800 }",
+                            "text": "tmq_header { tmq_stamp: 1665714464510 } timestamp: 1213272061555425960 frame_descriptors { encode: RGB24 width: 480 height: 720 size_in_bytes: 1036800 }",
                             "data_files": [{"is_image" : true, "path" : "./test_case/case1/stitched_near_raw.jpeg"}]
                         }            
                     ]
@@ -42,7 +42,7 @@
                     "topic_name" : "SurroundViewCameraFrames",
                     "messages" :
                     [
-                        {"text" : "tmq_header {   tmq_stamp: 1665371148720 } frame_list {   timestamp: 1665371143404090302   index_type: FRONT_CAMERA   name: \"front camera\"   frame_descriptors {     encode: RGBA32     width: 1280     height: 720   } } frame_list {   timestamp: 1665371143404090565   index_type: REAR_CAMERA   name: \"rear camera\"   frame_descriptors {     encode: RGBA32     width: 1280     height: 720   } } frame_list {   timestamp: 1665371143404090718   index_type: LEFT_CAMERA   name: \"left camera\"   frame_descriptors {     encode: RGBA32     width: 1280     height: 720   } } frame_list {   timestamp: 1665371143404090846   index_type: RIGHT_CAMERA   name: \"right camera\"   frame_descriptors {     encode: RGBA32     width: 1280     height: 720   } }",
+                        {"text" : "tmq_header {   tmq_stamp: 1665371148800 } frame_list {   timestamp: 1665371143404090902   index_type: FRONT_CAMERA   name: \"front camera\"   frame_descriptors {     encode: RGBA32     width: 1280     height: 720   } } frame_list {   timestamp: 1665371143404090565   index_type: REAR_CAMERA   name: \"rear camera\"   frame_descriptors {     encode: RGBA32     width: 1280     height: 720   } } frame_list {   timestamp: 1665371143404090718   index_type: LEFT_CAMERA   name: \"left camera\"   frame_descriptors {     encode: RGBA32     width: 1280     height: 720   } } frame_list {   timestamp: 1665371143404090846   index_type: RIGHT_CAMERA   name: \"right camera\"   frame_descriptors {     encode: RGBA32     width: 1280     height: 720   } }",
                             "data_files" : ["./test_case/case1/stitching_front.png", "./test_case/case1/stitching_rear.png", "./test_case/case1/stitching_left.png", "./test_case/case1/stitching_right.png"]}
                     ]
                 }
@@ -50,9 +50,19 @@
             "expectation" :
             [
                 {
-                    "topic_name" : "PerspectiveImageList",
+                    "topic_name" : "CameraParkingSpaceResult",
                     "messages" :
                     [
+                        {"text": "tmq_header {   tmq_stamp: 1665739021793 } parkingspaces {   p0 {     x: 3.805     y: -2.435   }   p1 {     x: 4.29812479     y: -6.27875   }   p2 {     x: 6.14187479     y: -5.9075   }   p3 {     x: 5.72125     y: -2.19875   }   valid: true   confidence: 0.822759449   timestamp: 1213272061555425721   mechanical: true   handicap: false   precision: kParkingSpacePrecisionNormal }",
+                        "validation_type": "point_equal"}
+                    ]
+                },
+                {
+                    "topic_name" : "CameraDetectedObject",
+                    "messages" :
+                    [
+                        {"text": "tmq_header {   tmq_stamp: 1665739021781 } objects {   points {     x: 6.00327158     y: -2.27983952   }   points {     x: 6.48356771     y: -5.74041033   }   points {     x: 8.12445354     y: -5.51267   }   points {     x: 7.64415789     y: -2.05209923   }   classification: kCar   confidence: 0.913058341   timestamp: 1665371143404090302   precision: kDetectedObjectPrecisionLow } objects {   points {     x: 9.34104     y: -0.777821302   }   points {     x: 9.48888779     y: -1.41509724   }   points {     x: 10.136302     y: -1.26489711   }   points {     x: 9.98845387     y: -0.627621174   }   classification: kPillar   confidence: 0.517083228   timestamp: 1665371143404090302   precision: kDetectedObjectPrecisionLow } objects {   points {     x: 4.55122471     y: 5.88623428   }   points {     x: 4.39919186     y: 11.7244711   }   points {     x: 2.37347913     y: 11.6717196   }   points {     x: 2.52551246     y: 5.83348274   }   classification: kCar   confidence: 0.892936528   timestamp: 1665371143404090718   precision: kDetectedObjectPrecisionLow } objects {   points {     x: -1.11714697     y: 5.43932152   }   points {     x: -2.82414651     y: 12.1255827   }   points {     x: -4.683424     y: 11.6509104   }   points {     x: -2.97642422     y: 4.9646492   }   classification: kCar   confidence: 0.857290864   timestamp: 1665371143404090718   precision: kDetectedObjectPrecisionLow } objects {   points {     x: -3.87596846     y: 5.03274202   }   points {     x: -5.79428053     y: 11.2366848   }   points {     x: -7.65907335     y: 10.6600742   }   points {     x: -5.74076128     y: 4.45613241   }   classification: kCar   confidence: 0.725259602   timestamp: 1665371143404090718   precision: kDetectedObjectPrecisionLow } objects {   points {     x: -0.220031828     y: 5.75461769   }   points {     x: -0.44648844     y: 6.48072   }   points {     x: -0.941875279     y: 6.32621908   }   points {     x: -0.715418696     y: 5.60011673   }   classification: kPillar   confidence: 0.744284809   timestamp: 1665371143404090718   precision: kDetectedObjectPrecisionLow } objects {   points {     x: 1.08527613     y: 5.39864445   }   points {     x: 0.982543588     y: 5.9897542   }   points {     x: 0.622911096     y: 5.92725134   }   points {     x: 0.725643575     y: 5.33614159   }   classification: kCone   confidence: 0.588416219   timestamp: 1665371143404090718   precision: kDetectedObjectPrecisionNormal } objects {   points {     x: 2.23278809     y: 5.20717144   }   points {     x: 1.7208209     y: 11.7018681   }   points {     x: -0.685466051     y: 11.5121841   }   points {     x: -0.173498988     y: 5.01748753   }   classification: kParkingSpace   confidence: 0.740174353   timestamp: 1665371143404090718   precision: kDetectedObjectPrecisionLow } objects {   points {     x: -3.43807292     y: 4.67207861   }   points {     x: -4.09474707     y: 9.34489632   }   points {     x: -6.00072145     y: 9.07704926   }   points {     x: -5.34404707     y: 4.40423059   }   classification: kCar   confidence: 0.886420429   timestamp: 1665371143404090565   precision: kDetectedObjectPrecisionLow } objects {   points {     x: -9.61486053     y: 5.35360146   }   points {     x: -9.48052406     y: 6.1146965   }   points {     x: -10.6114521     y: 6.31430912   }   points {     x: -10.7457886     y: 5.55321407   }   classification: kPillar   confidence: 0.425605208   timestamp: 1665371143404090565   precision: kDetectedObjectPrecisionLow } objects {   points {     x: -7.68517065     y: 4.58025694   }   points {     x: -7.64031029     y: 4.75405   }   points {     x: -7.80670452     y: 4.79700041   }   points {     x: -7.85156488     y: 4.62320757   }   classification: kCone   confidence: 0.551573753   timestamp: 1665371143404090565   precision: kDetectedObjectPrecisionLow } objects {   points {     x: 6.51145363     y: -2.34686971   }   points {     x: 6.65555954     y: -5.91046619   }   points {     x: 8.44114113     y: -5.83826065   }   points {     x: 8.29703522     y: -2.27466369   }   classification: kCar   confidence: 0.921357632   timestamp: 1665371143404090846   precision: kDetectedObjectPrecisionLow } objects {   points {     x: 1.53097248     y: -2.67821765   }   points {     x: 1.86437178     y: -5.75649357   }   points {     x: 3.55313253     y: -5.57358837   }   points {     x: 3.21973324     y: -2.49531293   }   classification: kCar   confidence: 0.938800752   timestamp: 1665371143404090846   precision: kDetectedObjectPrecisionNormal } objects {   points {     x: 0.535884142     y: -1.46360326   }   points {     x: 0.196460918     y: -1.84472549   }   points {     x: 0.546196163     y: -2.15619588   }   points {     x: 0.885619402     y: -1.77507353   }   classification: kPillar   confidence: 0.761361122   timestamp: 1665371143404090846   precision: kDetectedObjectPrecisionNormal } objects {   points {     x: 3.7697258     y: -2.49624968   }   points {     x: 3.98811579     y: -5.97442961   }   points {     x: 5.99378157     y: -5.84849691   }   points {     x: 5.77539158     y: -2.37031698   }   classification: kParkingSpace   confidence: 0.837885439   timestamp: 1665371143404090846 }",
+                        "validation_type": "point_equal"}
                     ]
                 }
             ]

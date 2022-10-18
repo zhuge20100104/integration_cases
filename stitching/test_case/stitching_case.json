@@ -19,6 +19,16 @@
             "input" :
             [
                 {
+                    "topic_name": "StitchingSwitch",
+                    "messages": 
+                    [
+                        {
+                            "text": "tmq_header { tmq_stamp: 1665371148720 } enable_stitched_near: true enable_stitched_medium: true enable_perspective_front: true enable_perspective_rear: true enable_perspective_left: true enable_perspective_right: true enable_blind_area_reset: true",
+                            "sleep_afterward_ms": 1000
+                        }
+                    ]
+                },
+                {
                     "topic_name" : "SurroundViewCameraFrames",
                     "messages" :
                     [

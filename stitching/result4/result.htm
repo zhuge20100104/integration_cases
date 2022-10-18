@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2> Test Result </h2>
+<ul>
+<li>#all indices start from : 0</li>
+<li>all pass : yes</li>
+<li>passed cases : 1</li>
+<li>failed cases : 0</li>
+<li>pass rate : 100</li>
+</ul>
+<table border="1" style="width:100%">
+<tr>
+<th> Test Case No. </th><th> Details </th>
+</tr>
+<tr>
+<td>0</td>
+<td>
+<table border="1" style="width:100%">
+<tr>
+<th> pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> text pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> data pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> Descriptions </th>
+<td>
+<ul>
+<li>Call Coverage : 85.4%</li>
+<li>Calls : hit: 217   total: 254</li>
+<li>Control Flow Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design</li>
+<li>Control Flow Verification : Pass</li>
+<li>Data Flow Document : https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770</li>
+<li>Data Flow Verification : Pass</li>
+<li>Description : To test stitching output of far/near overlook and perspective with 4 pre-shot images</li>
+<li>Design Document : https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design</li>
+<li>JIRA ID : XW-52 XW-82</li>
+<li>Pass Criteria : 1, Output message's content and number are as expected. 2, Histogram similarity between actual and expected images is greater than 90%.</li>
+<li>Test Case ID : 1</li>
+<li>Test Method : Interface test and requirement test(3 TMQ interfaces simulation and image histogram similarity check)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> Output No. </th><th> Details </th>
+</tr>
+<tr>
+<td>0</td>
+<td>
+<table border="1" style="width:100%">
+<tr>
+<th> channel id </th>
+<td>20001</td>
+</tr>
+<tr>
+<th> topic name </th>
+<td>StitchedImage</td>
+</tr>
+<tr>
+<th> text pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> data pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> failed text indices </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> failed data indices </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> image similaritiy </th>
+<td>
+<ul>
+<li>1</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> saved images </th>
+<td>
+<ul>
+<li>case_0_img_0_output.png , case_0_img_0_comparison.png</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> expected messages </th>
+<td>
+<ul>
+<li>tmq_header { tmq_stamp: 0 } timestamp: 0 frame_descriptors { encode: RGB24 width: 512 height: 512 size_in_bytes: 786432 }</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> actual messages </th>
+<td>
+<ul>
+<li>{"tmq_header":{"tmq_stamp":"1666077848109"},"timestamp":"1213272061555425836","frame_descriptors":{"encode":"RGB24","width":512,"height":512,"size_in_bytes":786432}}</li>
+</ul>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>1</td>
+<td>
+<table border="1" style="width:100%">
+<tr>
+<th> channel id </th>
+<td>20002</td>
+</tr>
+<tr>
+<th> topic name </th>
+<td>StitchedImageNear</td>
+</tr>
+<tr>
+<th> text pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> data pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> failed text indices </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> failed data indices </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> image similaritiy </th>
+<td>
+<ul>
+<li>1</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> saved images </th>
+<td>
+<ul>
+<li>case_0_img_1_output.png , case_0_img_1_comparison.png</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> expected messages </th>
+<td>
+<ul>
+<li>tmq_header { tmq_stamp: 0 } timestamp: 0 frame_descriptors { encode: RGB24 width: 480 height: 720 size_in_bytes: 1036800 }</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> actual messages </th>
+<td>
+<ul>
+<li>{"tmq_header":{"tmq_stamp":"1666077848109"},"timestamp":"1213272061555425836","frame_descriptors":{"encode":"RGB24","width":480,"height":720,"size_in_bytes":1036800}}</li>
+</ul>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>
+<table border="1" style="width:100%">
+<tr>
+<th> channel id </th>
+<td>20003</td>
+</tr>
+<tr>
+<th> topic name </th>
+<td>PerspectiveImageList</td>
+</tr>
+<tr>
+<th> text pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> data pass </th>
+<td style="background-color:#00FF00"> Yes </td>
+</tr>
+<tr>
+<th> failed text indices </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> failed data indices </th>
+<td>
+<ul>
+</ul>
+</td>
+</tr>
+<tr>
+<th> image similaritiy </th>
+<td>
+<ul>
+<li>1</li>
+<li>1</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> saved images </th>
+<td>
+<ul>
+<li>case_0_img_2_output.png , case_0_img_2_comparison.png</li>
+<li>case_0_img_3_output.png , case_0_img_3_comparison.png</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> expected messages </th>
+<td>
+<ul>
+<li>tmq_header { tmq_stamp: 0 } image_list { sdm_timestamp: 123 stitching_timestamp: 0 camera: FRONT_CAMERA frame_descriptors { encode: RGB24 width: 640 height: 480 size_in_bytes: 921600 } } image_list { sdm_timestamp: 0 stitching_timestamp: 0 camera: REAR_CAMERA frame_descriptors { encode: RGB24 width: 640 height: 480 size_in_bytes: 921600 } }</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th> actual messages </th>
+<td>
+<ul>
+<li>{"tmq_header":{"tmq_stamp":"1666077848108"},"image_list":[{"sdm_timestamp":"123","stitching_timestamp":"1666077848108354478","camera":"FRONT_CAMERA","frame_descriptors":{"encode":"RGB24","width":640,"height":480,"size_in_bytes":921600}},{"sdm_timestamp":"1617696082073900992","stitching_timestamp":"1666077848108354478","camera":"REAR_CAMERA","frame_descriptors":{"encode":"RGB24","width":640,"height":480,"size_in_bytes":921600}}]}</li>
+</ul>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>

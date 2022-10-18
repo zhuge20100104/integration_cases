@@ -1,0 +1,60 @@
+{
+    "sequences" :
+    [
+        {
+            "descriptions" : {
+                "JIRA ID" : "XW-52 XW-82",
+                "Description" : "To test stitching output of far/near overlook and perspective with 4 pre-shot images",
+                "Test Case ID" : "1",
+                "Test Method" : "Interface test and requirement test(3 TMQ interfaces simulation and image histogram similarity check)",
+                "Pass Criteria" : "1, Output message's content and number are as expected. 2, Histogram similarity between actual and expected images is greater than 90%.",
+                "Design Document" : "https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design",
+                "Call Coverage" : "85.4%",
+                "Calls" : "hit: 217   total: 254",
+                "Data Flow Verification" : "Pass",
+                "Data Flow Document" : "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification" : "Pass",
+                "Control Flow Document" : "https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design"
+            },
+            "input" :
+            [
+                {
+                    "topic_name" : "SurroundViewCameraFrames",
+                    "messages" :
+                    [
+                        {"text" : "tmq_header { tmq_stamp: 1617698226156316834 }  frame_list { timestamp: 123 index_type: FRONT_CAMERA name: \"front camera\" frame_descriptors { encode: RGBA32 width: 1280 height: 720 size_in_bytes: 3686400 } } frame_list { timestamp: 1617696082073900992 index_type: REAR_CAMERA name: \"rear camera\" frame_descriptors { encode: RGBA32 width: 1280 height: 720 size_in_bytes: 3686400 } } frame_list { timestamp: 1617696082073901070 index_type: LEFT_CAMERA name: \"left camera\" frame_descriptors { encode: RGBA32 width: 1280 height: 720 size_in_bytes: 3686400 } } frame_list { timestamp: 1617696082073901162 index_type: RIGHT_CAMERA name: \"right camera\" frame_descriptors { encode: RGBA32 width: 1280 height: 720 size_in_bytes: 3686400 } }",
+                            "data_files" : ["./test_case/case1/20220929_101326/stitching_front.png", "./test_case/case1/20220929_101326/stitching_rear.png", "./test_case/case1/20220929_101326/stitching_left.png", "./test_case/case1/20220929_101326/stitching_right.png"]}
+                    ]
+                }
+            ],
+            "expectation" :
+            [
+                {
+                    "topic_name" : "StitchedImage",
+                    "messages" :
+                    [
+                        {"text" : "tmq_header { tmq_stamp: 0 } timestamp: 0 frame_descriptors { encode: RGB24 width: 512 height: 512 size_in_bytes: 786432 }",
+                            "data_files" : [{"is_image" : true, "path" : "./test_case/case1/20220929_101326/stitched_far.png"}], "ignore_keys_lower": ["tmq_stamp", "timestamp"]}
+                    ]
+                },
+                {
+                    "topic_name" : "StitchedImageNear",
+                    "messages" :
+                    [
+                        {"text" : "tmq_header { tmq_stamp: 0 } timestamp: 0 frame_descriptors { encode: RGB24 width: 480 height: 720 size_in_bytes: 1036800 }",
+                            "data_files" : [{"is_image" : true, "path" : "./test_case/case1/20220929_101326/stitched_near.png"}], "ignore_keys_lower": ["tmq_stamp", "timestamp"]}
+                    ]
+                },
+                {
+                    "topic_name" : "PerspectiveImageList",
+                    "messages" :
+                    [
+                        {"text" : "tmq_header { tmq_stamp: 0 } image_list { sdm_timestamp: 123 stitching_timestamp: 0 camera: FRONT_CAMERA frame_descriptors { encode: RGB24 width: 640 height: 480 size_in_bytes: 921600 } } image_list { sdm_timestamp: 0 stitching_timestamp: 0 camera: REAR_CAMERA frame_descriptors { encode: RGB24 width: 640 height: 480 size_in_bytes: 921600 } }",
+                            "data_files" : [{"is_image" : true, "path" : "./test_case/case1/20220929_101326/perspective_front.png"},
+                                {"is_image" : true, "path" : "./test_case/case1/20220929_101326/perspective_rear.png"}], "ignore_keys_lower": ["tmq_stamp", "timestamp", "stitching_timestamp"]}
+                    ]
+                }
+            ]
+        }
+    ]
+}

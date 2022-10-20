@@ -1,0 +1,85 @@
+{
+    "sequences" :
+    [
+        {
+            "descriptions" : {
+                "JIRA ID" : "XW-7764",
+                "Description" : "Test perception module can generate correct MOD and parking lots info using StitchedImage/StitchedImageNearRaw and SurroundViewCameraFrames message",
+                "Test Case ID" : "1",
+                "Test Method" : "Interface test and requirement test(5 TMQ interfaces simulation and points equal similarity check)",
+                "Pass Criteria" : "1. Points' distance is less than 0.2  2. Similiar points' count and expect points' count different not greater than 2 .",
+                "Design Document" : "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design",
+                "Call Coverage" : "85.4%",
+                "Calls" : "hit: 217   total: 254",
+                "Data Flow Verification" : "Pass",
+                "Data Flow Document" : "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification" : "Pass",
+                "Control Flow Document" : "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design"
+            },
+            "input" :
+            [
+                {
+                    "topic_name" : "SelectedParkingSpaceResult",
+                    "messages" :
+                     [
+                        {
+                            "text" : "tmq_header:{tmq_stamp:1666248894250} parkingspaces:[{timestamp:1646797362896707392 confidence: 0.860399783 valid:true mechanical:true handicap:false p0:{x: 5.4210043 y: -3.42496324} p1:{ x: 5.08211279 y: -8.11264} p2:{x: 7.07687092 y: -8.25685215} p3:{x: 7.41576195 y: -3.56917214}}]"
+                        }            
+                    ]
+                },
+
+                {
+                    "topic_name" : "DetectionStage",
+                    "messages" :
+                     [
+                        {
+                            "text" : "tmq_header:{tmq_stamp:164679733325} timestamp:164679733325 stage:2"
+                        }            
+                    ]
+                },
+
+                {
+                    "topic_name" : "StitchedImage",
+                    "messages" :
+                     [
+                        {
+                            "text" : "tmq_header { tmq_stamp: 1665714464500 } timestamp: 1213272061555425960 frame_descriptors { encode: RGB24 width: 512 height: 512 size_in_bytes: 786432 }",
+                            "data_files" : [{"is_image" : true, "path" : "./test_case/case2/stitched_far.jpeg"}]
+                        }            
+                    ]
+                },
+                {
+                    "topic_name" : "StitchedImageNearRaw",
+                    "messages" :
+                     [
+                        {
+                            "text": "tmq_header { tmq_stamp: 1665714464510 } timestamp: 1213272061555425960 frame_descriptors { encode: RGB24 width: 480 height: 720 size_in_bytes: 1036800 }",
+                            "data_files": [{"is_image" : true, "path" : "./test_case/case2/stitched_near_raw.jpeg"}]
+                        }            
+                    ]
+                },
+
+                {
+                    "topic_name" : "Location_Rectified",
+                    "messages" :
+                     [
+                        {
+                            "text": "tmq_header {   tmq_stamp: 1666248894070 } timestamp: 1646797386676423200 pose {   x: 6.68968487   y: -1.72670209   theta: 1.47236133 }"
+                        }            
+                    ]
+                }
+            ],
+            "expectation" :
+            [
+                {
+                    "topic_name" : "CameraParkingSpaceResult",
+                    "messages" :
+                    [
+                        {"text": "tmq_header {   tmq_stamp: 1666255425957 } parkingspaces {   p0 {     x: -1.76274538     y: 1.11005366   }   p1 {     x: -5.45264149     y: 0.988776267   }   p2 {     x: -5.33392096     y: -0.901124239   }   p3 {     x: -1.69367552     y: -0.812690437   }   valid: true   confidence: 0.882813871   timestamp: 1213272061555425960   mechanical: true   handicap: false   precision: kParkingSpacePrecisionNormal } parkingspaces {   p0 {     x: -1.93369877     y: 3.38362861   }   p1 {     x: -5.81278181     y: 3.28665709   }   p2 {     x: -5.70336533     y: 1.30444336   }   p3 {     x: -1.83919191     y: 1.47913575   }   valid: false   confidence: 0.798309505   timestamp: 1213272061555425960   mechanical: false   handicap: false   precision: kParkingSpacePrecisionNormal }",
+                        "validation_type": "point_equal"}
+                    ]
+                }
+            ]
+        }
+    ]
+}

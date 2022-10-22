@@ -1,280 +1,246 @@
 {
-	"sequences" : 
-	[
-		{
-			"descriptions" : 
-			{
-				"Call Coverage" : "85.4%",
-				"Calls" : "hit: 217   total: 254",
-				"Control Flow Document" : "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design",
-				"Control Flow Verification" : "Pass",
-				"Data Flow Document" : "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
-				"Data Flow Verification" : "Pass",
-				"Description" : "Test perception module can generate correct MOD and parking lots info using StitchedImage/StitchedImageNearRaw and SurroundViewCameraFrames message",
-				"Design Document" : "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design",
-				"JIRA ID" : "XW-7764",
-				"Pass Criteria" : "1. Points' distance is less than 0.2  2. Similiar points' count and expect points' count different not greater than 2 .",
-				"Test Case ID" : "0",
-				"Test Method" : "Interface test and requirement test(5 TMQ interfaces simulation and points equal similarity check)"
-			},
-			"input" : 
-			[
-				{
-					"messages" : 
-					[
-						{
-							"data_files" : 
-							[
-								{
-									"is_image" : true,
-									"path" : "./test_case/case0/stitched_far.jpeg"
-								}
-							],
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1665711619200\"},\"timestamp\":\"1665371143404090500\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}"
-						}
-					],
-					"topic_name" : "StitchedImage"
-				},
-				{
-					"messages" : 
-					[
-						{
-							"data_files" : 
-							[
-								{
-									"is_image" : true,
-									"path" : "./test_case/case0/stitched_near_raw.jpeg"
-								}
-							],
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1665711619201\"},\"timestamp\":\"1665371143404090500\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":480,\"height\":720,\"size_in_bytes\":1036800}}"
-						}
-					],
-					"topic_name" : "StitchedImageNearRaw"
-				},
-				{
-					"messages" : 
-					[
-						{
-							"data_files" : 
-							[
-								"./test_case/case0/stitching_front.png",
-								"./test_case/case0/stitching_rear.png",
-								"./test_case/case0/stitching_left.png",
-								"./test_case/case0/stitching_right.png"
-							],
-							"sleep_afterward_ms" : 3000,
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1665371148720\"},\"frame_list\":[{\"timestamp\":\"1665371143404090302\",\"index_type\":\"FRONT_CAMERA\",\"name\":\"front camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090302\",\"index_type\":\"REAR_CAMERA\",\"name\":\"rear camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090302\",\"index_type\":\"LEFT_CAMERA\",\"name\":\"left camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090302\",\"index_type\":\"RIGHT_CAMERA\",\"name\":\"right camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}}]}"
-						}
-					],
-					"topic_name" : "SurroundViewCameraFrames"
-				}
-			],
-			"expectation" : 
-			[
-				{
-					"messages" : 
-					[
-						{
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1665739189255\"}}",
-							"validation_type" : "point_equal"
-						}
-					],
-					"topic_name" : "CameraParkingSpaceResult"
-				},
-				{
-					"messages" : 
-					[
-						{
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1665739189368\"},\"objects\":[{\"points\":[{\"x\":5.26250744,\"y\":-4.49485874},{\"x\":5.57181501,\"y\":-5.78791046},{\"x\":6.44885588,\"y\":-5.57811546},{\"x\":6.1395483,\"y\":-4.28506374}],\"classification\":\"kPillar\",\"confidence\":0.875787,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":5.82506037,\"y\":4.18469858},{\"x\":6.25272226,\"y\":5.42233562},{\"x\":5.50846243,\"y\":5.67951298},{\"x\":5.08080053,\"y\":4.44187593}],\"classification\":\"kPillar\",\"confidence\":0.837087929,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":5.11971521,\"y\":3.95860529},{\"x\":5.92809057,\"y\":3.95842123},{\"x\":5.92829847,\"y\":4.87191916},{\"x\":5.11992311,\"y\":4.87210321}],\"classification\":\"kPillar\",\"confidence\":0.880797088,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-3.02438927,\"y\":4.62620783},{\"x\":-3.76761389,\"y\":4.77877855},{\"x\":-3.92269278,\"y\":4.02333832},{\"x\":-3.17946815,\"y\":3.87076712}],\"classification\":\"kPillar\",\"confidence\":0.851706266,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-2.72940254,\"y\":4.17614174},{\"x\":-2.96782708,\"y\":4.93566704},{\"x\":-3.68267369,\"y\":4.71126747},{\"x\":-3.44424915,\"y\":3.95174241}],\"classification\":\"kPillar\",\"confidence\":0.847715795,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-3.0923357,\"y\":-4.01135254},{\"x\":-3.49468684,\"y\":-4.5734334},{\"x\":-2.97651029,\"y\":-4.94435644},{\"x\":-2.57415915,\"y\":-4.38227558}],\"classification\":\"kPillar\",\"confidence\":0.863391638,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":4.00539207,\"y\":-10.0054502},{\"x\":9.82850075,\"y\":-11.6624289},{\"x\":10.529295,\"y\":-9.1996336},{\"x\":4.70618629,\"y\":-7.54265499}],\"classification\":\"kCar\",\"confidence\":0.873646677,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-0.936283588,\"y\":-8.88956},{\"x\":-1.36968398,\"y\":-8.57334232},{\"x\":-1.83445466,\"y\":-9.21034813},{\"x\":-1.40105426,\"y\":-9.52656555}],\"classification\":\"kPerson\",\"confidence\":0.689305604,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":5.18574524,\"y\":-4.43857288},{\"x\":5.75224543,\"y\":-4.94641924},{\"x\":6.18259859,\"y\":-4.46636152},{\"x\":5.6160984,\"y\":-3.95851541}],\"classification\":\"kPillar\",\"confidence\":0.901574612,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-2.69481516,\"y\":-3.99100304},{\"x\":-3.38410902,\"y\":-3.9313097},{\"x\":-3.46494436,\"y\":-4.86473703},{\"x\":-2.7756505,\"y\":-4.92443037}],\"classification\":\"kPillar\",\"confidence\":0.87789613,\"timestamp\":\"1665371143404090302\"}]}",
-							"validation_type" : "point_equal"
-						}
-					],
-					"topic_name" : "CameraDetectedObject"
-				}
-			]
-		},
-		{
-			"descriptions" : 
-			{
-				"Call Coverage" : "85.4%",
-				"Calls" : "hit: 217   total: 254",
-				"Control Flow Document" : "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design",
-				"Control Flow Verification" : "Pass",
-				"Data Flow Document" : "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
-				"Data Flow Verification" : "Pass",
-				"Description" : "Test perception module can generate correct MOD and parking lots info using StitchedImage/StitchedImageNearRaw and SurroundViewCameraFrames message",
-				"Design Document" : "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design",
-				"JIRA ID" : "XW-7764",
-				"Pass Criteria" : "1. Points' distance is less than 0.2  2. Similiar points' count and expect points' count different not greater than 2 .",
-				"Test Case ID" : "1",
-				"Test Method" : "Interface test and requirement test(5 TMQ interfaces simulation and points equal similarity check)"
-			},
-			"input" : 
-			[
-				{
-					"messages" : 
-					[
-						{
-							"data_files" : 
-							[
-								{
-									"is_image" : true,
-									"path" : "./test_case/case1/stitched_far.jpeg"
-								}
-							],
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1665714464500\"},\"timestamp\":\"1213272061555425960\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}"
-						}
-					],
-					"topic_name" : "StitchedImage"
-				},
-				{
-					"messages" : 
-					[
-						{
-							"data_files" : 
-							[
-								{
-									"is_image" : true,
-									"path" : "./test_case/case1/stitched_near_raw.jpeg"
-								}
-							],
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1665714464510\"},\"timestamp\":\"1213272061555425960\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":480,\"height\":720,\"size_in_bytes\":1036800}}"
-						}
-					],
-					"topic_name" : "StitchedImageNearRaw"
-				},
-				{
-					"messages" : 
-					[
-						{
-							"data_files" : 
-							[
-								"./test_case/case1/stitching_front.png",
-								"./test_case/case1/stitching_rear.png",
-								"./test_case/case1/stitching_left.png",
-								"./test_case/case1/stitching_right.png"
-							],
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1665371148800\"},\"frame_list\":[{\"timestamp\":\"1665371143404090410\",\"index_type\":\"FRONT_CAMERA\",\"name\":\"front camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090410\",\"index_type\":\"REAR_CAMERA\",\"name\":\"rear camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090410\",\"index_type\":\"LEFT_CAMERA\",\"name\":\"left camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090410\",\"index_type\":\"RIGHT_CAMERA\",\"name\":\"right camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}}]}"
-						}
-					],
-					"topic_name" : "SurroundViewCameraFrames"
-				}
-			],
-			"expectation" : 
-			[
-				{
-					"messages" : 
-					[
-						{
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1665739021793\"},\"parkingspaces\":[{\"p0\":{\"x\":3.805,\"y\":-2.435},\"p1\":{\"x\":4.29812479,\"y\":-6.27875},\"p2\":{\"x\":6.14187479,\"y\":-5.9075},\"p3\":{\"x\":5.72125,\"y\":-2.19875},\"valid\":true,\"confidence\":0.822759449,\"timestamp\":\"1213272061555425960\",\"mechanical\":true,\"handicap\":false,\"precision\":\"kParkingSpacePrecisionNormal\"}]}",
-							"validation_type" : "point_equal"
-						}
-					],
-					"topic_name" : "CameraParkingSpaceResult"
-				},
-				{
-					"messages" : 
-					[
-						{
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1665739021781\"},\"objects\":[{\"points\":[{\"x\":6.00327158,\"y\":-2.27983952},{\"x\":6.48356771,\"y\":-5.74041033},{\"x\":8.12445354,\"y\":-5.51267},{\"x\":7.64415789,\"y\":-2.05209923}],\"classification\":\"kCar\",\"confidence\":0.913058341,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":9.34104,\"y\":-0.777821302},{\"x\":9.48888779,\"y\":-1.41509724},{\"x\":10.136302,\"y\":-1.26489711},{\"x\":9.98845387,\"y\":-0.627621174}],\"classification\":\"kPillar\",\"confidence\":0.517083228,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":4.55122471,\"y\":5.88623428},{\"x\":4.39919186,\"y\":11.7244711},{\"x\":2.37347913,\"y\":11.6717196},{\"x\":2.52551246,\"y\":5.83348274}],\"classification\":\"kCar\",\"confidence\":0.892936528,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-1.11714697,\"y\":5.43932152},{\"x\":-2.82414651,\"y\":12.1255827},{\"x\":-4.683424,\"y\":11.6509104},{\"x\":-2.97642422,\"y\":4.9646492}],\"classification\":\"kCar\",\"confidence\":0.857290864,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-3.87596846,\"y\":5.03274202},{\"x\":-5.79428053,\"y\":11.2366848},{\"x\":-7.65907335,\"y\":10.6600742},{\"x\":-5.74076128,\"y\":4.45613241}],\"classification\":\"kCar\",\"confidence\":0.725259602,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-0.220031828,\"y\":5.75461769},{\"x\":-0.44648844,\"y\":6.48072},{\"x\":-0.941875279,\"y\":6.32621908},{\"x\":-0.715418696,\"y\":5.60011673}],\"classification\":\"kPillar\",\"confidence\":0.744284809,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":1.08527613,\"y\":5.39864445},{\"x\":0.982543588,\"y\":5.9897542},{\"x\":0.622911096,\"y\":5.92725134},{\"x\":0.725643575,\"y\":5.33614159}],\"classification\":\"kCone\",\"confidence\":0.588416219,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionNormal\"},{\"points\":[{\"x\":2.23278809,\"y\":5.20717144},{\"x\":1.7208209,\"y\":11.7018681},{\"x\":-0.685466051,\"y\":11.5121841},{\"x\":-0.173498988,\"y\":5.01748753}],\"classification\":\"kParkingSpace\",\"confidence\":0.740174353,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-3.43807292,\"y\":4.67207861},{\"x\":-4.09474707,\"y\":9.34489632},{\"x\":-6.00072145,\"y\":9.07704926},{\"x\":-5.34404707,\"y\":4.40423059}],\"classification\":\"kCar\",\"confidence\":0.886420429,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-9.61486053,\"y\":5.35360146},{\"x\":-9.48052406,\"y\":6.1146965},{\"x\":-10.6114521,\"y\":6.31430912},{\"x\":-10.7457886,\"y\":5.55321407}],\"classification\":\"kPillar\",\"confidence\":0.425605208,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-7.68517065,\"y\":4.58025694},{\"x\":-7.64031029,\"y\":4.75405},{\"x\":-7.80670452,\"y\":4.79700041},{\"x\":-7.85156488,\"y\":4.62320757}],\"classification\":\"kCone\",\"confidence\":0.551573753,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":6.51145363,\"y\":-2.34686971},{\"x\":6.65555954,\"y\":-5.91046619},{\"x\":8.44114113,\"y\":-5.83826065},{\"x\":8.29703522,\"y\":-2.27466369}],\"classification\":\"kCar\",\"confidence\":0.921357632,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":1.53097248,\"y\":-2.67821765},{\"x\":1.86437178,\"y\":-5.75649357},{\"x\":3.55313253,\"y\":-5.57358837},{\"x\":3.21973324,\"y\":-2.49531293}],\"classification\":\"kCar\",\"confidence\":0.938800752,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionNormal\"},{\"points\":[{\"x\":0.535884142,\"y\":-1.46360326},{\"x\":0.196460918,\"y\":-1.84472549},{\"x\":0.546196163,\"y\":-2.15619588},{\"x\":0.885619402,\"y\":-1.77507353}],\"classification\":\"kPillar\",\"confidence\":0.761361122,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionNormal\"},{\"points\":[{\"x\":3.7697258,\"y\":-2.49624968},{\"x\":3.98811579,\"y\":-5.97442961},{\"x\":5.99378157,\"y\":-5.84849691},{\"x\":5.77539158,\"y\":-2.37031698}],\"classification\":\"kParkingSpace\",\"confidence\":0.837885439,\"timestamp\":\"1665371143404090410\"}]}",
-							"validation_type" : "point_equal"
-						}
-					],
-					"topic_name" : "CameraDetectedObject"
-				}
-			]
-		},
-		{
-			"descriptions" : 
-			{
-				"Call Coverage" : "85.4%",
-				"Calls" : "hit: 217   total: 254",
-				"Control Flow Document" : "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design",
-				"Control Flow Verification" : "Pass",
-				"Data Flow Document" : "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
-				"Data Flow Verification" : "Pass",
-				"Description" : "Test perception module can generate correct mechanical parking lots info",
-				"Design Document" : "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design",
-				"JIRA ID" : "XW-7764",
-				"Pass Criteria" : "1. Points' distance is less than 0.2  2. Similiar points' count and expect points' count different not greater than 2 .",
-				"Test Case ID" : "1",
-				"Test Method" : "Interface test and requirement test(6 TMQ interfaces simulation and points equal similarity check)"
-			},
-			"input" : 
-			[
-				{
-					"messages" : 
-					[
-						{
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1666248894250\"},\"parkingspaces\":[{\"p0\":{\"x\":5.4210043,\"y\":-3.42496324},\"p1\":{\"x\":5.08211279,\"y\":-8.11264},\"p2\":{\"x\":7.07687092,\"y\":-8.25685215},\"p3\":{\"x\":7.41576195,\"y\":-3.56917214},\"valid\":true,\"confidence\":0.860399783,\"timestamp\":\"1646797362896707392\",\"mechanical\":true,\"handicap\":false}]}"
-						}
-					],
-					"topic_name" : "SelectedParkingSpaceResult"
-				},
-				{
-					"messages" : 
-					[
-						{
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"164679733325\"},\"timestamp\":\"164679733325\",\"stage\":\"kParking\"}"
-						}
-					],
-					"topic_name" : "DetectionStage"
-				},
-				{
-					"messages" : 
-					[
-						{
-							"data_files" : 
-							[
-								{
-									"is_image" : true,
-									"path" : "./test_case/case2/stitched_far.jpeg"
-								}
-							],
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1665714464500\"},\"timestamp\":\"1213272061555425960\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}"
-						}
-					],
-					"topic_name" : "StitchedImage"
-				},
-				{
-					"messages" : 
-					[
-						{
-							"data_files" : 
-							[
-								{
-									"is_image" : true,
-									"path" : "./test_case/case2/stitched_near_raw.jpeg"
-								}
-							],
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1665714464510\"},\"timestamp\":\"1213272061555425960\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":480,\"height\":720,\"size_in_bytes\":1036800}}"
-						}
-					],
-					"topic_name" : "StitchedImageNearRaw"
-				},
-				{
-					"messages" : 
-					[
-						{
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1666248894070\"},\"timestamp\":\"1646797386676423200\",\"pose\":{\"x\":6.68968487,\"y\":-1.72670209,\"theta\":1.47236133}}"
-						}
-					],
-					"topic_name" : "Location_Rectified"
-				}
-			],
-			"expectation" : 
-			[
-				{
-					"messages" : 
-					[
-						{
-							"text" : "{\"tmq_header\":{\"tmq_stamp\":\"1666255425957\"},\"parkingspaces\":[{\"p0\":{\"x\":-1.76274538,\"y\":1.11005366},\"p1\":{\"x\":-5.45264149,\"y\":0.988776267},\"p2\":{\"x\":-5.33392096,\"y\":-0.901124239},\"p3\":{\"x\":-1.69367552,\"y\":-0.812690437},\"valid\":true,\"confidence\":0.882813871,\"timestamp\":\"1213272061555425960\",\"mechanical\":true,\"handicap\":false,\"precision\":\"kParkingSpacePrecisionNormal\"},{\"p0\":{\"x\":-1.93369877,\"y\":3.38362861},\"p1\":{\"x\":-5.81278181,\"y\":3.28665709},\"p2\":{\"x\":-5.70336533,\"y\":1.30444336},\"p3\":{\"x\":-1.83919191,\"y\":1.47913575},\"valid\":false,\"confidence\":0.798309505,\"timestamp\":\"1213272061555425960\",\"mechanical\":false,\"handicap\":false,\"precision\":\"kParkingSpacePrecisionNormal\"}]}",
-							"validation_type" : "point_equal"
-						}
-					],
-					"topic_name" : "CameraParkingSpaceResult"
-				}
-			]
-		}
-	]
+    "sequences": [
+        {
+            "descriptions": {
+                "JIRA ID": "XW-7764",
+                "Description": "Test perception module can generate correct MOD and parking lots info using StitchedImage/StitchedImageNearRaw and SurroundViewCameraFrames message",
+                "Test Case ID": "0",
+                "Test Method": "Interface test and requirement test(5 TMQ interfaces simulation and points equal similarity check)",
+                "Pass Criteria": "1. Points' distance is less than 0.2  2. Similiar points' count and expect points' count different not greater than 2 .",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design",
+                "Call Coverage": "85.4%",
+                "Calls": "hit: 217   total: 254",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "StitchedImage",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665711619200\"},\"timestamp\":\"1665371143404090500\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}",
+                            "data_files": [
+                                {
+                                    "is_image": true,
+                                    "path": "./test_case/case0/stitched_far.jpeg"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "StitchedImageNearRaw",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665711619201\"},\"timestamp\":\"1665371143404090500\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":480,\"height\":720,\"size_in_bytes\":1036800}}",
+                            "data_files": [
+                                {
+                                    "is_image": true,
+                                    "path": "./test_case/case0/stitched_near_raw.jpeg"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "SurroundViewCameraFrames",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665371148720\"},\"frame_list\":[{\"timestamp\":\"1665371143404090302\",\"index_type\":\"FRONT_CAMERA\",\"name\":\"front camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090302\",\"index_type\":\"REAR_CAMERA\",\"name\":\"rear camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090302\",\"index_type\":\"LEFT_CAMERA\",\"name\":\"left camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090302\",\"index_type\":\"RIGHT_CAMERA\",\"name\":\"right camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}}]}",
+                            "data_files": [
+                                "./test_case/case0/stitching_front.png",
+                                "./test_case/case0/stitching_rear.png",
+                                "./test_case/case0/stitching_left.png",
+                                "./test_case/case0/stitching_right.png"
+                            ],
+                            "sleep_afterward_ms": 3000
+                        }
+                    ]
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "CameraParkingSpaceResult",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665739189255\"}}",
+                            "validation_type": "point_equal"
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "CameraDetectedObject",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665739189368\"},\"objects\":[{\"points\":[{\"x\":5.26250744,\"y\":-4.49485874},{\"x\":5.57181501,\"y\":-5.78791046},{\"x\":6.44885588,\"y\":-5.57811546},{\"x\":6.1395483,\"y\":-4.28506374}],\"classification\":\"kPillar\",\"confidence\":0.875787,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":5.82506037,\"y\":4.18469858},{\"x\":6.25272226,\"y\":5.42233562},{\"x\":5.50846243,\"y\":5.67951298},{\"x\":5.08080053,\"y\":4.44187593}],\"classification\":\"kPillar\",\"confidence\":0.837087929,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":5.11971521,\"y\":3.95860529},{\"x\":5.92809057,\"y\":3.95842123},{\"x\":5.92829847,\"y\":4.87191916},{\"x\":5.11992311,\"y\":4.87210321}],\"classification\":\"kPillar\",\"confidence\":0.880797088,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-3.02438927,\"y\":4.62620783},{\"x\":-3.76761389,\"y\":4.77877855},{\"x\":-3.92269278,\"y\":4.02333832},{\"x\":-3.17946815,\"y\":3.87076712}],\"classification\":\"kPillar\",\"confidence\":0.851706266,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-2.72940254,\"y\":4.17614174},{\"x\":-2.96782708,\"y\":4.93566704},{\"x\":-3.68267369,\"y\":4.71126747},{\"x\":-3.44424915,\"y\":3.95174241}],\"classification\":\"kPillar\",\"confidence\":0.847715795,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-3.0923357,\"y\":-4.01135254},{\"x\":-3.49468684,\"y\":-4.5734334},{\"x\":-2.97651029,\"y\":-4.94435644},{\"x\":-2.57415915,\"y\":-4.38227558}],\"classification\":\"kPillar\",\"confidence\":0.863391638,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":4.00539207,\"y\":-10.0054502},{\"x\":9.82850075,\"y\":-11.6624289},{\"x\":10.529295,\"y\":-9.1996336},{\"x\":4.70618629,\"y\":-7.54265499}],\"classification\":\"kCar\",\"confidence\":0.873646677,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-0.936283588,\"y\":-8.88956},{\"x\":-1.36968398,\"y\":-8.57334232},{\"x\":-1.83445466,\"y\":-9.21034813},{\"x\":-1.40105426,\"y\":-9.52656555}],\"classification\":\"kPerson\",\"confidence\":0.689305604,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":5.18574524,\"y\":-4.43857288},{\"x\":5.75224543,\"y\":-4.94641924},{\"x\":6.18259859,\"y\":-4.46636152},{\"x\":5.6160984,\"y\":-3.95851541}],\"classification\":\"kPillar\",\"confidence\":0.901574612,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-2.69481516,\"y\":-3.99100304},{\"x\":-3.38410902,\"y\":-3.9313097},{\"x\":-3.46494436,\"y\":-4.86473703},{\"x\":-2.7756505,\"y\":-4.92443037}],\"classification\":\"kPillar\",\"confidence\":0.87789613,\"timestamp\":\"1665371143404090302\"}]}",
+                            "validation_type": "point_equal"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "descriptions": {
+                "JIRA ID": "XW-7764",
+                "Description": "Test perception module can generate correct MOD and parking lots info using StitchedImage/StitchedImageNearRaw and SurroundViewCameraFrames message",
+                "Test Case ID": "1",
+                "Test Method": "Interface test and requirement test(5 TMQ interfaces simulation and points equal similarity check)",
+                "Pass Criteria": "1. Points' distance is less than 0.2  2. Similiar points' count and expect points' count different not greater than 2 .",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design",
+                "Call Coverage": "85.4%",
+                "Calls": "hit: 217   total: 254",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "StitchedImage",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665714464500\"},\"timestamp\":\"1213272061555425960\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}",
+                            "data_files": [
+                                {
+                                    "is_image": true,
+                                    "path": "./test_case/case1/stitched_far.jpeg"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "StitchedImageNearRaw",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665714464510\"},\"timestamp\":\"1213272061555425960\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":480,\"height\":720,\"size_in_bytes\":1036800}}",
+                            "data_files": [
+                                {
+                                    "is_image": true,
+                                    "path": "./test_case/case1/stitched_near_raw.jpeg"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "SurroundViewCameraFrames",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665371148800\"},\"frame_list\":[{\"timestamp\":\"1665371143404090410\",\"index_type\":\"FRONT_CAMERA\",\"name\":\"front camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090410\",\"index_type\":\"REAR_CAMERA\",\"name\":\"rear camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090410\",\"index_type\":\"LEFT_CAMERA\",\"name\":\"left camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090410\",\"index_type\":\"RIGHT_CAMERA\",\"name\":\"right camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}}]}",
+                            "data_files": [
+                                "./test_case/case1/stitching_front.png",
+                                "./test_case/case1/stitching_rear.png",
+                                "./test_case/case1/stitching_left.png",
+                                "./test_case/case1/stitching_right.png"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "CameraParkingSpaceResult",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665739021793\"},\"parkingspaces\":[{\"p0\":{\"x\":3.805,\"y\":-2.435},\"p1\":{\"x\":4.29812479,\"y\":-6.27875},\"p2\":{\"x\":6.14187479,\"y\":-5.9075},\"p3\":{\"x\":5.72125,\"y\":-2.19875},\"valid\":true,\"confidence\":0.822759449,\"timestamp\":\"1213272061555425960\",\"mechanical\":true,\"handicap\":false,\"precision\":\"kParkingSpacePrecisionNormal\"}]}",
+                            "validation_type": "point_equal"
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "CameraDetectedObject",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665739021781\"},\"objects\":[{\"points\":[{\"x\":6.00327158,\"y\":-2.27983952},{\"x\":6.48356771,\"y\":-5.74041033},{\"x\":8.12445354,\"y\":-5.51267},{\"x\":7.64415789,\"y\":-2.05209923}],\"classification\":\"kCar\",\"confidence\":0.913058341,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":9.34104,\"y\":-0.777821302},{\"x\":9.48888779,\"y\":-1.41509724},{\"x\":10.136302,\"y\":-1.26489711},{\"x\":9.98845387,\"y\":-0.627621174}],\"classification\":\"kPillar\",\"confidence\":0.517083228,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":4.55122471,\"y\":5.88623428},{\"x\":4.39919186,\"y\":11.7244711},{\"x\":2.37347913,\"y\":11.6717196},{\"x\":2.52551246,\"y\":5.83348274}],\"classification\":\"kCar\",\"confidence\":0.892936528,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-1.11714697,\"y\":5.43932152},{\"x\":-2.82414651,\"y\":12.1255827},{\"x\":-4.683424,\"y\":11.6509104},{\"x\":-2.97642422,\"y\":4.9646492}],\"classification\":\"kCar\",\"confidence\":0.857290864,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-3.87596846,\"y\":5.03274202},{\"x\":-5.79428053,\"y\":11.2366848},{\"x\":-7.65907335,\"y\":10.6600742},{\"x\":-5.74076128,\"y\":4.45613241}],\"classification\":\"kCar\",\"confidence\":0.725259602,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-0.220031828,\"y\":5.75461769},{\"x\":-0.44648844,\"y\":6.48072},{\"x\":-0.941875279,\"y\":6.32621908},{\"x\":-0.715418696,\"y\":5.60011673}],\"classification\":\"kPillar\",\"confidence\":0.744284809,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":1.08527613,\"y\":5.39864445},{\"x\":0.982543588,\"y\":5.9897542},{\"x\":0.622911096,\"y\":5.92725134},{\"x\":0.725643575,\"y\":5.33614159}],\"classification\":\"kCone\",\"confidence\":0.588416219,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionNormal\"},{\"points\":[{\"x\":2.23278809,\"y\":5.20717144},{\"x\":1.7208209,\"y\":11.7018681},{\"x\":-0.685466051,\"y\":11.5121841},{\"x\":-0.173498988,\"y\":5.01748753}],\"classification\":\"kParkingSpace\",\"confidence\":0.740174353,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-3.43807292,\"y\":4.67207861},{\"x\":-4.09474707,\"y\":9.34489632},{\"x\":-6.00072145,\"y\":9.07704926},{\"x\":-5.34404707,\"y\":4.40423059}],\"classification\":\"kCar\",\"confidence\":0.886420429,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-9.61486053,\"y\":5.35360146},{\"x\":-9.48052406,\"y\":6.1146965},{\"x\":-10.6114521,\"y\":6.31430912},{\"x\":-10.7457886,\"y\":5.55321407}],\"classification\":\"kPillar\",\"confidence\":0.425605208,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":-7.68517065,\"y\":4.58025694},{\"x\":-7.64031029,\"y\":4.75405},{\"x\":-7.80670452,\"y\":4.79700041},{\"x\":-7.85156488,\"y\":4.62320757}],\"classification\":\"kCone\",\"confidence\":0.551573753,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":6.51145363,\"y\":-2.34686971},{\"x\":6.65555954,\"y\":-5.91046619},{\"x\":8.44114113,\"y\":-5.83826065},{\"x\":8.29703522,\"y\":-2.27466369}],\"classification\":\"kCar\",\"confidence\":0.921357632,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionLow\"},{\"points\":[{\"x\":1.53097248,\"y\":-2.67821765},{\"x\":1.86437178,\"y\":-5.75649357},{\"x\":3.55313253,\"y\":-5.57358837},{\"x\":3.21973324,\"y\":-2.49531293}],\"classification\":\"kCar\",\"confidence\":0.938800752,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionNormal\"},{\"points\":[{\"x\":0.535884142,\"y\":-1.46360326},{\"x\":0.196460918,\"y\":-1.84472549},{\"x\":0.546196163,\"y\":-2.15619588},{\"x\":0.885619402,\"y\":-1.77507353}],\"classification\":\"kPillar\",\"confidence\":0.761361122,\"timestamp\":\"1665371143404090410\",\"precision\":\"kDetectedObjectPrecisionNormal\"},{\"points\":[{\"x\":3.7697258,\"y\":-2.49624968},{\"x\":3.98811579,\"y\":-5.97442961},{\"x\":5.99378157,\"y\":-5.84849691},{\"x\":5.77539158,\"y\":-2.37031698}],\"classification\":\"kParkingSpace\",\"confidence\":0.837885439,\"timestamp\":\"1665371143404090410\"}]}",
+                            "validation_type": "point_equal"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "descriptions": {
+                "JIRA ID": "XW-7764",
+                "Description": "Test perception module can generate correct mechanical parking lots info",
+                "Test Case ID": "1",
+                "Test Method": "Interface test and requirement test(6 TMQ interfaces simulation and points equal similarity check)",
+                "Pass Criteria": "1. Points' distance is less than 0.2  2. Similiar points' count and expect points' count different not greater than 2 .",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design",
+                "Call Coverage": "85.4%",
+                "Calls": "hit: 217   total: 254",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "SelectedParkingSpaceResult",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1666248894250\"},\"parkingspaces\":[{\"p0\":{\"x\":5.4210043,\"y\":-3.42496324},\"p1\":{\"x\":5.08211279,\"y\":-8.11264},\"p2\":{\"x\":7.07687092,\"y\":-8.25685215},\"p3\":{\"x\":7.41576195,\"y\":-3.56917214},\"valid\":true,\"confidence\":0.860399783,\"timestamp\":\"1646797362896707392\",\"mechanical\":true,\"handicap\":false}]}"
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "DetectionStage",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"164679733325\"},\"timestamp\":\"164679733325\",\"stage\":\"kParking\"}"
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "StitchedImage",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665714464500\"},\"timestamp\":\"1213272061555425960\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}",
+                            "data_files": [
+                                {
+                                    "is_image": true,
+                                    "path": "./test_case/case2/stitched_far.jpeg"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "StitchedImageNearRaw",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665714464510\"},\"timestamp\":\"1213272061555425960\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":480,\"height\":720,\"size_in_bytes\":1036800}}",
+                            "data_files": [
+                                {
+                                    "is_image": true,
+                                    "path": "./test_case/case2/stitched_near_raw.jpeg"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1666248894070\"},\"timestamp\":\"1646797386676423200\",\"pose\":{\"x\":6.68968487,\"y\":-1.72670209,\"theta\":1.47236133}}"
+                        }
+                    ]
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "CameraParkingSpaceResult",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1666255425957\"},\"parkingspaces\":[{\"p0\":{\"x\":-1.76274538,\"y\":1.11005366},\"p1\":{\"x\":-5.45264149,\"y\":0.988776267},\"p2\":{\"x\":-5.33392096,\"y\":-0.901124239},\"p3\":{\"x\":-1.69367552,\"y\":-0.812690437},\"valid\":true,\"confidence\":0.882813871,\"timestamp\":\"1213272061555425960\",\"mechanical\":true,\"handicap\":false,\"precision\":\"kParkingSpacePrecisionNormal\"},{\"p0\":{\"x\":-1.93369877,\"y\":3.38362861},\"p1\":{\"x\":-5.81278181,\"y\":3.28665709},\"p2\":{\"x\":-5.70336533,\"y\":1.30444336},\"p3\":{\"x\":-1.83919191,\"y\":1.47913575},\"valid\":false,\"confidence\":0.798309505,\"timestamp\":\"1213272061555425960\",\"mechanical\":false,\"handicap\":false,\"precision\":\"kParkingSpacePrecisionNormal\"}]}",
+                            "validation_type": "point_equal"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

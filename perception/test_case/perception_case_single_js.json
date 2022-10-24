@@ -1,0 +1,47 @@
+{
+    "sequences": [
+        {
+            "descriptions": {
+                "JIRA ID": "XW-7764",
+                "Description": "Test perception module can generate correct MOD and parking lots info using StitchedImage/StitchedImageNearRaw and SurroundViewCameraFrames message",
+                "Test Case ID": "1",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation and points equal similarity check)",
+                "Pass Criteria": "1. Points' distance is less than 0.2  2. Similiar points' count and expect points' count different not greater than 2 .",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design",
+                "Call Coverage": "85.4%",
+                "Calls": "hit: 217   total: 254",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "StitchedImage",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665714464500\"},\"timestamp\":\"1213272061555425960\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}",
+                            "data_files": [
+                                {
+                                    "is_image": true,
+                                    "path": "./test_case/case_angle_no_line_with_cars/stitched_far.jpg"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "CameraParkingSpaceResult",
+                    "messages": [
+                        {
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1666606106954\"},\"parkingspaces\":[{\"p0\":{\"x\":5.61467648,\"y\":2.01942253},\"p1\":{\"x\":2.85184193,\"y\":7.27343607},\"p2\":{\"x\":0.133508295,\"y\":7.12258244},\"p3\":{\"x\":2.97959161,\"y\":1.87717962},\"valid\":false,\"confidence\":0.975525737,\"timestamp\":\"1213272061555425960\",\"mechanical\":false,\"handicap\":false,\"precision\":\"kParkingSpacePrecisionNormal\"},{\"p0\":{\"x\":2.75404549,\"y\":1.92360783},\"p1\":{\"x\":0.0630004853,\"y\":7.06007576},\"p2\":{\"x\":-2.69863534,\"y\":6.82652903},\"p3\":{\"x\":0.241549075,\"y\":1.67386842},\"valid\":true,\"confidence\":0.969498634,\"timestamp\":\"1213272061555425960\",\"mechanical\":false,\"handicap\":false,\"precision\":\"kParkingSpacePrecisionNormal\"},{\"p0\":{\"x\":0.0841284171,\"y\":1.631441},\"p1\":{\"x\":-2.82477164,\"y\":6.79463673},\"p2\":{\"x\":-5.50789547,\"y\":6.62332392},\"p3\":{\"x\":-2.53063965,\"y\":1.64067686},\"valid\":false,\"confidence\":0.965527177,\"timestamp\":\"1213272061555425960\",\"mechanical\":false,\"handicap\":false,\"precision\":\"kParkingSpacePrecisionNormal\"}]}",
+                            "validation_type": "point_equal"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

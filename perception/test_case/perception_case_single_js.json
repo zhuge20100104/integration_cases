@@ -17,26 +17,27 @@
             },
             "input": [
                 {
-                    "topic_name": "StitchedImage",
+                    "topic_name": "SurroundViewCameraFrames",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665714464500\"},\"timestamp\":\"1213272061555425960\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}",
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665371148720\"},\"frame_list\":[{\"timestamp\":\"1665371143404090302\",\"index_type\":\"FRONT_CAMERA\",\"name\":\"front camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090302\",\"index_type\":\"REAR_CAMERA\",\"name\":\"rear camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090302\",\"index_type\":\"LEFT_CAMERA\",\"name\":\"left camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090302\",\"index_type\":\"RIGHT_CAMERA\",\"name\":\"right camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}}]}",
                             "data_files": [
-                                {
-                                    "is_image": true,
-                                    "path": "./test_case/case_angle_no_line_with_cars/stitched_far.jpg"
-                                }
-                            ]
+                                "./test_case/case_05_parking_lots/stitching_front.jpg",
+                                "./test_case/case_05_parking_lots/stitching_rear.jpg",
+                                "./test_case/case_05_parking_lots/stitching_left.jpg",
+                                "./test_case/case_05_parking_lots/stitching_right.jpg"
+                            ],
+                            "sleep_afterward_ms": 3000
                         }
                     ]
                 }
             ],
             "expectation": [
                 {
-                    "topic_name": "CameraParkingSpaceResult",
+                    "topic_name": "CameraDetectedObject",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1666606106954\"},\"parkingspaces\":[{\"p0\":{\"x\":5.61467648,\"y\":2.01942253},\"p1\":{\"x\":2.85184193,\"y\":7.27343607},\"p2\":{\"x\":0.133508295,\"y\":7.12258244},\"p3\":{\"x\":2.97959161,\"y\":1.87717962},\"valid\":false,\"confidence\":0.975525737,\"timestamp\":\"1213272061555425960\",\"mechanical\":false,\"handicap\":false,\"precision\":\"kParkingSpacePrecisionNormal\"},{\"p0\":{\"x\":2.75404549,\"y\":1.92360783},\"p1\":{\"x\":0.0630004853,\"y\":7.06007576},\"p2\":{\"x\":-2.69863534,\"y\":6.82652903},\"p3\":{\"x\":0.241549075,\"y\":1.67386842},\"valid\":true,\"confidence\":0.969498634,\"timestamp\":\"1213272061555425960\",\"mechanical\":false,\"handicap\":false,\"precision\":\"kParkingSpacePrecisionNormal\"},{\"p0\":{\"x\":0.0841284171,\"y\":1.631441},\"p1\":{\"x\":-2.82477164,\"y\":6.79463673},\"p2\":{\"x\":-5.50789547,\"y\":6.62332392},\"p3\":{\"x\":-2.53063965,\"y\":1.64067686},\"valid\":false,\"confidence\":0.965527177,\"timestamp\":\"1213272061555425960\",\"mechanical\":false,\"handicap\":false,\"precision\":\"kParkingSpacePrecisionNormal\"}]}",
+                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1666677247679\"},\"objects\":[{\"points\":[{\"x\":4.77267599,\"y\":0.122060858},{\"x\":4.81434917,\"y\":0.752418399},{\"x\":4.35065269,\"y\":0.783073545},{\"x\":4.30897951,\"y\":0.152716}],\"classification\":\"kPerson\",\"confidence\":0.801033139,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionNormal\"},{\"points\":[{\"x\":2.10900545,\"y\":3.79162931},{\"x\":-1.84705484,\"y\":3.70791292},{\"x\":-1.79897726,\"y\":1.435987},{\"x\":2.15708303,\"y\":1.51970339}],\"classification\":\"kParkingSpace\",\"confidence\":0.786758542,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionNormal\"},{\"points\":[{\"x\":2.08800578,\"y\":-1.32414508},{\"x\":-1.48661065,\"y\":-1.16953206},{\"x\":-1.57090497,\"y\":-3.11839604},{\"x\":2.00371146,\"y\":-3.27300906}],\"classification\":\"kParkingSpace\",\"confidence\":0.566774309,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionNormal\"}]}",
                             "validation_type": "point_equal"
                         }
                     ]

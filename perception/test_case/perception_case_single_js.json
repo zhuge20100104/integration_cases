@@ -20,7 +20,53 @@
                     "topic_name": "SurroundViewCameraFrames",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665371148720\"},\"frame_list\":[{\"timestamp\":\"1665371143404090302\",\"index_type\":\"FRONT_CAMERA\",\"name\":\"front camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090302\",\"index_type\":\"REAR_CAMERA\",\"name\":\"rear camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090302\",\"index_type\":\"LEFT_CAMERA\",\"name\":\"left camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090302\",\"index_type\":\"RIGHT_CAMERA\",\"name\":\"right camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1665371148720"
+                                },
+                                "frame_list": [
+                                    {
+                                        "timestamp": "1665371143404090302",
+                                        "index_type": "FRONT_CAMERA",
+                                        "name": "front camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1665371143404090302",
+                                        "index_type": "REAR_CAMERA",
+                                        "name": "rear camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1665371143404090302",
+                                        "index_type": "LEFT_CAMERA",
+                                        "name": "left camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1665371143404090302",
+                                        "index_type": "RIGHT_CAMERA",
+                                        "name": "right camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 "./test_case/case_05_parking_lots/stitching_front.jpg",
                                 "./test_case/case_05_parking_lots/stitching_rear.jpg",
@@ -37,7 +83,85 @@
                     "topic_name": "CameraDetectedObject",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1666677247679\"},\"objects\":[{\"points\":[{\"x\":4.77267599,\"y\":0.122060858},{\"x\":4.81434917,\"y\":0.752418399},{\"x\":4.35065269,\"y\":0.783073545},{\"x\":4.30897951,\"y\":0.152716}],\"classification\":\"kPerson\",\"confidence\":0.801033139,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionNormal\"},{\"points\":[{\"x\":2.10900545,\"y\":3.79162931},{\"x\":-1.84705484,\"y\":3.70791292},{\"x\":-1.79897726,\"y\":1.435987},{\"x\":2.15708303,\"y\":1.51970339}],\"classification\":\"kParkingSpace\",\"confidence\":0.786758542,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionNormal\"},{\"points\":[{\"x\":2.08800578,\"y\":-1.32414508},{\"x\":-1.48661065,\"y\":-1.16953206},{\"x\":-1.57090497,\"y\":-3.11839604},{\"x\":2.00371146,\"y\":-3.27300906}],\"classification\":\"kParkingSpace\",\"confidence\":0.566774309,\"timestamp\":\"1665371143404090302\",\"precision\":\"kDetectedObjectPrecisionNormal\"}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666677247679"
+                                },
+                                "objects": [
+                                    {
+                                        "points": [
+                                            {
+                                                "x": 4.77267599,
+                                                "y": 0.122060858
+                                            },
+                                            {
+                                                "x": 4.81434917,
+                                                "y": 0.752418399
+                                            },
+                                            {
+                                                "x": 4.35065269,
+                                                "y": 0.783073545
+                                            },
+                                            {
+                                                "x": 4.30897951,
+                                                "y": 0.152716
+                                            }
+                                        ],
+                                        "classification": "kPerson",
+                                        "confidence": 0.801033139,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    },
+                                    {
+                                        "points": [
+                                            {
+                                                "x": 2.10900545,
+                                                "y": 3.79162931
+                                            },
+                                            {
+                                                "x": -1.84705484,
+                                                "y": 3.70791292
+                                            },
+                                            {
+                                                "x": -1.79897726,
+                                                "y": 1.435987
+                                            },
+                                            {
+                                                "x": 2.15708303,
+                                                "y": 1.51970339
+                                            }
+                                        ],
+                                        "classification": "kParkingSpace",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    },
+                                    {
+                                        "points": [
+                                            {
+                                                "x": 2.08800578,
+                                                "y": -1.32414508
+                                            },
+                                            {
+                                                "x": -1.48661065,
+                                                "y": -1.16953206
+                                            },
+                                            {
+                                                "x": -1.57090497,
+                                                "y": -3.11839604
+                                            },
+                                            {
+                                                "x": 2.00371146,
+                                                "y": -3.27300906
+                                            }
+                                        ],
+                                        "classification": "kParkingSpace",
+                                        "confidence": 0.566774309,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    }
+                                ]
+                            },
                             "validation_type": "point_equal"
                         }
                     ]

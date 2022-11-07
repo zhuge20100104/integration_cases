@@ -1,0 +1,314 @@
+{
+    "sequences": [
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "To test the planning for vertical parking in with head",
+                "Test Case ID": "1",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "parkingspaces": [
+                                    {
+                                        "p0": {
+                                            "x": -1.2,
+                                            "y": -2.5
+                                        },
+                                        "p1": {
+                                            "x": -1.2,
+                                            "y": -7.9
+                                        },
+                                        "p2": {
+                                            "x": 1.2,
+                                            "y": -7.9
+                                        },
+                                        "p3": {
+                                            "x": 1.2,
+                                            "y": -2.5
+                                        },
+                                        "valid": true,
+                                        "confidence": 0.9,
+                                        "sensor_source": "kFromCamera",
+                                        "timestamp": "1658227458725613094"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInHead",
+                                "parking_space": {
+                                    "p0": {
+                                        "x": -1.2,
+                                        "y": -2.5
+                                    },
+                                    "p1": {
+                                        "x": -1.2,
+                                        "y": -7.9
+                                    },
+                                    "p2": {
+                                        "x": 1.2,
+                                        "y": -7.9
+                                    },
+                                    "p3": {
+                                        "x": 1.2,
+                                        "y": -2.5
+                                    },
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSuccessed"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "TrajectoryFully",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1667441351895"},"timestamp":"1667441351894829888","trajectory_type":"kTrajectory","waypoints":[{"pose":{"x":0,"y":0.0224609375,"theta":0},"direction":"kForward","speed":0.3},{"pose":{"x":0.328435898,"y":0.0224003792,"theta":-0.000106032698},"direction":"kForward","speed":0.3},{"pose":{"x":0.478435516,"y":0.0223846436,"theta":-0.000106032698},"direction":"kForward","speed":0.3},{"pose":{"x":0.628435135,"y":0.0223689079,"theta":-0.000106032698},"direction":"kForward","speed":0.3},{"pose":{"x":0.778434753,"y":0.0223531723,"theta":-0.000106032698},"direction":"kForward","speed":0.3},{"pose":{"x":0.928434372,"y":0.0223374367,"theta":-0.000106032698},"direction":"kForward","speed":0.3},{"pose":{"x":1.07843399,"y":0.022321701,"theta":-0.000106032698},"direction":"kForward","speed":0.3},{"pose":{"x":1.22840691,"y":0.0248246193,"theta":0.0334833302},"direction":"kForward","speed":0.3},{"pose":{"x":1.37835503,"y":0.0286850929,"theta":0.0179942288},"direction":"kForward","speed":0.3},{"pose":{"x":1.52834415,"y":0.0302228928,"theta":0.00250512757},"direction":"kForward","speed":0.3},{"pose":{"x":1.67832279,"y":0.0280799866,"theta":-0.0310842693},"direction":"kForward","speed":0.3},{"pose":{"x":1.82814312,"y":0.0209012032,"theta":-0.0646736175},"direction":"kForward","speed":0.3},{"pose":{"x":1.97774792,"y":0.0100483894,"theta":-0.0801628},"direction":"kForward","speed":0.3},{"pose":{"x":2.1271677,"y":-0.00312042236,"theta":-0.0956519842},"direction":"kForward","speed":0.3},{"pose":{"x":2.27621365,"y":-0.0199513435,"theta":-0.129241332},"direction":"kForward","speed":0.3},{"pose":{"x":2.424963,"y":-0.0392837524,"theta":-0.129241332},"direction":"kForward","speed":0.3},{"pose":{"x":2.57371235,"y":-0.0586161613,"theta":-0.129241332},"direction":"kForward","speed":0.3},{"pose":{"x":3.01628399,"y":-0.138979435,"theta":-0.230009377},"direction":"kForward","speed":0.3},{"pose":{"x":3.01628399,"y":-0.138979435,"theta":-0.230009377},"direction":"kBackward","speed":0.3},{"pose":{"x":2.58067608,"y":-0.0262446404,"theta":-0.27647692},"direction":"kBackward","speed":0.3},{"pose":{"x":2.15468216,"y":0.118175983,"theta":-0.377244979},"direction":"kBackward","speed":0.3},{"pose":{"x":2.01566315,"y":0.174508572,"theta":-0.39273417},"direction":"kBackward","speed":0.3},{"pose":{"x":1.87807369,"y":0.234232426,"theta":-0.426323503},"direction":"kBackward","speed":0.3},{"pose":{"x":1.74198532,"y":0.297317028,"theta":-0.441812694},"direction":"kBackward","speed":0.3},{"pose":{"x":1.60749054,"y":0.36371851,"theta":-0.475402057},"direction":"kBackward","speed":0.3},{"pose":{"x":1.4753027,"y":0.434599876,"theta":-0.50899142},"direction":"kBackward","speed":0.3},{"pose":{"x":1.34488773,"y":0.508706093,"theta":-0.524480581},"direction":"kBackward","speed":0.3},{"pose":{"x":1.21633625,"y":0.585986614,"theta":-0.558069944},"direction":"kBackward","speed":0.3},{"pose":{"x":1.08971405,"y":0.666401386,"theta":-0.573559105},"direction":"kBackward","speed":0.3},{"pose":{"x":0.965107918,"y":0.749896049,"theta":-0.607148468},"direction":"kBackward","speed":0.3},{"pose":{"x":0.843377113,"y":0.837527752,"theta":-0.640737832},"direction":"kBackward","speed":0.3},{"pose":{"x":0.724657059,"y":0.929198742,"theta":-0.674327195},"direction":"kBackward","speed":0.3},{"pose":{"x":0.609082222,"y":1.02480459,"theta":-0.707916558},"direction":"kBackward","speed":0.3},{"pose":{"x":0.49678421,"y":1.12423801,"theta":-0.741505921},"direction":"kBackward","speed":0.3},{"pose":{"x":0.387888908,"y":1.22738647,"theta":-0.775095284},"direction":"kBackward","speed":0.3},{"pose":{"x":0.282519341,"y":1.33413363,"theta":-0.808684647},"direction":"kBackward","speed":0.3},{"pose":{"x":0.282519341,"y":1.33413363,"theta":-0.808684647},"direction":"kForward","speed":0.3},{"pose":{"x":0.384245872,"y":1.22390747,"theta":-0.842274},"direction":"kForward","speed":0.3},{"pose":{"x":0.48221302,"y":1.11032724,"theta":-0.875863373},"direction":"kForward","speed":0.3},{"pose":{"x":0.576311111,"y":0.99352169,"theta":-0.909452736},"direction":"kForward","speed":0.3},{"pose":{"x":0.576311111,"y":0.99352169,"theta":-0.909452736},"direction":"kBackward","speed":0.3},{"pose":{"x":0.486189842,"y":1.11342192,"theta":-0.943042099},"direction":"kBackward","speed":0.3},{"pose":{"x":0.400146484,"y":1.23628092,"theta":-0.976631463},"direction":"kBackward","speed":0.3},{"pose":{"x":0.317140579,"y":1.36121893,"theta":-0.992120624},"direction":"kBackward","speed":0.3},{"pose":{"x":0.23722744,"y":1.48815107,"theta":-1.02571},"direction":"kBackward","speed":0.3},{"pose":{"x":0.161622047,"y":1.61769533,"theta":-1.05929935},"direction":"kBackward","speed":0.3},{"pose":{"x":0.0892152786,"y":1.74906111,"theta":-1.07478857},"direction":"kBackward","speed":0.3},{"pose":{"x":0.0200557709,"y":1.88215876,"theta":-1.10837793},"direction":"kBackward","speed":0.3},{"pose":{"x":-0.0458183289,"y":2.01691818,"theta":-1.12386715},"direction":"kBackward","speed":0.3},{"pose":{"x":-0.108365059,"y":2.15324831,"theta":-1.15745652},"direction":"kBackward","speed":0.3},{"pose":{"x":-0.166297913,"y":2.29160213,"theta":-1.19104588},"direction":"kBackward","speed":0.3},{"pose":{"x":-0.219551086,"y":2.43182325,"theta":-1.22463524},"direction":"kBackward","speed":0.3},{"pose":{"x":-0.27153492,"y":2.57252645,"theta":-1.20914602},"direction":"kBackward","speed":0.3},{"pose":{"x":-0.322241783,"y":2.71368861,"theta":-1.24273539},"direction":"kBackward","speed":0.3},{"pose":{"x":-0.322241783,"y":2.71368861,"theta":-1.24273539},"direction":"kForward","speed":0.3},{"pose":{"x":-0.275012016,"y":2.57131958,"theta":-1.25822461},"direction":"kForward","speed":0.3},{"pose":{"x":-0.231291771,"y":2.42783976,"theta":-1.29181397},"direction":"kForward","speed":0.3},{"pose":{"x":-0.191103935,"y":2.28332567,"theta":-1.30730319},"direction":"kForward","speed":0.3},{"pose":{"x":-0.154475212,"y":2.13787365,"theta":-1.34089255},"direction":"kForward","speed":0.3},{"pose":{"x":-0.121424675,"y":1.99156141,"theta":-1.35638177},"direction":"kForward","speed":0.3},{"pose":{"x":-0.0919752121,"y":1.84448767,"theta":-1.38997114},"direction":"kForward","speed":0.3},{"pose":{"x":-0.067481041,"y":1.69650841,"theta":-1.4235605},"direction":"kForward","speed":0.3},{"pose":{"x":-0.0466251373,"y":1.54796648,"theta":-1.43904972},"direction":"kForward","speed":0.3},{"pose":{"x":-0.0294208527,"y":1.39896345,"theta":-1.47263908},"direction":"kForward","speed":0.3},{"pose":{"x":-0.01587677,"y":1.24957705,"theta":-1.4881283},"direction":"kForward","speed":0.3},{"pose":{"x":-0.00600338,"y":1.09990931,"theta":-1.52171767},"direction":"kForward","speed":0.3},{"pose":{"x":-0.00116157532,"y":0.949994087,"theta":-1.55530703},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":0.799999714,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":0.650000095,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":0.5,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":0.349999905,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":0.199999809,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":0.0499997139,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-0.0999999046,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-0.250000477,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-0.400000095,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-0.550000191,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-0.700000286,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-0.849999905,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-1.00000048,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-1.1500001,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-1.30000019,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-1.45000029,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-1.5999999,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-1.75000048,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-1.9000001,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-2.04999971,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-2.20000029,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-2.35,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-2.50000048,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-2.65,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-2.80000067,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-2.95000029,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-3.1,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-3.25000048,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-3.4,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-3.55000067,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-3.70000029,"theta":-1.57079625},"direction":"kForward","speed":0.3}]},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ],
+                            "validation_type": "track_equal",
+                            "min_turn_radius": 4.8
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "To test the planning for parallel parking in with tail",
+                "Test Case ID": "2",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "parkingspaces": [
+                                    {
+                                        "p0": {
+                                            "x": -3,
+                                            "y": -2.92000031
+                                        },
+                                        "p1": {
+                                            "x": -3,
+                                            "y": -5.32000065
+                                        },
+                                        "p2": {
+                                            "x": 3,
+                                            "y": -5.31999969
+                                        },
+                                        "p3": {
+                                            "x": 3,
+                                            "y": -2.91999984
+                                        },
+                                        "valid": true,
+                                        "confidence": 0.9,
+                                        "sensor_source": "kFromCamera",
+                                        "timestamp": "1658227458725613094"
+                                    }
+                                ]
+                            }            
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInHead",
+                                "parking_space": {
+                                    "p0": {
+                                        "x": -1.2,
+                                        "y": -2.5
+                                    },
+                                    "p1": {
+                                        "x": -1.2,
+                                        "y": -7.9
+                                    },
+                                    "p2": {
+                                        "x": 1.2,
+                                        "y": -7.9
+                                    },
+                                    "p3": {
+                                        "x": 1.2,
+                                        "y": -2.5
+                                    },
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSuccessed"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "TrajectoryFully",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1667543958046"},"timestamp":"1667543958045692774","trajectory_type":"kTrajectory","waypoints":[{"pose":{"x":0,"y":0.0224609375,"theta":-0},"direction":"kForward","speed":0.3},{"pose":{"x":0.328435898,"y":0.0224003792,"theta":-0.000106032698},"direction":"kForward","speed":0.3},{"pose":{"x":0.478435516,"y":0.0223846436,"theta":-0.000106032698},"direction":"kForward","speed":0.3},{"pose":{"x":0.628435135,"y":0.0223689079,"theta":-0.000106032698},"direction":"kForward","speed":0.3},{"pose":{"x":0.778434753,"y":0.0223531723,"theta":-0.000106032698},"direction":"kForward","speed":0.3},{"pose":{"x":0.928434372,"y":0.0223374367,"theta":-0.000106032698},"direction":"kForward","speed":0.3},{"pose":{"x":1.07843399,"y":0.022321701,"theta":-0.000106032698},"direction":"kForward","speed":0.3},{"pose":{"x":1.22840691,"y":0.0248246193,"theta":0.0334833302},"direction":"kForward","speed":0.3},{"pose":{"x":1.37835503,"y":0.0286850929,"theta":0.0179942288},"direction":"kForward","speed":0.3},{"pose":{"x":1.52834415,"y":0.0302228928,"theta":0.00250512757},"direction":"kForward","speed":0.3},{"pose":{"x":1.67832279,"y":0.0280799866,"theta":-0.0310842693},"direction":"kForward","speed":0.3},{"pose":{"x":1.82814312,"y":0.0209012032,"theta":-0.0646736175},"direction":"kForward","speed":0.3},{"pose":{"x":1.97774792,"y":0.0100483894,"theta":-0.0801628},"direction":"kForward","speed":0.3},{"pose":{"x":2.1271677,"y":-0.00312042236,"theta":-0.0956519842},"direction":"kForward","speed":0.3},{"pose":{"x":2.27621365,"y":-0.0199513435,"theta":-0.129241332},"direction":"kForward","speed":0.3},{"pose":{"x":2.424963,"y":-0.0392837524,"theta":-0.129241332},"direction":"kForward","speed":0.3},{"pose":{"x":2.57371235,"y":-0.0586161613,"theta":-0.129241332},"direction":"kForward","speed":0.3},{"pose":{"x":3.01628399,"y":-0.138979435,"theta":-0.230009377},"direction":"kForward","speed":0.3},{"pose":{"x":3.01628399,"y":-0.138979435,"theta":-0.230009377},"direction":"kBackward","speed":0.3},{"pose":{"x":2.58067608,"y":-0.0262446404,"theta":-0.27647692},"direction":"kBackward","speed":0.3},{"pose":{"x":2.15468216,"y":0.118175983,"theta":-0.377244979},"direction":"kBackward","speed":0.3},{"pose":{"x":2.01566315,"y":0.174508572,"theta":-0.39273417},"direction":"kBackward","speed":0.3},{"pose":{"x":1.87807369,"y":0.234232426,"theta":-0.426323503},"direction":"kBackward","speed":0.3},{"pose":{"x":1.74198532,"y":0.297317028,"theta":-0.441812694},"direction":"kBackward","speed":0.3},{"pose":{"x":1.60749054,"y":0.36371851,"theta":-0.475402057},"direction":"kBackward","speed":0.3},{"pose":{"x":1.4753027,"y":0.434599876,"theta":-0.50899142},"direction":"kBackward","speed":0.3},{"pose":{"x":1.34488773,"y":0.508706093,"theta":-0.524480581},"direction":"kBackward","speed":0.3},{"pose":{"x":1.21633625,"y":0.585986614,"theta":-0.558069944},"direction":"kBackward","speed":0.3},{"pose":{"x":1.08971405,"y":0.666401386,"theta":-0.573559105},"direction":"kBackward","speed":0.3},{"pose":{"x":0.965107918,"y":0.749896049,"theta":-0.607148468},"direction":"kBackward","speed":0.3},{"pose":{"x":0.843377113,"y":0.837527752,"theta":-0.640737832},"direction":"kBackward","speed":0.3},{"pose":{"x":0.724657059,"y":0.929198742,"theta":-0.674327195},"direction":"kBackward","speed":0.3},{"pose":{"x":0.609082222,"y":1.02480459,"theta":-0.707916558},"direction":"kBackward","speed":0.3},{"pose":{"x":0.49678421,"y":1.12423801,"theta":-0.741505921},"direction":"kBackward","speed":0.3},{"pose":{"x":0.387888908,"y":1.22738647,"theta":-0.775095284},"direction":"kBackward","speed":0.3},{"pose":{"x":0.282519341,"y":1.33413363,"theta":-0.808684647},"direction":"kBackward","speed":0.3},{"pose":{"x":0.282519341,"y":1.33413363,"theta":-0.808684647},"direction":"kForward","speed":0.3},{"pose":{"x":0.384245872,"y":1.22390747,"theta":-0.842274},"direction":"kForward","speed":0.3},{"pose":{"x":0.48221302,"y":1.11032724,"theta":-0.875863373},"direction":"kForward","speed":0.3},{"pose":{"x":0.576311111,"y":0.99352169,"theta":-0.909452736},"direction":"kForward","speed":0.3},{"pose":{"x":0.576311111,"y":0.99352169,"theta":-0.909452736},"direction":"kBackward","speed":0.3},{"pose":{"x":0.486189842,"y":1.11342192,"theta":-0.943042099},"direction":"kBackward","speed":0.3},{"pose":{"x":0.400146484,"y":1.23628092,"theta":-0.976631463},"direction":"kBackward","speed":0.3},{"pose":{"x":0.317140579,"y":1.36121893,"theta":-0.992120624},"direction":"kBackward","speed":0.3},{"pose":{"x":0.23722744,"y":1.48815107,"theta":-1.02571},"direction":"kBackward","speed":0.3},{"pose":{"x":0.161622047,"y":1.61769533,"theta":-1.05929935},"direction":"kBackward","speed":0.3},{"pose":{"x":0.0892152786,"y":1.74906111,"theta":-1.07478857},"direction":"kBackward","speed":0.3},{"pose":{"x":0.0200557709,"y":1.88215876,"theta":-1.10837793},"direction":"kBackward","speed":0.3},{"pose":{"x":-0.0458183289,"y":2.01691818,"theta":-1.12386715},"direction":"kBackward","speed":0.3},{"pose":{"x":-0.108365059,"y":2.15324831,"theta":-1.15745652},"direction":"kBackward","speed":0.3},{"pose":{"x":-0.166297913,"y":2.29160213,"theta":-1.19104588},"direction":"kBackward","speed":0.3},{"pose":{"x":-0.219551086,"y":2.43182325,"theta":-1.22463524},"direction":"kBackward","speed":0.3},{"pose":{"x":-0.27153492,"y":2.57252645,"theta":-1.20914602},"direction":"kBackward","speed":0.3},{"pose":{"x":-0.322241783,"y":2.71368861,"theta":-1.24273539},"direction":"kBackward","speed":0.3},{"pose":{"x":-0.322241783,"y":2.71368861,"theta":-1.24273539},"direction":"kForward","speed":0.3},{"pose":{"x":-0.275012016,"y":2.57131958,"theta":-1.25822461},"direction":"kForward","speed":0.3},{"pose":{"x":-0.231291771,"y":2.42783976,"theta":-1.29181397},"direction":"kForward","speed":0.3},{"pose":{"x":-0.191103935,"y":2.28332567,"theta":-1.30730319},"direction":"kForward","speed":0.3},{"pose":{"x":-0.154475212,"y":2.13787365,"theta":-1.34089255},"direction":"kForward","speed":0.3},{"pose":{"x":-0.121424675,"y":1.99156141,"theta":-1.35638177},"direction":"kForward","speed":0.3},{"pose":{"x":-0.0919752121,"y":1.84448767,"theta":-1.38997114},"direction":"kForward","speed":0.3},{"pose":{"x":-0.067481041,"y":1.69650841,"theta":-1.4235605},"direction":"kForward","speed":0.3},{"pose":{"x":-0.0466251373,"y":1.54796648,"theta":-1.43904972},"direction":"kForward","speed":0.3},{"pose":{"x":-0.0294208527,"y":1.39896345,"theta":-1.47263908},"direction":"kForward","speed":0.3},{"pose":{"x":-0.01587677,"y":1.24957705,"theta":-1.4881283},"direction":"kForward","speed":0.3},{"pose":{"x":-0.00600338,"y":1.09990931,"theta":-1.52171767},"direction":"kForward","speed":0.3},{"pose":{"x":-0.00116157532,"y":0.949994087,"theta":-1.55530703},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":0.799999714,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":0.650000095,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":0.5,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":0.349999905,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":0.199999809,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":0.0499997139,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-0.0999999046,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-0.250000477,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-0.400000095,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-0.550000191,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-0.700000286,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-0.849999905,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-1.00000048,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-1.1500001,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-1.30000019,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-1.45000029,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-1.5999999,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-1.75000048,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-1.9000001,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-2.04999971,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-2.20000029,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-2.35,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-2.50000048,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-2.65,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-2.80000067,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-2.95000029,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-3.1,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-3.25000048,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-3.4,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-3.55000067,"theta":-1.57079625},"direction":"kForward","speed":0.3},{"pose":{"x":0,"y":-3.70000029,"theta":-1.57079625},"direction":"kForward","speed":0.3}]},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ],
+                            "validation_type": "track_equal",
+                            "min_turn_radius": 4.8
+                        }
+                    ]
+                }
+
+            ]
+        }
+        ,
+      
+    ]
+}

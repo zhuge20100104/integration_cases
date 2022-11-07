@@ -20,7 +20,36 @@
                     "topic_name": "SelectedParkingSpaceResult",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1666248894250\"},\"parkingspaces\":[{\"p0\":{\"x\":5.4210043,\"y\":-3.42496324},\"p1\":{\"x\":5.08211279,\"y\":-8.11264},\"p2\":{\"x\":7.07687092,\"y\":-8.25685215},\"p3\":{\"x\":7.41576195,\"y\":-3.56917214},\"valid\":true,\"confidence\":0.860399783,\"timestamp\":\"1646797362896707392\",\"mechanical\":true,\"handicap\":false}]}"
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666248894250"
+                                },
+                                "parkingspaces": [
+                                    {
+                                        "p0": {
+                                            "x": 5.4210043,
+                                            "y": -3.42496324
+                                        },
+                                        "p1": {
+                                            "x": 5.08211279,
+                                            "y": -8.11264
+                                        },
+                                        "p2": {
+                                            "x": 7.07687092,
+                                            "y": -8.25685215
+                                        },
+                                        "p3": {
+                                            "x": 7.41576195,
+                                            "y": -3.56917214
+                                        },
+                                        "valid": true,
+                                        "confidence": 0.860399783,
+                                        "timestamp": "1646797362896707392",
+                                        "mechanical": true,
+                                        "handicap": false
+                                    }
+                                ]
+                            }
                         }
                     ]
                 },
@@ -28,7 +57,13 @@
                     "topic_name": "DetectionStage",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"164679733325\"},\"timestamp\":\"164679733325\",\"stage\":\"kParking\"}"
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "164679733325"
+                                },
+                                "timestamp": "164679733325",
+                                "stage": "kParking"
+                            }
                         }
                     ]
                 },
@@ -36,7 +71,18 @@
                     "topic_name": "StitchedImage",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665714464500\"},\"timestamp\":\"1213272061555425960\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1665714464500"
+                                },
+                                "timestamp": "1213272061555425960",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 512,
+                                    "height": 512,
+                                    "size_in_bytes": 786432
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -50,7 +96,18 @@
                     "topic_name": "StitchedImageNearRaw",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665714464510\"},\"timestamp\":\"1213272061555425960\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":480,\"height\":720,\"size_in_bytes\":1036800}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1665714464510"
+                                },
+                                "timestamp": "1213272061555425960",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 480,
+                                    "height": 720,
+                                    "size_in_bytes": 1036800
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -64,7 +121,17 @@
                     "topic_name": "Location_Rectified",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1666248894070\"},\"timestamp\":\"1646797386676423200\",\"pose\":{\"x\":6.68968487,\"y\":-1.72670209,\"theta\":1.47236133}}"
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666248894070"
+                                },
+                                "timestamp": "1646797386676423200",
+                                "pose": {
+                                    "x": 6.68968487,
+                                    "y": -1.72670209,
+                                    "theta": 1.47236133
+                                }
+                            }
                         }
                     ]
                 }
@@ -74,7 +141,61 @@
                     "topic_name": "CameraParkingSpaceResult",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1666255425957\"},\"parkingspaces\":[{\"p0\":{\"x\":-1.76274538,\"y\":1.11005366},\"p1\":{\"x\":-5.45264149,\"y\":0.988776267},\"p2\":{\"x\":-5.33392096,\"y\":-0.901124239},\"p3\":{\"x\":-1.69367552,\"y\":-0.812690437},\"valid\":true,\"confidence\":0.882813871,\"timestamp\":\"1213272061555425960\",\"mechanical\":true,\"handicap\":false,\"precision\":\"kParkingSpacePrecisionNormal\"},{\"p0\":{\"x\":-1.93369877,\"y\":3.38362861},\"p1\":{\"x\":-5.81278181,\"y\":3.28665709},\"p2\":{\"x\":-5.70336533,\"y\":1.30444336},\"p3\":{\"x\":-1.83919191,\"y\":1.47913575},\"valid\":false,\"confidence\":0.798309505,\"timestamp\":\"1213272061555425960\",\"mechanical\":false,\"handicap\":false,\"precision\":\"kParkingSpacePrecisionNormal\"}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666255425957"
+                                },
+                                "parkingspaces": [
+                                    {
+                                        "p0": {
+                                            "x": -1.76274538,
+                                            "y": 1.11005366
+                                        },
+                                        "p1": {
+                                            "x": -5.45264149,
+                                            "y": 0.988776267
+                                        },
+                                        "p2": {
+                                            "x": -5.33392096,
+                                            "y": -0.901124239
+                                        },
+                                        "p3": {
+                                            "x": -1.69367552,
+                                            "y": -0.812690437
+                                        },
+                                        "valid": true,
+                                        "confidence": 0.882813871,
+                                        "timestamp": "1213272061555425960",
+                                        "mechanical": true,
+                                        "handicap": false,
+                                        "precision": "kParkingSpacePrecisionNormal"
+                                    },
+                                    {
+                                        "p0": {
+                                            "x": -1.93369877,
+                                            "y": 3.38362861
+                                        },
+                                        "p1": {
+                                            "x": -5.81278181,
+                                            "y": 3.28665709
+                                        },
+                                        "p2": {
+                                            "x": -5.70336533,
+                                            "y": 1.30444336
+                                        },
+                                        "p3": {
+                                            "x": -1.83919191,
+                                            "y": 1.47913575
+                                        },
+                                        "valid": false,
+                                        "confidence": 0.798309505,
+                                        "timestamp": "1213272061555425960",
+                                        "mechanical": false,
+                                        "handicap": false,
+                                        "precision": "kParkingSpacePrecisionNormal"
+                                    }
+                                ]
+                            },
                             "validation_type": "point_equal"
                         }
                     ]

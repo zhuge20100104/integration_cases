@@ -20,7 +20,18 @@
                     "topic_name": "StitchingSwitch",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665371148720\"},\"enable_stitched_near\":true,\"enable_stitched_medium\":true,\"enable_perspective_front\":true,\"enable_perspective_rear\":true,\"enable_perspective_left\":true,\"enable_perspective_right\":true,\"enable_blind_area_reset\":true}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1665371148720"
+                                },
+                                "enable_stitched_near": true,
+                                "enable_stitched_medium": true,
+                                "enable_perspective_front": true,
+                                "enable_perspective_rear": true,
+                                "enable_perspective_left": true,
+                                "enable_perspective_right": true,
+                                "enable_blind_area_reset": true
+                            },
                             "sleep_afterward_ms": 1000
                         }
                     ]
@@ -29,7 +40,57 @@
                     "topic_name": "SurroundViewCameraFrames",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1617698226156316834\"},\"frame_list\":[{\"timestamp\":\"123\",\"index_type\":\"FRONT_CAMERA\",\"name\":\"front camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073900992\",\"index_type\":\"REAR_CAMERA\",\"name\":\"rear camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073901070\",\"index_type\":\"LEFT_CAMERA\",\"name\":\"left camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073901162\",\"index_type\":\"RIGHT_CAMERA\",\"name\":\"right camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1617698226156316834"
+                                },
+                                "frame_list": [
+                                    {
+                                        "timestamp": "123",
+                                        "index_type": "FRONT_CAMERA",
+                                        "name": "front camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073900992",
+                                        "index_type": "REAR_CAMERA",
+                                        "name": "rear camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073901070",
+                                        "index_type": "LEFT_CAMERA",
+                                        "name": "left camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073901162",
+                                        "index_type": "RIGHT_CAMERA",
+                                        "name": "right camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 "./test_case/case0/stitching_front.png",
                                 "./test_case/case0/stitching_rear.png",
@@ -45,7 +106,18 @@
                     "topic_name": "StitchedImage",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 512,
+                                    "height": 512,
+                                    "size_in_bytes": 786432
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -63,7 +135,18 @@
                     "topic_name": "StitchedImageNear",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":480,\"height\":720,\"size_in_bytes\":1036800}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 480,
+                                    "height": 720,
+                                    "size_in_bytes": 1036800
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -81,7 +164,35 @@
                     "topic_name": "PerspectiveImageList",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"image_list\":[{\"sdm_timestamp\":\"123\",\"stitching_timestamp\":\"0\",\"camera\":\"FRONT_CAMERA\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":640,\"height\":480,\"size_in_bytes\":921600}},{\"sdm_timestamp\":\"0\",\"stitching_timestamp\":\"0\",\"camera\":\"REAR_CAMERA\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":640,\"height\":480,\"size_in_bytes\":921600}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "image_list": [
+                                    {
+                                        "sdm_timestamp": "123",
+                                        "stitching_timestamp": "0",
+                                        "camera": "FRONT_CAMERA",
+                                        "frame_descriptors": {
+                                            "encode": "RGB24",
+                                            "width": 640,
+                                            "height": 480,
+                                            "size_in_bytes": 921600
+                                        }
+                                    },
+                                    {
+                                        "sdm_timestamp": "0",
+                                        "stitching_timestamp": "0",
+                                        "camera": "REAR_CAMERA",
+                                        "frame_descriptors": {
+                                            "encode": "RGB24",
+                                            "width": 640,
+                                            "height": 480,
+                                            "size_in_bytes": 921600
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -122,7 +233,57 @@
                     "topic_name": "SurroundViewCameraFrames",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1617698226156316834\"},\"frame_list\":[{\"timestamp\":\"123\",\"index_type\":\"FRONT_CAMERA\",\"name\":\"front camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073900992\",\"index_type\":\"REAR_CAMERA\",\"name\":\"rear camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073901070\",\"index_type\":\"LEFT_CAMERA\",\"name\":\"left camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073901162\",\"index_type\":\"RIGHT_CAMERA\",\"name\":\"right camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1617698226156316834"
+                                },
+                                "frame_list": [
+                                    {
+                                        "timestamp": "123",
+                                        "index_type": "FRONT_CAMERA",
+                                        "name": "front camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073900992",
+                                        "index_type": "REAR_CAMERA",
+                                        "name": "rear camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073901070",
+                                        "index_type": "LEFT_CAMERA",
+                                        "name": "left camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073901162",
+                                        "index_type": "RIGHT_CAMERA",
+                                        "name": "right camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 "./test_case/case1/20220929_101326/stitching_front.png",
                                 "./test_case/case1/20220929_101326/stitching_rear.png",
@@ -138,7 +299,18 @@
                     "topic_name": "StitchedImage",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 512,
+                                    "height": 512,
+                                    "size_in_bytes": 786432
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -156,7 +328,18 @@
                     "topic_name": "StitchedImageNear",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":480,\"height\":720,\"size_in_bytes\":1036800}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 480,
+                                    "height": 720,
+                                    "size_in_bytes": 1036800
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -174,7 +357,35 @@
                     "topic_name": "PerspectiveImageList",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"image_list\":[{\"sdm_timestamp\":\"123\",\"stitching_timestamp\":\"0\",\"camera\":\"FRONT_CAMERA\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":640,\"height\":480,\"size_in_bytes\":921600}},{\"sdm_timestamp\":\"0\",\"stitching_timestamp\":\"0\",\"camera\":\"REAR_CAMERA\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":640,\"height\":480,\"size_in_bytes\":921600}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "image_list": [
+                                    {
+                                        "sdm_timestamp": "123",
+                                        "stitching_timestamp": "0",
+                                        "camera": "FRONT_CAMERA",
+                                        "frame_descriptors": {
+                                            "encode": "RGB24",
+                                            "width": 640,
+                                            "height": 480,
+                                            "size_in_bytes": 921600
+                                        }
+                                    },
+                                    {
+                                        "sdm_timestamp": "0",
+                                        "stitching_timestamp": "0",
+                                        "camera": "REAR_CAMERA",
+                                        "frame_descriptors": {
+                                            "encode": "RGB24",
+                                            "width": 640,
+                                            "height": 480,
+                                            "size_in_bytes": 921600
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -215,7 +426,57 @@
                     "topic_name": "SurroundViewCameraFrames",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1617698226156316834\"},\"frame_list\":[{\"timestamp\":\"123\",\"index_type\":\"FRONT_CAMERA\",\"name\":\"front camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073900992\",\"index_type\":\"REAR_CAMERA\",\"name\":\"rear camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073901070\",\"index_type\":\"LEFT_CAMERA\",\"name\":\"left camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073901162\",\"index_type\":\"RIGHT_CAMERA\",\"name\":\"right camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1617698226156316834"
+                                },
+                                "frame_list": [
+                                    {
+                                        "timestamp": "123",
+                                        "index_type": "FRONT_CAMERA",
+                                        "name": "front camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073900992",
+                                        "index_type": "REAR_CAMERA",
+                                        "name": "rear camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073901070",
+                                        "index_type": "LEFT_CAMERA",
+                                        "name": "left camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073901162",
+                                        "index_type": "RIGHT_CAMERA",
+                                        "name": "right camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 "./test_case/case2/20220929_101350/stitching_front.png",
                                 "./test_case/case2/20220929_101350/stitching_rear.png",
@@ -231,7 +492,18 @@
                     "topic_name": "StitchedImage",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 512,
+                                    "height": 512,
+                                    "size_in_bytes": 786432
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -249,7 +521,18 @@
                     "topic_name": "StitchedImageNear",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":480,\"height\":720,\"size_in_bytes\":1036800}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 480,
+                                    "height": 720,
+                                    "size_in_bytes": 1036800
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -267,7 +550,35 @@
                     "topic_name": "PerspectiveImageList",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"image_list\":[{\"sdm_timestamp\":\"123\",\"stitching_timestamp\":\"0\",\"camera\":\"FRONT_CAMERA\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":640,\"height\":480,\"size_in_bytes\":921600}},{\"sdm_timestamp\":\"0\",\"stitching_timestamp\":\"0\",\"camera\":\"REAR_CAMERA\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":640,\"height\":480,\"size_in_bytes\":921600}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "image_list": [
+                                    {
+                                        "sdm_timestamp": "123",
+                                        "stitching_timestamp": "0",
+                                        "camera": "FRONT_CAMERA",
+                                        "frame_descriptors": {
+                                            "encode": "RGB24",
+                                            "width": 640,
+                                            "height": 480,
+                                            "size_in_bytes": 921600
+                                        }
+                                    },
+                                    {
+                                        "sdm_timestamp": "0",
+                                        "stitching_timestamp": "0",
+                                        "camera": "REAR_CAMERA",
+                                        "frame_descriptors": {
+                                            "encode": "RGB24",
+                                            "width": 640,
+                                            "height": 480,
+                                            "size_in_bytes": 921600
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -308,7 +619,57 @@
                     "topic_name": "SurroundViewCameraFrames",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1617698226156316834\"},\"frame_list\":[{\"timestamp\":\"123\",\"index_type\":\"FRONT_CAMERA\",\"name\":\"front camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073900992\",\"index_type\":\"REAR_CAMERA\",\"name\":\"rear camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073901070\",\"index_type\":\"LEFT_CAMERA\",\"name\":\"left camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073901162\",\"index_type\":\"RIGHT_CAMERA\",\"name\":\"right camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1617698226156316834"
+                                },
+                                "frame_list": [
+                                    {
+                                        "timestamp": "123",
+                                        "index_type": "FRONT_CAMERA",
+                                        "name": "front camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073900992",
+                                        "index_type": "REAR_CAMERA",
+                                        "name": "rear camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073901070",
+                                        "index_type": "LEFT_CAMERA",
+                                        "name": "left camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073901162",
+                                        "index_type": "RIGHT_CAMERA",
+                                        "name": "right camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 "./test_case/case3/20220929_101353/stitching_front.png",
                                 "./test_case/case3/20220929_101353/stitching_rear.png",
@@ -324,7 +685,18 @@
                     "topic_name": "StitchedImage",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 512,
+                                    "height": 512,
+                                    "size_in_bytes": 786432
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -342,7 +714,18 @@
                     "topic_name": "StitchedImageNear",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":480,\"height\":720,\"size_in_bytes\":1036800}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 480,
+                                    "height": 720,
+                                    "size_in_bytes": 1036800
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -360,7 +743,35 @@
                     "topic_name": "PerspectiveImageList",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"image_list\":[{\"sdm_timestamp\":\"123\",\"stitching_timestamp\":\"0\",\"camera\":\"FRONT_CAMERA\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":640,\"height\":480,\"size_in_bytes\":921600}},{\"sdm_timestamp\":\"0\",\"stitching_timestamp\":\"0\",\"camera\":\"REAR_CAMERA\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":640,\"height\":480,\"size_in_bytes\":921600}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "image_list": [
+                                    {
+                                        "sdm_timestamp": "123",
+                                        "stitching_timestamp": "0",
+                                        "camera": "FRONT_CAMERA",
+                                        "frame_descriptors": {
+                                            "encode": "RGB24",
+                                            "width": 640,
+                                            "height": 480,
+                                            "size_in_bytes": 921600
+                                        }
+                                    },
+                                    {
+                                        "sdm_timestamp": "0",
+                                        "stitching_timestamp": "0",
+                                        "camera": "REAR_CAMERA",
+                                        "frame_descriptors": {
+                                            "encode": "RGB24",
+                                            "width": 640,
+                                            "height": 480,
+                                            "size_in_bytes": 921600
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -401,7 +812,57 @@
                     "topic_name": "SurroundViewCameraFrames",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1617698226156316834\"},\"frame_list\":[{\"timestamp\":\"123\",\"index_type\":\"FRONT_CAMERA\",\"name\":\"front camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073900992\",\"index_type\":\"REAR_CAMERA\",\"name\":\"rear camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073901070\",\"index_type\":\"LEFT_CAMERA\",\"name\":\"left camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073901162\",\"index_type\":\"RIGHT_CAMERA\",\"name\":\"right camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1617698226156316834"
+                                },
+                                "frame_list": [
+                                    {
+                                        "timestamp": "123",
+                                        "index_type": "FRONT_CAMERA",
+                                        "name": "front camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073900992",
+                                        "index_type": "REAR_CAMERA",
+                                        "name": "rear camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073901070",
+                                        "index_type": "LEFT_CAMERA",
+                                        "name": "left camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073901162",
+                                        "index_type": "RIGHT_CAMERA",
+                                        "name": "right camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 "./test_case/case4/20220929_101359/stitching_front.png",
                                 "./test_case/case4/20220929_101359/stitching_rear.png",
@@ -417,7 +878,18 @@
                     "topic_name": "StitchedImage",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 512,
+                                    "height": 512,
+                                    "size_in_bytes": 786432
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -435,7 +907,18 @@
                     "topic_name": "StitchedImageNear",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":480,\"height\":720,\"size_in_bytes\":1036800}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 480,
+                                    "height": 720,
+                                    "size_in_bytes": 1036800
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -453,7 +936,35 @@
                     "topic_name": "PerspectiveImageList",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"image_list\":[{\"sdm_timestamp\":\"123\",\"stitching_timestamp\":\"0\",\"camera\":\"FRONT_CAMERA\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":640,\"height\":480,\"size_in_bytes\":921600}},{\"sdm_timestamp\":\"0\",\"stitching_timestamp\":\"0\",\"camera\":\"REAR_CAMERA\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":640,\"height\":480,\"size_in_bytes\":921600}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "image_list": [
+                                    {
+                                        "sdm_timestamp": "123",
+                                        "stitching_timestamp": "0",
+                                        "camera": "FRONT_CAMERA",
+                                        "frame_descriptors": {
+                                            "encode": "RGB24",
+                                            "width": 640,
+                                            "height": 480,
+                                            "size_in_bytes": 921600
+                                        }
+                                    },
+                                    {
+                                        "sdm_timestamp": "0",
+                                        "stitching_timestamp": "0",
+                                        "camera": "REAR_CAMERA",
+                                        "frame_descriptors": {
+                                            "encode": "RGB24",
+                                            "width": 640,
+                                            "height": 480,
+                                            "size_in_bytes": 921600
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -494,7 +1005,57 @@
                     "topic_name": "SurroundViewCameraFrames",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1617698226156316834\"},\"frame_list\":[{\"timestamp\":\"123\",\"index_type\":\"FRONT_CAMERA\",\"name\":\"front camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073900992\",\"index_type\":\"REAR_CAMERA\",\"name\":\"rear camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073901070\",\"index_type\":\"LEFT_CAMERA\",\"name\":\"left camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}},{\"timestamp\":\"1617696082073901162\",\"index_type\":\"RIGHT_CAMERA\",\"name\":\"right camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720,\"size_in_bytes\":3686400}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1617698226156316834"
+                                },
+                                "frame_list": [
+                                    {
+                                        "timestamp": "123",
+                                        "index_type": "FRONT_CAMERA",
+                                        "name": "front camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073900992",
+                                        "index_type": "REAR_CAMERA",
+                                        "name": "rear camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073901070",
+                                        "index_type": "LEFT_CAMERA",
+                                        "name": "left camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1617696082073901162",
+                                        "index_type": "RIGHT_CAMERA",
+                                        "name": "right camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720,
+                                            "size_in_bytes": 3686400
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 "./test_case/case5/20220929_101413/stitching_front.png",
                                 "./test_case/case5/20220929_101413/stitching_rear.png",
@@ -510,7 +1071,18 @@
                     "topic_name": "StitchedImage",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 512,
+                                    "height": 512,
+                                    "size_in_bytes": 786432
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -528,7 +1100,18 @@
                     "topic_name": "StitchedImageNear",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":480,\"height\":720,\"size_in_bytes\":1036800}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 480,
+                                    "height": 720,
+                                    "size_in_bytes": 1036800
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -546,7 +1129,35 @@
                     "topic_name": "PerspectiveImageList",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"image_list\":[{\"sdm_timestamp\":\"123\",\"stitching_timestamp\":\"0\",\"camera\":\"FRONT_CAMERA\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":640,\"height\":480,\"size_in_bytes\":921600}},{\"sdm_timestamp\":\"0\",\"stitching_timestamp\":\"0\",\"camera\":\"REAR_CAMERA\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":640,\"height\":480,\"size_in_bytes\":921600}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "image_list": [
+                                    {
+                                        "sdm_timestamp": "123",
+                                        "stitching_timestamp": "0",
+                                        "camera": "FRONT_CAMERA",
+                                        "frame_descriptors": {
+                                            "encode": "RGB24",
+                                            "width": 640,
+                                            "height": 480,
+                                            "size_in_bytes": 921600
+                                        }
+                                    },
+                                    {
+                                        "sdm_timestamp": "0",
+                                        "stitching_timestamp": "0",
+                                        "camera": "REAR_CAMERA",
+                                        "frame_descriptors": {
+                                            "encode": "RGB24",
+                                            "width": 640,
+                                            "height": 480,
+                                            "size_in_bytes": 921600
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -587,7 +1198,18 @@
                     "topic_name": "StitchingSwitch",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665371148720\"},\"enable_stitched_near\":false,\"enable_stitched_medium\":true,\"enable_perspective_front\":true,\"enable_perspective_rear\":true,\"enable_perspective_left\":true,\"enable_perspective_right\":true,\"enable_blind_area_reset\":true}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1665371148720"
+                                },
+                                "enable_stitched_near": false,
+                                "enable_stitched_medium": true,
+                                "enable_perspective_front": true,
+                                "enable_perspective_rear": true,
+                                "enable_perspective_left": true,
+                                "enable_perspective_right": true,
+                                "enable_blind_area_reset": true
+                            },
                             "sleep_afterward_ms": 1000
                         }
                     ]
@@ -596,7 +1218,53 @@
                     "topic_name": "SurroundViewCameraFrames",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665371148720\"},\"frame_list\":[{\"timestamp\":\"1665371143404090302\",\"index_type\":\"FRONT_CAMERA\",\"name\":\"front camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090565\",\"index_type\":\"REAR_CAMERA\",\"name\":\"rear camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090718\",\"index_type\":\"LEFT_CAMERA\",\"name\":\"left camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090846\",\"index_type\":\"RIGHT_CAMERA\",\"name\":\"right camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1665371148720"
+                                },
+                                "frame_list": [
+                                    {
+                                        "timestamp": "1665371143404090302",
+                                        "index_type": "FRONT_CAMERA",
+                                        "name": "front camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1665371143404090565",
+                                        "index_type": "REAR_CAMERA",
+                                        "name": "rear camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1665371143404090718",
+                                        "index_type": "LEFT_CAMERA",
+                                        "name": "left camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1665371143404090846",
+                                        "index_type": "RIGHT_CAMERA",
+                                        "name": "right camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 "./test_case/case0/stitching_front.png",
                                 "./test_case/case0/stitching_rear.png",
@@ -616,7 +1284,18 @@
                     "topic_name": "StitchedImage",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 512,
+                                    "height": 512,
+                                    "size_in_bytes": 786432
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -652,7 +1331,18 @@
                     "topic_name": "StitchingSwitch",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665371148720\"},\"enable_stitched_near\":true,\"enable_stitched_medium\":true,\"enable_perspective_front\":false,\"enable_perspective_rear\":false,\"enable_perspective_left\":false,\"enable_perspective_right\":false,\"enable_blind_area_reset\":true}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1665371148720"
+                                },
+                                "enable_stitched_near": true,
+                                "enable_stitched_medium": true,
+                                "enable_perspective_front": false,
+                                "enable_perspective_rear": false,
+                                "enable_perspective_left": false,
+                                "enable_perspective_right": false,
+                                "enable_blind_area_reset": true
+                            },
                             "sleep_afterward_ms": 1000
                         }
                     ]
@@ -661,7 +1351,53 @@
                     "topic_name": "SurroundViewCameraFrames",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"1665371148720\"},\"frame_list\":[{\"timestamp\":\"1665371143404090302\",\"index_type\":\"FRONT_CAMERA\",\"name\":\"front camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090565\",\"index_type\":\"REAR_CAMERA\",\"name\":\"rear camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090718\",\"index_type\":\"LEFT_CAMERA\",\"name\":\"left camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}},{\"timestamp\":\"1665371143404090846\",\"index_type\":\"RIGHT_CAMERA\",\"name\":\"right camera\",\"frame_descriptors\":{\"encode\":\"RGBA32\",\"width\":1280,\"height\":720}}]}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1665371148720"
+                                },
+                                "frame_list": [
+                                    {
+                                        "timestamp": "1665371143404090302",
+                                        "index_type": "FRONT_CAMERA",
+                                        "name": "front camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1665371143404090565",
+                                        "index_type": "REAR_CAMERA",
+                                        "name": "rear camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1665371143404090718",
+                                        "index_type": "LEFT_CAMERA",
+                                        "name": "left camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720
+                                        }
+                                    },
+                                    {
+                                        "timestamp": "1665371143404090846",
+                                        "index_type": "RIGHT_CAMERA",
+                                        "name": "right camera",
+                                        "frame_descriptors": {
+                                            "encode": "RGBA32",
+                                            "width": 1280,
+                                            "height": 720
+                                        }
+                                    }
+                                ]
+                            },
                             "data_files": [
                                 "./test_case/case0/stitching_front.png",
                                 "./test_case/case0/stitching_rear.png",
@@ -681,7 +1417,18 @@
                     "topic_name": "StitchedImage",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":512,\"height\":512,\"size_in_bytes\":786432}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 512,
+                                    "height": 512,
+                                    "size_in_bytes": 786432
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,
@@ -699,7 +1446,18 @@
                     "topic_name": "StitchedImageNear",
                     "messages": [
                         {
-                            "text": "{\"tmq_header\":{\"tmq_stamp\":\"0\"},\"timestamp\":\"0\",\"frame_descriptors\":{\"encode\":\"RGB24\",\"width\":480,\"height\":720,\"size_in_bytes\":1036800}}",
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "frame_descriptors": {
+                                    "encode": "RGB24",
+                                    "width": 480,
+                                    "height": 720,
+                                    "size_in_bytes": 1036800
+                                }
+                            },
                             "data_files": [
                                 {
                                     "is_image": true,

@@ -105,7 +105,8 @@
                             },
                             "sleep_afterward_ms": 8000
                         }
-                    ]
+                    ],
+                    "sleep_afterward_ms": 7000
                 }
             ],
             "expectation": [
@@ -257,7 +258,8 @@
                                 }
                             }
                         }
-                    ]
+                    ],
+                    "sleep_afterward_ms": 7000
                 }
             ],
             "expectation": [
@@ -410,7 +412,8 @@
                                 }
                             }
                         }
-                    ]
+                    ],
+                    "sleep_afterward_ms": 7000
                 }
             ],
             "expectation": [
@@ -563,7 +566,8 @@
                                 }
                             }
                         }
-                    ]
+                    ],
+                    "sleep_afterward_ms": 7000
                 }
             ],
             "expectation": [
@@ -716,7 +720,8 @@
                                 }
                             }
                         }
-                    ]
+                    ],
+                    "sleep_afterward_ms": 7000
                 }
             ],
             "expectation": [
@@ -874,7 +879,8 @@
                                 }
                             }
                         }
-                    ]
+                    ],
+                    "sleep_afterward_ms": 7000
                 }
             ],
             "expectation": [
@@ -1010,7 +1016,8 @@
                             },
                             "sleep_afterward_ms": 10000   
                         }
-                    ]
+                    ],
+                    "sleep_afterward_ms": 7000
                 }
             ],
             "expectation": [
@@ -1130,7 +1137,8 @@
                                 }
                             }   
                         }
-                    ]
+                    ],
+                    "sleep_afterward_ms": 7000
                 }
             ],
             "expectation": [
@@ -1250,7 +1258,8 @@
                                 }
                             }   
                         }
-                    ]
+                    ],
+                    "sleep_afterward_ms": 7000
                 }
             ],
             "expectation": [
@@ -1370,7 +1379,8 @@
                                 }
                             }   
                         }
-                    ]
+                    ],
+                    "sleep_afterward_ms": 7000
                 }
             ],
             "expectation": [
@@ -1515,7 +1525,8 @@
                                 }
                             }   
                         }
-                    ]
+                    ],
+                    "sleep_afterward_ms": 7000
                 }
             ],
             "expectation": [
@@ -1640,7 +1651,1671 @@
                                 }
                             }   
                         }
+                    ],
+                    "sleep_afterward_ms": 7000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1668070640235"},"timestamp":"1668070640235252987","status":"kPlanFailed"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
                     ]
+                }
+            ]
+        },
+
+       
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Angle Parking Lots with USS data obstacle",
+                "Test Case ID": "13",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 3.1415926
+                                }
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1658216905424"},"parkingspaces":[
+                                {"p0":{"x": 3.8387096774193523,"y": 5.873917748917748 },"p1": {"x": 7.838709677419353,"y": 12.802120979193257 },"p2":{"x": 3.838709677419353,"y": 12.802120979193257},"p3": {"x": -0.16129032258064768,"y": 5.873917748917748},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
+                                {"p0":{"x": 8.069649785095201,"y": 5.873917748917748 },"p1": {"x": 12.069649785095203,"y": 12.802120979193257 },"p2":{"x": 8.069649785095203,"y": 12.802120979193257},"p3": {"x": 4.069649785095202,"y": 5.873917748917748},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"}
+                            ]}
+                        }
+                    ]
+                },
+                
+                {
+                    "topic_name": "UltrasoundPoints",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "points_near": [{
+                                    "x": 3.911290322580644, "y": 9.661796536796537
+                                }],
+                                "points_far": [{
+                                    "x": 4.111290322580644, "y": 9.861796536796536
+                                }],
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 3.1415926
+                                }    
+                            }
+                        }
+                    ]
+                
+                },
+
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInTail",
+                                "parking_space": {
+                                    "p0":{"x": 3.8387096774193523,"y": 5.873917748917748 },"p1": {"x": 7.838709677419353,"y": 12.802120979193257 },"p2":{"x": 3.838709677419353,"y": 12.802120979193257},"p3": {"x": -0.16129032258064768,"y": 5.873917748917748},
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }   
+                        }
+                    ],
+                    "sleep_afterward_ms": 7000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1668070640235"},"timestamp":"1668070640235252987","status":"kPlanFailed"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Horizontal Parking Lots Uss MOD line",
+                "Test Case ID": "14",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1658216905424"},"parkingspaces":[
+                                {"p0":{"x": 6.7258064516129,"y": 2.153679653679653 },"p1": {"x": 6.7258064516129,"y": 4.553679653679653 },"p2":{"x": 0.7258064516129004,"y": 4.553679653679653},"p3": {"x": 0.7258064516129004,"y": 2.153679653679653},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
+                                {"p0":{"x": 12.9258064516129,"y": 2.153679653679653 },"p1": {"x": 12.9258064516129,"y": 4.553679653679653 },"p2":{"x": 6.9258064516129005,"y": 4.553679653679653},"p3": {"x": 6.9258064516129005,"y": 2.153679653679653},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"}
+                            ]}
+                        }
+                    ]
+                },
+                
+                {
+                    "topic_name": "DetectedObject_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666677247679"
+                                },
+                                "objects": [
+                                   
+                                    {
+                                        "points": [
+                                            {"x": 2.5806451612903203, "y": 3.1682900432900425},{"x": 3.5806451612903203, "y": 3.1682900432900425}
+                                        ],
+                                        "classification": "kObstacle",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                
+                },
+
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInTail",
+                                "parking_space": {
+                                    "p0":{"x": 6.7258064516129,"y": 2.153679653679653 },"p1": {"x": 6.7258064516129,"y": 4.553679653679653 },"p2":{"x": 0.7258064516129004,"y": 4.553679653679653},"p3": {"x": 0.7258064516129004,"y": 2.153679653679653},
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }   
+                        }
+                    ],
+                    "sleep_afterward_ms": 7000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1668070640235"},"timestamp":"1668070640235252987","status":"kPlanFailed"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Vertical Parking Lots MOD Line",
+                "Test Case ID": "15",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1658216905424"},"parkingspaces":[
+                                {"p0":{"x": 4.254838709677417,"y": 2.2213203463203435 },"p1": {"x": 4.254838709677417,"y": 7.621320346320344 },"p2":{"x": 1.8548387096774164,"y": 7.621320346320344},"p3": {"x": 1.8548387096774164,"y": 2.2213203463203435},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
+                                {"p0":{"x": 6.854838709677416,"y": 2.2213203463203435 },"p1": {"x": 6.854838709677416,"y": 7.621320346320344 },"p2":{"x": 4.454838709677416,"y": 7.621320346320344},"p3": {"x": 4.454838709677416,"y": 2.2213203463203435},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"}
+                            ]}
+                        }
+                    ]
+                },
+                
+                {
+                    "topic_name": "DetectedObject_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666677247679"
+                                },
+                                "objects": [
+                                   
+                                    {
+                                        "points": [
+                                            {"x": 2.5806451612903203, "y": 4.588744588744589},{"x": 3.5806451612903203, "y": 4.588744588744589}
+                                        ],
+                                        "classification": "kObstacle",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                
+                },
+
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInTail",
+                                "parking_space": {
+                                    "p0":{"x": 4.254838709677417,"y": 2.2213203463203435 },"p1": {"x": 4.254838709677417,"y": 7.621320346320344 },"p2":{"x": 1.8548387096774164,"y": 7.621320346320344},"p3": {"x": 1.8548387096774164,"y": 2.2213203463203435},
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }   
+                        }
+                    ],
+                    "sleep_afterward_ms": 7000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1668070640235"},"timestamp":"1668070640235252987","status":"kPlanFailed"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Angle Parking Lots MOD Line",
+                "Test Case ID": "16",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1658216905424"},"parkingspaces":[
+                                {"p0":{"x": 5.9758064516129,"y": 2.491883116883116 },"p1": {"x": 11.63266070110528,"y": 8.148737366375496 },"p2":{"x": 7.632660701105281,"y": 8.148737366375496},"p3": {"x": 1.9758064516129004,"y": 2.491883116883116},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
+                                {"p0":{"x": 10.258649164087519,"y": 2.491883116883116 },"p1": {"x": 15.9155034135799,"y": 8.148737366375496 },"p2":{"x": 11.9155034135799,"y": 8.148737366375496},"p3": {"x": 6.25864916408752,"y": 2.491883116883116},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"}
+                            ]}
+                        }
+                    ]
+                },
+                
+                {
+                    "topic_name": "DetectedObject_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666677247679"
+                                },
+                                "objects": [
+                                   
+                                    {
+                                        "points": [
+                                            {"x": 6.532258064516128, "y": 5.4004329004329},{"x": 7.532258064516128, "y": 5.4004329004329}
+                                        ],
+                                        "classification": "kObstacle",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                
+                },
+
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInTail",
+                                "parking_space": {
+                                    "p0":{"x": 5.9758064516129,"y": 2.491883116883116 },"p1": {"x": 11.63266070110528,"y": 8.148737366375496 },"p2":{"x": 7.632660701105281,"y": 8.148737366375496},"p3": {"x": 1.9758064516129004,"y": 2.491883116883116},
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }   
+                        }
+                    ],
+                    "sleep_afterward_ms": 7000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1668070640235"},"timestamp":"1668070640235252987","status":"kPlanFailed"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Horizontal Parking Lots MOD Triangle",
+                "Test Case ID": "17",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1658216905424"},"parkingspaces":[
+                                {"p0":{"x": 7.89516129032258,"y": 2.424242424242422 },"p1": {"x": 7.89516129032258,"y": 4.8242424242424224 },"p2":{"x": 1.89516129032258,"y": 4.8242424242424224},"p3": {"x": 1.89516129032258,"y": 2.424242424242422},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
+                                {"p0":{"x": 14.09516129032258,"y": 2.424242424242422 },"p1": {"x": 14.09516129032258,"y": 4.8242424242424224 },"p2":{"x": 8.09516129032258,"y": 4.8242424242424224},"p3": {"x": 8.09516129032258,"y": 2.424242424242422},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"}
+                            ]}
+                        }
+                    ]
+                },
+                
+                {
+                    "topic_name": "DetectedObject_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666677247679"
+                                },
+                                "objects": [
+                                   
+                                    {
+                                        "points": [
+                                            {"x": 4.032258064516128, "y": 4.453463203463201},{"x": 5.032258064516128, "y": 4.253463203463201},{"x": 4.032258064516128, "y": 3.453463203463201}
+                                        ],
+                                        "classification": "kObstacle",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                
+                },
+
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInTail",
+                                "parking_space": {
+                                    "p0":{"x": 7.89516129032258,"y": 2.424242424242422 },"p1": {"x": 7.89516129032258,"y": 4.8242424242424224 },"p2":{"x": 1.89516129032258,"y": 4.8242424242424224},"p3": {"x": 1.89516129032258,"y": 2.424242424242422},
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }   
+                        }
+                    ],
+                    "sleep_afterward_ms": 7000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1668070640235"},"timestamp":"1668070640235252987","status":"kPlanFailed"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Vertical Parking Lots MOD Triangle",
+                "Test Case ID": "18",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1658216905424"},"parkingspaces":[
+                                {"p0":{"x": 3.2870967741935444,"y": 2.424242424242422 },"p1": {"x": 3.2870967741935444,"y": 7.8242424242424224 },"p2":{"x": 0.8870967741935445,"y": 7.8242424242424224},"p3": {"x": 0.8870967741935445,"y": 2.424242424242422},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
+                                {"p0":{"x": 5.8870967741935445,"y": 2.424242424242422 },"p1": {"x": 5.8870967741935445,"y": 7.8242424242424224 },"p2":{"x": 3.4870967741935446,"y": 7.8242424242424224},"p3": {"x": 3.4870967741935446,"y": 2.424242424242422},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"}
+                            ]}
+                        }
+                    ]
+                },
+                
+                {
+                    "topic_name": "DetectedObject_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666677247679"
+                                },
+                                "objects": [
+                                   
+                                    {
+                                        "points": [
+                                            {"x": 1.653225806451612, "y": 4.65638528138528},{"x": 2.653225806451612, "y": 4.45638528138528},{"x": 1.653225806451612, "y": 3.6563852813852797}
+                                        ],
+                                        "classification": "kObstacle",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                
+                },
+
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInTail",
+                                "parking_space": {
+                                    "p0":{"x": 3.2870967741935444,"y": 2.424242424242422 },"p1": {"x": 3.2870967741935444,"y": 7.8242424242424224 },"p2":{"x": 0.8870967741935445,"y": 7.8242424242424224},"p3": {"x": 0.8870967741935445,"y": 2.424242424242422},
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }   
+                        }
+                    ],
+                    "sleep_afterward_ms": 7000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1668070640235"},"timestamp":"1668070640235252987","status":"kPlanFailed"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Angle Parking Lots MOD Triangle",
+                "Test Case ID": "19",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1658216905424"},"parkingspaces":[
+                                {"p0":{"x": 5.2499999999999964,"y": 2.086038961038959 },"p1": {"x": 10.906854249492376,"y": 7.742893210531339 },"p2":{"x": 6.906854249492377,"y": 7.742893210531339},"p3": {"x": 1.2499999999999964,"y": 2.086038961038959},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
+                                {"p0":{"x": 9.532842712474615,"y": 2.086038961038959 },"p1": {"x": 15.189696961966996,"y": 7.742893210531339 },"p2":{"x": 11.189696961966996,"y": 7.742893210531339},"p3": {"x": 5.532842712474616,"y": 2.086038961038959},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"}
+                            ]}
+                        }
+                    ]
+                },
+                
+                {
+                    "topic_name": "DetectedObject_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666677247679"
+                                },
+                                "objects": [
+                                   
+                                    {
+                                        "points": [
+                                            {"x": 6.048387096774192, "y": 5.1975108225108215},{"x": 7.048387096774192, "y": 4.997510822510821},{"x": 6.048387096774192, "y": 4.1975108225108215}
+                                        ],
+                                        "classification": "kObstacle",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                
+                },
+
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInTail",
+                                "parking_space": {
+                                    "p0":{"x": 5.2499999999999964,"y": 2.086038961038959 },"p1": {"x": 10.906854249492376,"y": 7.742893210531339 },"p2":{"x": 6.906854249492377,"y": 7.742893210531339},"p3": {"x": 1.2499999999999964,"y": 2.086038961038959},
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }   
+                        }
+                    ],
+                    "sleep_afterward_ms": 7000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1668070640235"},"timestamp":"1668070640235252987","status":"kPlanFailed"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Horizontal Parking Lots MOD Rectangle",
+                "Test Case ID": "20",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1658216905424"},"parkingspaces":[
+                                {"p0":{"x": 7.854838709677416,"y": 1.9507575757575744 },"p1": {"x": 7.854838709677416,"y": 4.350757575757575 },"p2":{"x": 1.8548387096774164,"y": 4.350757575757575},"p3": {"x": 1.8548387096774164,"y": 1.9507575757575744},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
+                                {"p0":{"x": 14.054838709677416,"y": 1.9507575757575744 },"p1": {"x": 14.054838709677416,"y": 4.350757575757575 },"p2":{"x": 8.054838709677416,"y": 4.350757575757575},"p3": {"x": 8.054838709677416,"y": 1.9507575757575744},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"}
+                            ]}
+                        }
+                    ]
+                },
+                
+                {
+                    "topic_name": "DetectedObject_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666677247679"
+                                },
+                                "objects": [
+                                   
+                                    {
+                                        "points": [
+                                            {"x": 3.3870967741935445, "y": 2.491883116883116},{"x": 3.3870967741935445, "y": 3.491883116883116},{"x": 4.3870967741935445, "y": 3.491883116883116},{"x": 4.3870967741935445, "y": 2.491883116883116}
+                                        ],
+                                        "classification": "kObstacle",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                
+                },
+
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInTail",
+                                "parking_space": {
+                                    "p0":{"x": 7.854838709677416,"y": 1.9507575757575744 },"p1": {"x": 7.854838709677416,"y": 4.350757575757575 },"p2":{"x": 1.8548387096774164,"y": 4.350757575757575},"p3": {"x": 1.8548387096774164,"y": 1.9507575757575744},
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }   
+                        }
+                    ],
+                    "sleep_afterward_ms": 7000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1668070640235"},"timestamp":"1668070640235252987","status":"kPlanFailed"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Vertical Parking Lots MOD Rectangle",
+                "Test Case ID": "21",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1658216905424"},"parkingspaces":[
+                                {"p0":{"x": 3.569354838709676,"y": 1.6125541125541112 },"p1": {"x": 3.569354838709676,"y": 7.0125541125541115 },"p2":{"x": 1.1693548387096762,"y": 7.0125541125541115},"p3": {"x": 1.1693548387096762,"y": 1.6125541125541112},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
+                                {"p0":{"x": 6.169354838709676,"y": 1.6125541125541112 },"p1": {"x": 6.169354838709676,"y": 7.0125541125541115 },"p2":{"x": 3.7693548387096762,"y": 7.0125541125541115},"p3": {"x": 3.7693548387096762,"y": 1.6125541125541112},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"}
+                            ]}
+                        }
+                    ]
+                },
+                
+                {
+                    "topic_name": "DetectedObject_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666677247679"
+                                },
+                                "objects": [
+                                   
+                                    {
+                                        "points": [
+                                            {"x": 1.89516129032258, "y": 2.965367965367964},{"x": 1.89516129032258, "y": 3.965367965367964},{"x": 2.89516129032258, "y": 3.965367965367964},{"x": 2.89516129032258, "y": 2.965367965367964}
+                                        ],
+                                        "classification": "kObstacle",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                
+                },
+
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInTail",
+                                "parking_space": {
+                                    "p0":{"x": 3.569354838709676,"y": 1.6125541125541112 },"p1": {"x": 3.569354838709676,"y": 7.0125541125541115 },"p2":{"x": 1.1693548387096762,"y": 7.0125541125541115},"p3": {"x": 1.1693548387096762,"y": 1.6125541125541112},
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }   
+                        }
+                    ],
+                    "sleep_afterward_ms": 7000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1668070640235"},"timestamp":"1668070640235252987","status":"kPlanFailed"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Angle Parking Lots MOD Rectangle",
+                "Test Case ID": "22",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1658216905424"},"parkingspaces":[
+                                {"p0":{"x": 5.0080645161290285,"y": 2.153679653679653 },"p1": {"x": 9.008064516129028,"y": 9.081882883955162 },"p2":{"x": 5.008064516129029,"y": 9.081882883955162},"p3": {"x": 1.0080645161290285,"y": 2.153679653679653},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
+                                {"p0":{"x": 9.239004623804878,"y": 2.153679653679653 },"p1": {"x": 13.23900462380488,"y": 9.081882883955162 },"p2":{"x": 9.23900462380488,"y": 9.081882883955162},"p3": {"x": 5.239004623804878,"y": 2.153679653679653},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"}
+                            ]}
+                        }
+                    ]
+                },
+                
+                {
+                    "topic_name": "DetectedObject_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666677247679"
+                                },
+                                "objects": [
+                                   
+                                    {
+                                        "points": [
+                                            {"x": 4.314516129032256, "y": 5.1298701298701275},{"x": 4.314516129032256, "y": 6.1298701298701275},{"x": 5.314516129032256, "y": 6.1298701298701275},{"x": 5.314516129032256, "y": 5.1298701298701275}
+                                        ],
+                                        "classification": "kObstacle",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                
+                },
+
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInTail",
+                                "parking_space": {
+                                    "p0":{"x": 5.0080645161290285,"y": 2.153679653679653 },"p1": {"x": 9.008064516129028,"y": 9.081882883955162 },"p2":{"x": 5.008064516129029,"y": 9.081882883955162},"p3": {"x": 1.0080645161290285,"y": 2.153679653679653},
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }   
+                        }
+                    ],
+                    "sleep_afterward_ms": 7000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1668070640235"},"timestamp":"1668070640235252987","status":"kPlanFailed"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Horizontal Parking Lots MOD Pentagon",
+                "Test Case ID": "23",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1658216905424"},"parkingspaces":[
+                                {"p0":{"x": 7.33064516129032,"y": 2.2213203463203435 },"p1": {"x": 7.33064516129032,"y": 4.621320346320344 },"p2":{"x": 1.3306451612903203,"y": 4.621320346320344},"p3": {"x": 1.3306451612903203,"y": 2.2213203463203435},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
+                                {"p0":{"x": 13.53064516129032,"y": 2.2213203463203435 },"p1": {"x": 13.53064516129032,"y": 4.621320346320344 },"p2":{"x": 7.5306451612903205,"y": 4.621320346320344},"p3": {"x": 7.5306451612903205,"y": 2.2213203463203435},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"}
+                            ]}
+                        }
+                    ]
+                },
+                
+                {
+                    "topic_name": "DetectedObject_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666677247679"
+                                },
+                                "objects": [
+                                   
+                                    {
+                                        "points": [
+                                            {"x": 4.233870967741932, "y": 4.115259740259738},{"x": 3.4338709677419326, "y": 3.515259740259738},{"x": 3.8338709677419325, "y": 3.115259740259738},{"x": 4.633870967741933, "y": 3.115259740259738},{"x": 4.833870967741932, "y": 3.615259740259738}
+                                        ],
+                                        "classification": "kObstacle",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                
+                },
+
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInTail",
+                                "parking_space": {
+                                    "p0":{"x": 7.33064516129032,"y": 2.2213203463203435 },"p1": {"x": 7.33064516129032,"y": 4.621320346320344 },"p2":{"x": 1.3306451612903203,"y": 4.621320346320344},"p3": {"x": 1.3306451612903203,"y": 2.2213203463203435},
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }   
+                        }
+                    ],
+                    "sleep_afterward_ms": 7000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1668070640235"},"timestamp":"1668070640235252987","status":"kPlanFailed"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Vertical Parking Lots MOD Pentagon",
+                "Test Case ID": "24",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1658216905424"},"parkingspaces":[
+                                {"p0":{"x": 3.69032258064516,"y": 1.6125541125541112 },"p1": {"x": 3.69032258064516,"y": 7.0125541125541115 },"p2":{"x": 1.2903225806451601,"y": 7.0125541125541115},"p3": {"x": 1.2903225806451601,"y": 1.6125541125541112},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
+                                {"p0":{"x": 6.29032258064516,"y": 1.6125541125541112 },"p1": {"x": 6.29032258064516,"y": 7.0125541125541115 },"p2":{"x": 3.8903225806451602,"y": 7.0125541125541115},"p3": {"x": 3.8903225806451602,"y": 1.6125541125541112},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"}
+                            ]}
+                        }
+                    ]
+                },
+                
+                {
+                    "topic_name": "DetectedObject_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666677247679"
+                                },
+                                "objects": [
+                                   
+                                    {
+                                        "points": [
+                                            {"x": 2.4999999999999964, "y": 4.926948051948052},{"x": 1.6999999999999964, "y": 4.326948051948053},{"x": 2.0999999999999965, "y": 3.9269480519480524},{"x": 2.8999999999999964, "y": 3.9269480519480524},{"x": 3.0999999999999965, "y": 4.426948051948052}
+                                        ],
+                                        "classification": "kObstacle",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                
+                },
+
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInTail",
+                                "parking_space": {
+                                    "p0":{"x": 3.69032258064516,"y": 1.6125541125541112 },"p1": {"x": 3.69032258064516,"y": 7.0125541125541115 },"p2":{"x": 1.2903225806451601,"y": 7.0125541125541115},"p3": {"x": 1.2903225806451601,"y": 1.6125541125541112},
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }   
+                        }
+                    ],
+                    "sleep_afterward_ms": 7000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "PlanningStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "0"
+                                },
+                                "timestamp": "0",
+                                "status": "kPlanSearching"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        },
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1668070640235"},"timestamp":"1668070640235252987","status":"kPlanFailed"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Angle Parking Lots MOD Pentagon",
+                "Test Case ID": "25",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1658216905424"},"parkingspaces":[
+                                {"p0":{"x": 5.693548387096772,"y": 2.491883116883116 },"p1": {"x": 11.350402636589152,"y": 8.148737366375496 },"p2":{"x": 7.350402636589153,"y": 8.148737366375496},"p3": {"x": 1.6935483870967722,"y": 2.491883116883116},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
+                                {"p0":{"x": 9.97639109957139,"y": 2.491883116883116 },"p1": {"x": 15.633245349063772,"y": 8.148737366375496 },"p2":{"x": 11.633245349063772,"y": 8.148737366375496},"p3": {"x": 5.976391099571392,"y": 2.491883116883116},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"}
+                            ]}
+                        }
+                    ]
+                },
+                
+                {
+                    "topic_name": "DetectedObject_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1666677247679"
+                                },
+                                "objects": [
+                                   
+                                    {
+                                        "points": [
+                                            {"x": 7.862903225806448, "y": 6.48268398268398},{"x": 7.062903225806449, "y": 5.8826839826839805},{"x": 7.462903225806448, "y": 5.48268398268398},{"x": 8.262903225806449, "y": 5.48268398268398},{"x": 8.462903225806448, "y": 5.98268398268398}
+                                        ],
+                                        "classification": "kObstacle",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                
+                },
+
+                {
+                    "topic_name": "PlanCmd",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "plan_type": "kParkingInTail",
+                                "parking_space": {
+                                    "p0":{"x": 5.693548387096772,"y": 2.491883116883116 },"p1": {"x": 11.350402636589152,"y": 8.148737366375496 },"p2":{"x": 7.350402636589153,"y": 8.148737366375496},"p3": {"x": 1.6935483870967722,"y": 2.491883116883116},
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera",
+                                    "timestamp": "1658227458725613094"
+                                }
+                            }   
+                        }
+                    ],
+                    "sleep_afterward_ms": 7000
                 }
             ],
             "expectation": [
@@ -1671,6 +3346,7 @@
                 }
             ]
         }
+        
 
     ]
 }

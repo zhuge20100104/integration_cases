@@ -3,7 +3,7 @@
         {
             "descriptions": {
                 "JIRA ID": "XW-6513",
-                "Description": "Angle Pos17 Obstacle Both Parking in Head pi/12",
+                "Description": "Vertical Pos9 Tail In Parking Out With Obstacle on The Right Failed -pi/2",
                 "Test Case ID": "17",
                 "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
                 "Pass Criteria": "1, Output message's content and number are as expected.",
@@ -28,26 +28,14 @@
                                 "pose": {
                                     "x": 0,
                                     "y": 0,
-                                    "theta": 0.261799383
+                                    "theta": -1.5707963
                                 }
                             }
                         }
                     ]
                 },
 
-                {
-                    "topic_name": "ParkingSpace_Fusioned",
-                    "messages": [
-                        {
-                            "text": {"tmq_header":{"tmq_stamp":"1658216905424"},"parkingspaces":[
-                                {"p0":{"x": 2.282258064516128,"y": 2.672077922077923 },"p1": {"x": 6.282258064516129,"y": 9.600281152353432 },"p2":{"x": 2.282258064516129,"y": 9.600281152353432},"p3": {"x": -1.7177419354838719,"y": 2.672077922077923},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
-                                {"p0":{"x": 6.513198172191978,"y": 2.672077922077923 },"p1": {"x": 10.513198172191979,"y": 9.600281152353432 },"p2":{"x": 6.513198172191979,"y": 9.600281152353432},"p3": {"x": 2.513198172191978,"y": 2.672077922077923},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"},
-                                {"p0":{"x": 10.744138279867828,"y": 2.672077922077923 },"p1": {"x": 14.74413827986783,"y": 9.600281152353432 },"p2":{"x": 10.74413827986783,"y": 9.600281152353432},"p3": {"x": 6.744138279867828,"y": 2.672077922077923},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","timestamp":"1658227458725613094"}
-                            ]}
-                        }
-                    ]
-                },
-                
+
                 {
                     "topic_name": "DetectedObject_Fusioned",
                     "messages": [
@@ -60,7 +48,7 @@
                                    
                                     {
                                         "points": [
-                                            {"x": -0.024193548387097863, "y": 5.553571428571429},{"x": -0.024193548387097863, "y": 6.553571428571429},{"x": 0.9758064516129021, "y": 6.553571428571429},{"x": 0.9758064516129021, "y": 5.553571428571429}  
+                                            {"x": -3.193548387096774, "y": -4.876623376623376},{"x": -3.193548387096774, "y": -3.8766233766233764},{"x": -2.193548387096774, "y": -3.8766233766233764},{"x": -2.193548387096774, "y": -4.876623376623376}
                                         ],
                                         "classification": "kObstacle",
                                         "confidence": 0.786758542,
@@ -68,10 +56,29 @@
                                         "precision": "kDetectedObjectPrecisionNormal"
                                     },
                 
+                                    {
+                                        "points": [
+                                            {"x": -3.314516129032258, "y": -8.204545454545455},{"x": -3.314516129032258, "y": -7.204545454545455},{"x": -2.314516129032258, "y": -7.204545454545455},{"x": -2.314516129032258, "y": -8.204545454545455}
+                                        ],
+                                        "classification": "kObstacle",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    },
                 
                                     {
                                         "points": [
-                                            {"x": 10.693548387096772, "y": 5.3100649350649345},{"x": 10.693548387096772, "y": 6.3100649350649345},{"x": 11.693548387096772, "y": 6.3100649350649345},{"x": 11.693548387096772, "y": 5.3100649350649345} 
+                                            {"x": -3.45967741935484, "y": -9.90909090909091},{"x": -3.45967741935484, "y": -8.90909090909091},{"x": -2.45967741935484, "y": -8.90909090909091},{"x": -2.45967741935484, "y": -9.90909090909091}
+                                        ],
+                                        "classification": "kObstacle",
+                                        "confidence": 0.786758542,
+                                        "timestamp": "1665371143404090302",
+                                        "precision": "kDetectedObjectPrecisionNormal"
+                                    },
+                                    
+                                    {
+                                        "points": [
+                                            {"x": -3.314516129032258, "y": -11.086038961038962},{"x": -3.314516129032258, "y": -10.086038961038962},{"x": -2.314516129032258, "y": -10.086038961038962},{"x": -2.314516129032258, "y": -11.086038961038962}
                                         ],
                                         "classification": "kObstacle",
                                         "confidence": 0.786758542,
@@ -94,9 +101,9 @@
                                     "tmq_stamp": "1658227772828"
                                 },
                                 "timestamp": "1658227772828576964",
-                                "plan_type": "kParkingInHead",
+                                "plan_type": "kTailInParkingOutToRight",
                                 "parking_space": {
-                                    "p0":{"x": 6.513198172191978,"y": 2.672077922077923 },"p1": {"x": 10.513198172191979,"y": 9.600281152353432 },"p2":{"x": 6.513198172191979,"y": 9.600281152353432},"p3": {"x": 2.513198172191978,"y": 2.672077922077923},
+                                    "p0":{"x": 1.19032258064516,"y": -2.9691558441558445 },"p1": {"x": 1.19032258064516,"y": 2.430844155844156 },"p2":{"x": -1.2096774193548399,"y": 2.430844155844156},"p3": {"x": -1.2096774193548399,"y": -2.9691558441558445},
                                     "valid": true,
                                     "confidence": 0.9,
                                     "sensor_source": "kFromCamera",
@@ -107,7 +114,7 @@
                     ],
                     "sleep_afterward_ms": 9000
                 }
-                
+
             ],
             "expectation": [
                 {
@@ -132,26 +139,12 @@
                                     "tmq_stamp": "0"
                                 },
                                 "timestamp": "0",
-                                "status": "kPlanSuccessed"
+                                "status": "kPlanFailed"
                             },
                             "ignore_keys_lower": [
                                 "tmq_stamp",
                                 "timestamp"
                             ]
-                        }
-                    ]
-                },
-                {
-                    "topic_name": "TrajectoryFully",
-                    "messages": [
-                        {
-                            "text": {"tmq_header":{"tmq_stamp":"1669622722217"},"timestamp":"1669622722217428862","trajectory_type":"kTrajectory","waypoints":[{"pose":{"x":0.00576400757,"y":-0.0215120316,"theta":0.261799395},"direction":"kForward","speed":0.3},{"pose":{"x":0.472155571,"y":0.124353409,"theta":0.344432175},"direction":"kForward","speed":0.3},{"pose":{"x":0.750922203,"y":0.235056877,"theta":0.411610901},"direction":"kForward","speed":0.3},{"pose":{"x":1.02162886,"y":0.364224434,"theta":0.478789628},"direction":"kForward","speed":0.3},{"pose":{"x":1.28305387,"y":0.51127243,"theta":0.545968354},"direction":"kForward","speed":0.3},{"pose":{"x":1.54181147,"y":0.663049698,"theta":0.514990151},"direction":"kForward","speed":0.3},{"pose":{"x":1.80514574,"y":0.806738853,"theta":0.484011948},"direction":"kForward","speed":0.3},{"pose":{"x":2.20817947,"y":1.0068121,"theta":0.437544167},"direction":"kForward","speed":0.3},{"pose":{"x":2.61121321,"y":1.20688534,"theta":0.484011948},"direction":"kForward","speed":0.3},{"pose":{"x":2.99830866,"y":1.4359827,"theta":0.584780037},"direction":"kForward","speed":0.3},{"pose":{"x":3.360394,"y":1.70285892,"theta":0.685548127},"direction":"kForward","speed":0.3},{"pose":{"x":3.70872641,"y":1.98775291,"theta":0.685548127},"direction":"kForward","speed":0.3},{"pose":{"x":3.93439627,"y":2.18533707,"theta":0.752726853},"direction":"kForward","speed":0.3},{"pose":{"x":4.14629412,"y":2.39762402,"theta":0.819905579},"direction":"kForward","speed":0.3},{"pose":{"x":4.34755087,"y":2.6200819,"theta":0.850883782},"direction":"kForward","speed":0.3},{"pose":{"x":4.53762484,"y":2.85211277,"theta":0.918062508},"direction":"kForward","speed":0.3},{"pose":{"x":4.71611166,"y":3.09322262,"theta":0.949040711},"direction":"kForward","speed":0.3},{"pose":{"x":4.88704443,"y":3.33974552,"theta":0.980018914},"direction":"kForward","speed":0.3},{"pose":{"x":5.04565477,"y":3.59432125,"theta":1.0471977},"direction":"kForward","speed":0.3},{"pose":{"x":5.11708307,"y":3.71803951,"theta":1.04719746},"direction":"kForward","speed":0.3},{"pose":{"x":5.18851233,"y":3.84175682,"theta":1.04719746},"direction":"kForward","speed":0.3},{"pose":{"x":5.25994062,"y":3.96547508,"theta":1.04719746},"direction":"kForward","speed":0.3},{"pose":{"x":5.33136892,"y":4.08919239,"theta":1.04719746},"direction":"kForward","speed":0.3},{"pose":{"x":5.40279818,"y":4.21291065,"theta":1.04719746},"direction":"kForward","speed":0.3},{"pose":{"x":5.47422647,"y":4.33662891,"theta":1.04719746},"direction":"kForward","speed":0.3},{"pose":{"x":5.54565477,"y":4.46034622,"theta":1.04719746},"direction":"kForward","speed":0.3},{"pose":{"x":5.61708307,"y":4.58406448,"theta":1.04719746},"direction":"kForward","speed":0.3},{"pose":{"x":5.68851233,"y":4.70778227,"theta":1.04719746},"direction":"kForward","speed":0.3},{"pose":{"x":5.75994062,"y":4.8315,"theta":1.04719746},"direction":"kForward","speed":0.3},{"pose":{"x":5.83136892,"y":4.95521784,"theta":1.04719746},"direction":"kForward","speed":0.3},{"pose":{"x":5.90279722,"y":5.0789361,"theta":1.04719746},"direction":"kForward","speed":0.3},{"pose":{"x":5.97422647,"y":5.20265388,"theta":1.04719746},"direction":"kForward","speed":0.3},{"pose":{"x":6.04565477,"y":5.32637167,"theta":1.04719746},"direction":"kForward","speed":0.3}]}
-                            ,"ignore_keys_lower": [
-                                "tmq_stamp",
-                                "timestamp"
-                            ],
-                            "validation_type": "track_equal",
-                            "min_turn_radius": 4.19
                         }
                     ]
                 }

@@ -75,7 +75,7 @@
                                 "tmq_header": {
                                     "tmq_stamp": "1665714464500"
                                 },
-                                "timestamp": "1213272061555425960",
+                                "timestamp": "1213272061555425957",
                                 "frame_descriptors": {
                                     "encode": "RGB24",
                                     "width": 512,

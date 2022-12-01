@@ -3,9 +3,9 @@
         {
             "descriptions": {
                 "JIRA ID": "XW-7764",
-                "Description": "Test perception module can generate correct mechanical parking lots info",
+                "Description": "Test perception module can generate correct MOD and parking lots info using StitchedImage/StitchedImageNearRaw and SurroundViewCameraFrames message",
                 "Test Case ID": "1",
-                "Test Method": "Interface test and requirement test(6 TMQ interfaces simulation and points equal similarity check)",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation and points equal similarity check)",
                 "Pass Criteria": "1. Points' distance is less than 0.2  2. Similiar points' count and expect points' count different not greater than 2 .",
                 "Design Document": "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design",
                 "Call Coverage": "85.4%",
@@ -16,43 +16,6 @@
                 "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/PSD+%28camera%29+-+Software+Detailed+Design"
             },
             "input": [
-                {
-                    "topic_name": "SelectedParkingSpaceResult",
-                    "messages": [
-                        {
-                            "text": {
-                                "tmq_header": {
-                                    "tmq_stamp": "1666248894250"
-                                },
-                                "parkingspaces": [
-                                    {
-                                        "p0": {
-                                            "x": 5.4210043,
-                                            "y": -3.42496324
-                                        },
-                                        "p1": {
-                                            "x": 5.08211279,
-                                            "y": -8.11264
-                                        },
-                                        "p2": {
-                                            "x": 7.07687092,
-                                            "y": -8.25685215
-                                        },
-                                        "p3": {
-                                            "x": 7.41576195,
-                                            "y": -3.56917214
-                                        },
-                                        "valid": true,
-                                        "confidence": 0.860399783,
-                                        "timestamp": "1646797362896707392",
-                                        "mechanical": true,
-                                        "handicap": false
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                },
                 {
                     "topic_name": "DetectionStage",
                     "messages": [
@@ -75,7 +38,7 @@
                                 "tmq_header": {
                                     "tmq_stamp": "1665714464500"
                                 },
-                                "timestamp": "1213272061555425957",
+                                "timestamp": "1213272061555425960",
                                 "frame_descriptors": {
                                     "encode": "RGB24",
                                     "width": 512,
@@ -86,52 +49,9 @@
                             "data_files": [
                                 {
                                     "is_image": true,
-                                    "path": "./test_case/case2/stitched_far.jpeg"
+                                    "path": "./test_case/case_vertical_lots/stitched_far.jpg"
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "topic_name": "StitchedImageNearRaw",
-                    "messages": [
-                        {
-                            "text": {
-                                "tmq_header": {
-                                    "tmq_stamp": "1665714464510"
-                                },
-                                "timestamp": "1213272061555425960",
-                                "frame_descriptors": {
-                                    "encode": "RGB24",
-                                    "width": 480,
-                                    "height": 720,
-                                    "size_in_bytes": 1036800
-                                }
-                            },
-                            "data_files": [
-                                {
-                                    "is_image": true,
-                                    "path": "./test_case/case2/stitched_near_raw.jpeg"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "topic_name": "Location_Rectified",
-                    "messages": [
-                        {
-                            "text": {
-                                "tmq_header": {
-                                    "tmq_stamp": "1666248894070"
-                                },
-                                "timestamp": "1646797386676423200",
-                                "pose": {
-                                    "x": 6.68968487,
-                                    "y": -1.72670209,
-                                    "theta": 1.47236133
-                                }
-                            }
                         }
                     ]
                 }
@@ -143,28 +63,28 @@
                         {
                             "text": {
                                 "tmq_header": {
-                                    "tmq_stamp": "1666255425957"
+                                    "tmq_stamp": "1666582057832"
                                 },
                                 "parkingspaces": [
                                     {
                                         "p0": {
-                                            "x": -1.76274538,
-                                            "y": 1.11005366
+                                            "x": 4.76781654,
+                                            "y": 0.412011713
                                         },
                                         "p1": {
-                                            "x": -5.45264149,
-                                            "y": 0.988776267
+                                            "x": 7.72976828,
+                                            "y": 1.54129028
                                         },
                                         "p2": {
-                                            "x": -5.33392096,
-                                            "y": -0.901124239
+                                            "x": 7.13686275,
+                                            "y": 3.31187248
                                         },
                                         "p3": {
-                                            "x": -1.69367552,
-                                            "y": -0.812690437
+                                            "x": 4.10741472,
+                                            "y": 2.30444884
                                         },
                                         "valid": true,
-                                        "confidence": 0.882813871,
+                                        "confidence": 0.970631778,
                                         "timestamp": "1213272061555425960",
                                         "mechanical": true,
                                         "handicap": false,
@@ -172,25 +92,121 @@
                                     },
                                     {
                                         "p0": {
-                                            "x": -1.93369877,
-                                            "y": 3.38362861
+                                            "x": -1.69219971,
+                                            "y": -2.14184093
                                         },
                                         "p1": {
-                                            "x": -5.81278181,
-                                            "y": 3.28665709
+                                            "x": -5.05904055,
+                                            "y": -3.31306648
                                         },
                                         "p2": {
-                                            "x": -5.70336533,
-                                            "y": 1.30444336
+                                            "x": -4.4088707,
+                                            "y": -5.0096755
                                         },
                                         "p3": {
-                                            "x": -1.83919191,
-                                            "y": 1.47913575
+                                            "x": -1.03646243,
+                                            "y": -3.82223153
                                         },
-                                        "valid": false,
-                                        "confidence": 0.798309505,
+                                        "valid": true,
+                                        "confidence": 0.969118774,
                                         "timestamp": "1213272061555425960",
-                                        "mechanical": false,
+                                        "mechanical": true,
+                                        "handicap": false,
+                                        "precision": "kParkingSpacePrecisionNormal"
+                                    },
+                                    {
+                                        "p0": {
+                                            "x": -2.63337779,
+                                            "y": 0.312503666
+                                        },
+                                        "p1": {
+                                            "x": -6.0005908,
+                                            "y": -0.864053965
+                                        },
+                                        "p2": {
+                                            "x": -5.31310558,
+                                            "y": -2.73483276
+                                        },
+                                        "p3": {
+                                            "x": -1.97283936,
+                                            "y": -1.59377444
+                                        },
+                                        "valid": true,
+                                        "confidence": 0.965815783,
+                                        "timestamp": "1213272061555425960",
+                                        "mechanical": true,
+                                        "handicap": false,
+                                        "precision": "kParkingSpacePrecisionNormal"
+                                    },
+                                    {
+                                        "p0": {
+                                            "x": 3.92938972,
+                                            "y": 2.82133245
+                                        },
+                                        "p1": {
+                                            "x": 6.94441795,
+                                            "y": 3.86942983
+                                        },
+                                        "p2": {
+                                            "x": 6.39175701,
+                                            "y": 5.61900806
+                                        },
+                                        "p3": {
+                                            "x": 3.34247017,
+                                            "y": 4.60253334
+                                        },
+                                        "valid": true,
+                                        "confidence": 0.962936223,
+                                        "timestamp": "1213272061555425960",
+                                        "mechanical": true,
+                                        "handicap": false,
+                                        "precision": "kParkingSpacePrecisionNormal"
+                                    },
+                                    {
+                                        "p0": {
+                                            "x": -3.51291013,
+                                            "y": 2.62028432
+                                        },
+                                        "p1": {
+                                            "x": -6.86133289,
+                                            "y": 1.47812748
+                                        },
+                                        "p2": {
+                                            "x": -6.21275902,
+                                            "y": -0.312512219
+                                        },
+                                        "p3": {
+                                            "x": -2.82243657,
+                                            "y": 0.82111758
+                                        },
+                                        "valid": true,
+                                        "confidence": 0.956182241,
+                                        "timestamp": "1213272061555425960",
+                                        "mechanical": true,
+                                        "handicap": false,
+                                        "precision": "kParkingSpacePrecisionNormal"
+                                    },
+                                    {
+                                        "p0": {
+                                            "x": 5.47066784,
+                                            "y": -1.82387578
+                                        },
+                                        "p1": {
+                                            "x": 8.41549397,
+                                            "y": -0.611278057
+                                        },
+                                        "p2": {
+                                            "x": 7.8752141,
+                                            "y": 1.03698611
+                                        },
+                                        "p3": {
+                                            "x": 4.91999,
+                                            "y": -0.0953027308
+                                        },
+                                        "valid": true,
+                                        "confidence": 0.935566187,
+                                        "timestamp": "1213272061555425960",
+                                        "mechanical": true,
                                         "handicap": false,
                                         "precision": "kParkingSpacePrecisionNormal"
                                     }

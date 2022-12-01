@@ -1160,6 +1160,20 @@
             },
             "input": [
                 {
+                    "topic_name": "DetectionStage",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "164679733325"
+                                },
+                                "timestamp": "164679733325",
+                                "stage": "kParking"
+                            }
+                        }
+                    ]
+                },
+                {
                     "topic_name": "StitchedImage",
                     "messages": [
                         {

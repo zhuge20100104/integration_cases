@@ -1,0 +1,114 @@
+{
+    "sequences": [
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6539",
+                "Description": "Test IssueReport Request",
+                "Test Case ID": "0",
+                "Test Method": "Interface test and requirement test",
+                "Pass Criteria": "1, Output message's content are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Diagnostic+-+Software+Detail+Design",
+                "Call Coverage": "85.4%",
+                "Calls": "hit: 217   total: 254",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "IssueReportRequest",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658310633148"
+                                },
+                                "timestamp": "1658310633148820343",
+                                "id": "1658310591171",
+                                "info": {
+                                    "severity": "kTrivial",
+                                    "device_id": "vehicle_0",
+                                    "affected_version": "fixversion_placeholder",
+                                    "component": "Bug Report Default",
+                                    "project_key": "XW",
+                                    "summary": "[BugReport] Report from XX",
+                                    "happened_time": "1658310633148820343",
+                                    "comment": "test"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "IssueReportResponse",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1670225783901"},"timestamp":"1670225783901180111","status":"kOk","id":"1658310591171","issue_key":"XW-8189","message":"SUCCESS, "},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp",
+                                "id",
+                                "issue_key"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6539",
+                "Description": "Test ComponentCommand Shutdown",
+                "Test Case ID": "2",
+                "Test Method": "Interface test and requirement test",
+                "Pass Criteria": "1, Output message's content are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Diagnostic+-+Software+Detail+Design",
+                "Call Coverage": "85.4%",
+                "Calls": "hit: 217   total: 254",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Stitching+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "ComponentCommandList",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658310633148"
+                                },
+                                "timestamp": "1658310633148820343",
+                                "command": [
+                                    {
+                                        "cmd_type": "kShutdown",
+                                        "component_name": "dianostic"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "ComponentHeartBeat",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1670226767010"},"timestamp":"1670226767009968662","component_name":"dianostic","type":"kShutdownReady"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp",
+                                "component_name"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

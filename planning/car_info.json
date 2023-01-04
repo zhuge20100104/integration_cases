@@ -1,0 +1,18 @@
+{
+    "description": "BYD Qin Pro Autodrive Version",
+	"car_info" : {
+        "car_width" : 1.845,
+        "car_length" : 4.765,
+        "wheel_radius" : 0.332284,
+        "front_overhang" : 0.99,
+        "rear_overhang" : 1.075,
+        "min_turn_radius" : 4.19,
+        "wheel_base" : 2.7,
+        "max_steering_wheel_angle" : 8.726,
+        "has_wheel_counter" : true,
+        "wheel_reset_position" : 1023,
+        "counts_per_circle" : 96,
+        "support_uss_blind_area_detect" : true,
+        "use_ratios_lut" : true
+    }
+}

@@ -1,0 +1,1318 @@
+{
+    "channels": [
+        {
+            "topic_name": "USSDataList",
+            "msg_type_name": "tn.message.sdm.USSDataList",
+            "channel_id": "10001",
+            "channel_name": "tn::message::sdm::USSDataList",
+            "advertised_component": "SDM",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor", "perception_log"
+            ]
+        },
+        {
+            "topic_name": "SurroundViewCameraFrames",
+            "msg_type_name": "tn.message.sdm.SurroundViewCameraFrames",
+            "channel_id": "10002",
+            "channel_name": "tn::message::sdm::SurroundViewCameraFrames",
+            "advertised_component": "SDM",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 15728640,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 3,
+            "img_width": 1280,
+            "img_height": 720,
+            "img_count": 4,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "SampledSurroundViewCameraFramesThumbnail",
+            "msg_type_name": "tn.message.sdm.SurroundViewCameraFrames",
+            "channel_id": "12010",
+            "channel_name": "tn::message::sdm::SampledSurroundViewCameraFramesThumbnail",
+            "advertised_component": "Perception",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 15728640,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 3,
+            "img_width": 1280,
+            "img_height": 720,
+            "img_count": 4,
+            "belonged_presets": [
+                "perception_log"
+            ]
+        },
+        {
+            "topic_name": "SimulationSurroundFrames",
+            "msg_type_name": "tn.message.simulation.SimulationSurroundFrames",
+            "channel_id": "11002",
+            "channel_name": "tn::message::simulation::SimulationSurroundFrames",
+            "advertised_component": "simulation",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 15728640,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 3,
+            "img_width": 1280,
+            "img_height": 720,
+            "img_count": 4,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "FrontViewCameraFrame",
+            "msg_type_name": "tn.message.sdm.FrontViewCameraFrame",
+            "channel_id": "10003",
+            "channel_name": "tn::message::sdm::FrontViewCameraFrame",
+            "advertised_component": "SDM",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 8388608,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 3,
+            "img_width": 1280,
+            "img_height": 720,
+            "img_count": 1,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "SimulationFrontFrame",
+            "msg_type_name": "tn.message.simulation.SimulationFrontFrame",
+            "channel_id": "11003",
+            "channel_name": "tn::message::simulation::SimulationFrontFrame",
+            "advertised_component": "simulation",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 8388608,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 3,
+            "img_width": 1280,
+            "img_height": 720,
+            "img_count": 1,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "SampledFrontViewCameraFramesThumbnail",
+            "msg_type_name": "tn.message.sdm.SurroundViewCameraFramesThumbnail",
+            "channel_id": "12003",
+            "channel_name": "tn::message::sdm::SampledFrontViewCameraFramesThumbnail",
+            "advertised_component": "Perception",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 8388608,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 3,
+            "img_width": 1280,
+            "img_height": 720,
+            "img_count": 1,
+            "belonged_presets": [
+                "perception_log"
+            ]
+        },
+        {
+            "topic_name": "SensorStatusList",
+            "msg_type_name": "tn.message.SensorStatusList",
+            "channel_id": "10004",
+            "channel_name": "tn::message::SensorStatusList",
+            "advertised_component": "",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "GNSSData",
+            "msg_type_name": "tn.message.GNSSData",
+            "channel_id": "10005",
+            "channel_name": "tn::message::GNSSData",
+            "advertised_component": "SDM",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "Acceleration3Axes",
+            "msg_type_name": "tn.message.Acceleration",
+            "channel_id": "10008",
+            "channel_name": "tn::message::Acceleration3Axes",
+            "advertised_component": "SDM",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "AngularRate3Axes",
+            "msg_type_name": "tn.message.AngularRate",
+            "channel_id": "10009",
+            "channel_name": "tn::message::AngularRate3Axes",
+            "advertised_component": "SDM",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "IMUData",
+            "msg_type_name": "tn.message.IMUData",
+            "channel_id": "10011",
+            "channel_name": "tn::message::IMUData",
+            "advertised_component": "SDM",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "SurroundViewCameraFramesThumbnail",
+            "msg_type_name": "tn.message.sdm.SurroundViewCameraFramesThumbnail",
+            "channel_id": "10010",
+            "channel_name": "tn::message::sdm::SurroundViewCameraFramesThumbnail",
+            "advertised_component": "SDM",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 2097152,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 1,
+            "img_width": 512,
+            "img_height": 320,
+            "img_count": 4,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "FrontViewCameraFrameThumbnail",
+            "msg_type_name": "tn.message.sdm.FrontViewCameraFrameThumbnail",
+            "channel_id": "10012",
+            "channel_name": "tn::message::sdm::FrontViewCameraFrameThumbnail",
+            "advertised_component": "SDM",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 2097152,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 1,
+            "img_width": 512,
+            "img_height": 320,
+            "img_count": 4,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "StitchingSwitch",
+            "msg_type_name": "tn.message.StitchingSwitch",
+            "channel_id": "20000",
+            "channel_name": "tn::message::StitchingSwitch",
+            "advertised_component": "Stitching",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "StitchedImage",
+            "msg_type_name": "tn.message.StitchedImage",
+            "channel_id": "20001",
+            "channel_name": "tn::message::StitchedImage",
+            "advertised_component": "Stitching",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 4194304,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 1,
+            "img_width": 512,
+            "img_height": 512,
+            "img_count": 1
+        },
+        {
+            "topic_name": "SampledStitchedImage",
+            "msg_type_name": "tn.message.StitchedImage",
+            "channel_id": "22001",
+            "channel_name": "tn::message::SampledStitchedImage",
+            "advertised_component": "Perception",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 4194304,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 1,
+            "img_width": 512,
+            "img_height": 512,
+            "img_count": 1,
+            "belonged_presets": [
+                "perception_log"
+            ]
+        },
+        {
+            "topic_name": "StitchedImageNear",
+            "msg_type_name": "tn.message.StitchedImage",
+            "channel_id": "20002",
+            "channel_name": "tn::message::StitchedImageNear",
+            "advertised_component": "Stitching",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 4194304,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 1,
+            "img_width": 436,
+            "img_height": 760,
+            "img_count": 1
+        },
+        {
+            "topic_name": "PerspectiveImageList",
+            "msg_type_name": "tn.message.PerspectiveImageList",
+            "channel_id": "20003",
+            "channel_name": "tn::message::PerspectiveImageList",
+            "advertised_component": "Stitching",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 6291456,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 1,
+            "img_width": 640,
+            "img_height": 480,
+            "img_count": 1
+        },
+        {
+            "topic_name": "CameraParkingSpaceResult",
+            "msg_type_name": "tn.message.ParkingSpaceResult",
+            "channel_id": "20004",
+            "channel_name": "tn::message::CameraParkingSpaceResult",
+            "advertised_component": "PSD",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "UltrasoundParkingSpaceResult",
+            "msg_type_name": "tn.message.ParkingSpaceResult",
+            "channel_id": "20005",
+            "channel_name": "tn::message::UltrasoundParkingSpaceResult",
+            "advertised_component": "PSD",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "DetectionStage",
+            "msg_type_name": "tn.message.DetectionStage",
+            "channel_id": "20006",
+            "channel_name": "tn::message::DetectionStage",
+            "advertised_component": "PSD",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "StitchedImageMedium",
+            "msg_type_name": "tn.message.StitchedImage",
+            "channel_id": "20007",
+            "channel_name": "tn::message::StitchedImageMedium",
+            "advertised_component": "Stitching",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 4194304,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 1,
+            "img_width": 512,
+            "img_height": 512,
+            "img_count": 1
+        },
+        {
+            "topic_name": "StitchedImageNearRaw",
+            "msg_type_name": "tn.message.StitchedImage",
+            "channel_id": "20008",
+            "channel_name": "tn::message::StitchedImageNearRaw",
+            "advertised_component": "Stitching",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 4194304,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 1,
+            "img_width": 436,
+            "img_height": 760,
+            "img_count": 1
+        },
+        {
+            "topic_name": "SampledStitchedImageNearRaw",
+            "msg_type_name": "tn.message.StitchedImage",
+            "channel_id": "21008",
+            "channel_name": "tn::message::SampledStitchedImageNearRaw",
+            "advertised_component": "Perception",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 4194304,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 1,
+            "img_width": 436,
+            "img_height": 760,
+            "img_count": 1,
+            "belonged_presets": [
+                "perception_log"
+            ]
+        },
+        {
+            "topic_name": "PersistParkingSpaceResult",
+            "msg_type_name": "tn.message.ParkingSpaceResult",
+            "channel_id": "40001",
+            "channel_name": "tn::message::PersistParkingSpaceResult",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "SelectedParkingSpaceResult",
+            "msg_type_name": "tn.message.ParkingSpaceResult",
+            "channel_id": "40001",
+            "channel_name": "tn::message::SelectedParkingSpaceResult",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "SlamControl",
+            "msg_type_name": "tn.message.slam.SlamControl",
+            "channel_id": "21000",
+            "channel_name": "tn::message::slam::SlamControl",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "SemanticFrame",
+            "msg_type_name": "tn.message.SemanticMap",
+            "channel_id": "21001",
+            "channel_name": "tn::message::SemanticFrame",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "SemanticGridMap",
+            "msg_type_name": "tn.message.SemanticMap",
+            "channel_id": "21002",
+            "channel_name": "tn::message::SemanticGridMap",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "SemanticMapPersist",
+            "msg_type_name": "tn.message.SemanticMap",
+            "channel_id": "21003",
+            "channel_name": "tn::message::SemanticMapPersist",
+            "advertised_component": "MapManager",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "CameraDetectedObject",
+            "msg_type_name": "tn.message.mod.DetectedObjectResult",
+            "channel_id": "20100",
+            "channel_name": "tn::message::CameraDetectedObject",
+            "advertised_component": "MOD",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "UltrasoundDetectedObject",
+            "msg_type_name": "tn.message.mod.DetectedObjectResult",
+            "channel_id": "20101",
+            "channel_name": "tn::message::UltrasoundDetectedObject",
+            "advertised_component": "MOD",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "CameraDetectedFreespace",
+            "msg_type_name": "tn.message.freespace.FreespaceResult",
+            "channel_id": "20201",
+            "channel_name": "tn::message::CameraDetectedFreespace",
+            "advertised_component": "Freespace",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "Trajectory",
+            "msg_type_name": "tn.message.Trajectory",
+            "channel_id": "30000",
+            "channel_name": "tn::message::Trajectory",
+            "advertised_component": "Planning",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "DynamicTrajectory",
+            "msg_type_name": "tn.message.DynamicTrajectory",
+            "channel_id": "30020",
+            "channel_name": "tn::message::DynamicTrajectory",
+            "advertised_component": "Planning",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "Location",
+            "msg_type_name": "tn.message.Location",
+            "channel_id": "30001",
+            "channel_name": "tn::message::Location",
+            "advertised_component": "LAM",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "perception_log"
+            ]
+        },
+        {
+            "topic_name": "Location_Rectified",
+            "msg_type_name": "tn.message.Location",
+            "channel_id": "30002",
+            "channel_name": "tn::message::Location_Rectified",
+            "advertised_component": "LAM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "PlanCmd",
+            "msg_type_name": "tn.message.PlanCmd",
+            "channel_id": "30004",
+            "channel_name": "tn::message::PlanCmd",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "TrainingPlanCmd",
+            "msg_type_name": "tn.message.TrainingPlanCmd",
+            "channel_id": "30004",
+            "channel_name": "tn::message::TrainingPlanCmd",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "Acceleration",
+            "msg_type_name": "tn.message.Acceleration",
+            "channel_id": "10006",
+            "channel_name": "tn::message::Acceleration",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "AngularRate",
+            "msg_type_name": "tn.message.AngularRate",
+            "channel_id": "10007",
+            "channel_name": "tn::message::AngularRate",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "WheelSpeed",
+            "msg_type_name": "tn.message.vehicle_control.WheelSpeed",
+            "channel_id": "30005",
+            "channel_name": "tn::message::vehicle_control::WheelSpeed",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "WheelPulse",
+            "msg_type_name": "tn.message.vehicle_control.WheelPulse",
+            "channel_id": "30006",
+            "channel_name": "tn::message::vehicle_control::WheelPulse",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "SteerAngle",
+            "msg_type_name": "tn.message.vehicle_control.SteerAngle",
+            "channel_id": "30007",
+            "channel_name": "tn::message::vehicle_control::SteerAngle",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "GearData",
+            "msg_type_name": "tn.message.vehicle_control.GearData",
+            "channel_id": "30008",
+            "channel_name": "tn::message::vehicle_control::GearData",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "ThrottleData",
+            "msg_type_name": "tn.message.vehicle_control.ThrottleData",
+            "channel_id": "30009",
+            "channel_name": "tn::message::vehicle_control::ThrottleData",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "DoorInfo",
+            "msg_type_name": "tn.message.vehicle_control.DoorInfo",
+            "channel_id": "30018",
+            "channel_name": "tn::message::DoorState",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "LampCommand",
+            "msg_type_name": "tn.message.vehicle_control.LampCommand",
+            "channel_id": "30019",
+            "channel_name": "tn::message::LampCommand",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "HumanIntervention",
+            "msg_type_name": "tn.message.vehicle_control.HumanIntervention",
+            "channel_id": "30018",
+            "channel_name": "tn::message::HumanIntervention",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "RequestVin",
+            "msg_type_name": "tn.message.vehicle_control.RequestVin",
+            "channel_id": "30018",
+            "channel_name": "tn::message::RequestVin",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "VinInfo",
+            "msg_type_name": "tn.message.vehicle_control.VinInfo",
+            "channel_id": "30018",
+            "channel_name": "tn::message::VinInfo",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "DeceleratingCommand",
+            "msg_type_name": "tn.message.vehicle_control.DeceleratingCommand",
+            "channel_id": "30018",
+            "channel_name": "tn::message::DeceleratingCommand",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "ParkerLimiter",
+            "msg_type_name": "tn.message.vehicle_control.ParkerLimiter",
+            "channel_id": "30018",
+            "channel_name": "tn::message::ParkerLimiter",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "MechanicalFinished",
+            "msg_type_name": "tn.message.vehicle_control.MechanicalFinished",
+            "channel_id": "30018",
+            "channel_name": "tn::message::MechanicalFinished",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "VehicleMovedState",
+            "msg_type_name": "tn.message.vehicle_control.VehicleMovedState",
+            "channel_id": "30018",
+            "channel_name": "tn::message::VehicleMovedState",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "VehicleBlockState",
+            "msg_type_name": "tn.message.vehicle_control.VehicleBlockState",
+            "channel_id": "30018",
+            "channel_name": "tn::message::VehicleBlockState",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "AutoDriveStatus",
+            "msg_type_name": "tn.message.vehicle_control.AutoDriveStatus",
+            "channel_id": "50001",
+            "channel_name": "tn::message::vehicle_control::AutoDriveStatus",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "VehicleStopResult",
+            "msg_type_name": "tn.message.VehicleStopResult",
+            "channel_id": "30018",
+            "channel_name": "tn::message::VehicleStopResult",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "VehicleControlHeartBeat",
+            "msg_type_name": "tn.message.vehicle_control.VehicleControlHeartBeat",
+            "channel_id": "50003",
+            "channel_name": "tn::message::vehicle_control::VehicleControlHeartBeat",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "VehicleStop",
+            "msg_type_name": "tn.message.vehicle_control.VehicleStop",
+            "channel_id": "50004",
+            "channel_name": "tn::message::vehicle_control::VehicleStop",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "VehicleControlTrajectory",
+            "msg_type_name": "tn.message.Trajectory",
+            "channel_id": "30018",
+            "channel_name": "tn::message::vehicle_control::VehicleControlTrajectory",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "WheelDirection",
+            "msg_type_name": "tn.message.vehicle_control.WheelDirection",
+            "channel_id": "30026",
+            "channel_name": "tn::message::vehicle_control::WheelDirection",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "SimulationControl",
+            "msg_type_name": "tn.message.simulation.SimulationControl",
+            "channel_id": "11004",
+            "channel_name": "tn::message::simulation::SimulationControl",
+            "advertised_component": "Vehicle Control",
+            "use_share_memory": false,
+            "belonged_presets": [
+                "sensor"
+            ]
+        },
+        {
+            "topic_name": "ParkingSpace_Fusioned",
+            "msg_type_name": "tn.message.ParkingSpaceResult",
+            "channel_id": "30010",
+            "channel_name": "tn::message::ParkingSpace_Fusioned",
+            "advertised_component": "LAM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "DetectedObject_Fusioned",
+            "msg_type_name": "tn.message.mod.DetectedObjectResult",
+            "channel_id": "30011",
+            "channel_name": "tn::message::DetectedObject_Fusioned",
+            "advertised_component": "LAM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "Freespace_Fusioned",
+            "msg_type_name": "tn.message.freespace.FreespaceResult",
+            "channel_id": "30021",
+            "channel_name": "tn::message::Freespace_Fusioned",
+            "advertised_component": "LAM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "UltrasoundPoints",
+            "msg_type_name": "tn.message.USSPoints",
+            "channel_id": "30012",
+            "channel_name": "tn::message::UltrasoundPoints",
+            "advertised_component": "LAM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "TrajectoryFully",
+            "msg_type_name": "tn.message.Trajectory",
+            "channel_id": "30013",
+            "channel_name": "tn::message::TrajectoryFully",
+            "advertised_component": "Planning",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "TrajectoryKeypoint",
+            "msg_type_name": "tn.message.TrajectoryKeypoint",
+            "channel_id": "30014",
+            "channel_name": "tn::message::TrajectoryKeypoint",
+            "advertised_component": "Planning",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "PlanningStatus",
+            "msg_type_name": "tn.message.PlanningStatus",
+            "channel_id": "30015",
+            "channel_name": "tn::message::PlanningStatus",
+            "advertised_component": "Planning",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "BuzzingCommand",
+            "msg_type_name": "tn.message.BuzzingCommand",
+            "channel_id": "30016",
+            "channel_name": "tn::message::BuzzingCommand",
+            "advertised_component": "HMI",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "UssParkingSpace",
+            "msg_type_name": "tn.message.UssParkingSpace",
+            "channel_id": "30017",
+            "channel_name": "tn::message::UssParkingSpace",
+            "advertised_component": "Planning",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "LamNotifyMsg",
+            "msg_type_name": "tn.message.lam.LamNotifyMsg",
+            "channel_id": "40001",
+            "channel_name": "tn::message::LamNotifyMsg",
+            "advertised_component": "LAM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "AutoParkingRequest",
+            "msg_type_name": "tn.message.AutoParkingRequest",
+            "channel_id": "31001",
+            "channel_name": "tn::message::AutoParkingRequest",
+            "advertised_component": "HMI",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "UserRequest",
+            "msg_type_name": "tn.message.UserRequest",
+            "channel_id": "31001",
+            "channel_name": "tn::message::UserRequest",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "HmiParkingStateMsg",
+            "msg_type_name": "tn.message.HmiParkingStateMsg",
+            "channel_id": "31001",
+            "channel_name": "tn::message::HmiParkingStateMsg",
+            "advertised_component": "HMI",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "IssueReportRequest",
+            "msg_type_name": "tn.message.IssueReportRequest",
+            "channel_id": "36001",
+            "channel_name": "tn::message::IssueReportRequest",
+            "advertised_component": "HMI",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "DiagnosticEvent",
+            "msg_type_name": "tn.message.DiagnosticEvent",
+            "channel_id": "36002",
+            "channel_name": "tn::message::DiagnosticEvent",
+            "advertised_component": "",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "DiagnosticImage",
+            "msg_type_name": "tn.message.diagnostic.DiagnosticImage",
+            "channel_id": "36003",
+            "channel_name": "tn::message::DiagnosticImage",
+            "advertised_component": "Diagnostic",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 15000000,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 1,
+            "img_width": 3440,
+            "img_height": 1440,
+            "img_count": 1
+        },
+        {
+            "topic_name": "ImageSwap",
+            "msg_type_name": "tn.message.diagnostic.ImageSwap",
+            "channel_id": "36004",
+            "channel_name": "tn::message::ImageSwap",
+            "advertised_component": "",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "StrategyStatus",
+            "msg_type_name": "tn.message.strategy.StrategyStatus",
+            "channel_id": "40001",
+            "channel_name": "tn::message::strategy::StrategyStatus",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "AutoDriveRequest",
+            "msg_type_name": "tn.message.strategy.AutoDriveRequest",
+            "channel_id": "40001",
+            "channel_name": "tn::message::strategy::AutoDriveRequest",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "StrategyCmd",
+            "msg_type_name": "tn.message.strategy.StrategyCmd",
+            "channel_id": "40001",
+            "channel_name": "tn::message::strategy::StrategyCmd",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "StrategyRequest",
+            "msg_type_name": "tn.message.strategy.StrategyRequest",
+            "channel_id": "40001",
+            "channel_name": "tn::message::strategy::StrategyRequest",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "CaptureVideoCmd",
+            "msg_type_name": "tn.message.CaptureVideoCmd",
+            "channel_id": "40005",
+            "channel_name": "tn::message::CaptureVideoCmd",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "CaptureMsgCmd",
+            "msg_type_name": "tn.message.CaptureMsgCmd",
+            "channel_id": "40006",
+            "channel_name": "tn::message::CaptureMsgCmd",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "ComponentControl",
+            "msg_type_name": "tn.message.ComponentControl",
+            "channel_id": "40007",
+            "channel_name": "tn::message::ComponentControl",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "TrackingStatus",
+            "msg_type_name": "tn.message.strategy.TrackingStatus",
+            "channel_id": "40001",
+            "channel_name": "tn::message::strategy::TrackingStatus",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "CaptureVoiceCmd",
+            "msg_type_name": "tn.message.CaptureVoiceCmd",
+            "channel_id": "40008",
+            "channel_name": "tn::message::CaptureVoiceCmd",
+            "advertised_component": "HMI",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "TopicControl",
+            "msg_type_name": "tn.message.TopicControl",
+            "channel_id": "40009",
+            "channel_name": "tn::message::TopicControl",
+            "advertised_component": "Strategy",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "ComponentHeartBeat",
+            "msg_type_name": "tn.message.spm.ComponentHeartBeat",
+            "channel_id": "41001",
+            "channel_name": "tn::message::spm::ComponentHeartBeat",
+            "advertised_component": "SPM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "ComponentStatusList",
+            "msg_type_name": "tn.message.spm.ComponentStatusList",
+            "channel_id": "41002",
+            "channel_name": "tn::message::spm::ComponentStatusList",
+            "advertised_component": "SPM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "ComponentCommandList",
+            "msg_type_name": "tn.message.spm.ComponentCommandList",
+            "channel_id": "41003",
+            "channel_name": "tn::message::spm::ComponentCommand",
+            "advertised_component": "SPM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "SwitchComponentGroup",
+            "msg_type_name": "tn.message.spm.SwitchComponentGroup",
+            "channel_id": "41004",
+            "channel_name": "tn::message::spm::SwitchComponentGroup",
+            "advertised_component": "SPM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "SPMComponentStatus",
+            "msg_type_name": "tn.message.spm.ComponentStatusList",
+            "channel_id": "41005",
+            "channel_name": "tn::message::spm::SPMComponentStatus",
+            "advertised_component": "SPM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "SPMComponentCommand",
+            "msg_type_name": "tn.message.spm.ComponentCommandList",
+            "channel_id": "41006",
+            "channel_name": "tn::message::spm::SPMComponentCommand",
+            "advertised_component": "SPM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "ParkingSpaceRemoteSelection",
+            "msg_type_name": "tn.message.AutoParkingRequest",
+            "channel_id": "60001",
+            "channel_name": "tn::message::ParkingSpaceRemoteSelection",
+            "advertised_component": "EUIM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "CameraSwitch",
+            "msg_type_name": "tn.message.CameraSwitch",
+            "channel_id": "60002",
+            "channel_name": "tn::message::CameraSwitch",
+            "advertised_component": "EUIM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "PhoneReady",
+            "msg_type_name": "tn.message.PhoneReady",
+            "channel_id": "60003",
+            "channel_name": "tn::message::PhoneReady",
+            "advertised_component": "EUIM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "PhoneKeepParking",
+            "msg_type_name": "tn.message.PhoneKeepParking",
+            "channel_id": "60004",
+            "channel_name": "tn::message::PhoneKeepParking",
+            "advertised_component": "EUIM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "SimpleRemoteParking",
+            "msg_type_name": "tn.message.euim.SimpleRemoteMessage",
+            "channel_id": "60005",
+            "channel_name": "tn::message::euim::SimpleRemoteParking",
+            "advertised_component": "EUIM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "RemoteEngineStart",
+            "msg_type_name": "tn.message.euim.SimpleRemoteMessage",
+            "channel_id": "60006",
+            "channel_name": "tn::message::euim::RemoteEngineStart",
+            "advertised_component": "EUIM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "HmiToPhoneMsg",
+            "msg_type_name": "tn.message.HmiPhoneMsg",
+            "channel_id": "60007",
+            "channel_name": "tn::message::HmiPhoneMsg",
+            "advertised_component": "EUIM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "PhoneToHmiMsg",
+            "msg_type_name": "tn.message.HmiPhoneMsg",
+            "channel_id": "60008",
+            "channel_name": "tn::message::HmiPhoneMsg",
+            "advertised_component": "EUIM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "VehicleRemoteDisconnect",
+            "msg_type_name": "tn.message.VehicleRemoteDisconnect",
+            "channel_id": "60009",
+            "channel_name": "tn::message::VehicleRemoteDisconnect",
+            "advertised_component": "EUIM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "IssueReportResponse",
+            "msg_type_name": "tn.message.IssueReportResponse",
+            "channel_id": "61001",
+            "channel_name": "tn::message::IssueReportResponse",
+            "advertised_component": "EUIM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "KeyFrame",
+            "msg_type_name": "tn.message.slam.KeyFrame",
+            "channel_id": "62001",
+            "channel_name": "tn::message::slam::KeyFrame",
+            "advertised_component": "Slam",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 4194304
+        },
+        {
+            "topic_name": "ImuPropagate",
+            "msg_type_name": "tn.message.slam.Odometry",
+            "channel_id": "62004",
+            "channel_name": "tn::message::slam::ImuPropagate",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "WheelPropagate",
+            "msg_type_name": "tn.message.slam.Odometry",
+            "channel_id": "62005",
+            "channel_name": "tn::message::slam::WheelPropagate",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "PureWheelPropagate",
+            "msg_type_name": "tn.message.slam.Odometry",
+            "channel_id": "62006",
+            "channel_name": "tn::message::slam::PureWheelPropagate",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "VIWPath",
+            "msg_type_name": "tn.message.slam.Odometry",
+            "channel_id": "62007",
+            "channel_name": "tn::message::slam::VIWPath",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "TioExtrinsic",
+            "msg_type_name": "tn.message.slam.Odometry",
+            "channel_id": "62008",
+            "channel_name": "tn::message::slam::TioExtrinsic",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "TicExtrinsic",
+            "msg_type_name": "tn.message.slam.Odometry",
+            "channel_id": "62009",
+            "channel_name": "tn::message::slam::TicExtrinsic",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "TpwExtrinsic",
+            "msg_type_name": "tn.message.slam.Odometry",
+            "channel_id": "62010",
+            "channel_name": "tn::message::slam::TpwExtrinsic",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "GroundTruth",
+            "msg_type_name": "tn.message.slam.Odometry",
+            "channel_id": "62011",
+            "channel_name": "tn::message::slam::GroundTruth",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "TrackPointCloud",
+            "msg_type_name": "tn.message.slam.PointCloud",
+            "channel_id": "62012",
+            "channel_name": "tn::message::slam::TrackPointCloud",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "MarginPointCloud",
+            "msg_type_name": "tn.message.slam.PointCloud",
+            "channel_id": "62013",
+            "channel_name": "tn::message::slam::MarginPointCloud",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "TrackLineCloud",
+            "msg_type_name": "tn.message.slam.LineCloud",
+            "channel_id": "62014",
+            "channel_name": "tn::message::slam::TrackLineCloud",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "MarginLineCloud",
+            "msg_type_name": "tn.message.slam.LineCloud",
+            "channel_id": "62015",
+            "channel_name": "tn::message::slam::MarginLineCloud",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "TrackPointImage",
+            "msg_type_name": "tn.message.sdm.FrontViewCameraFrame",
+            "channel_id": "62016",
+            "channel_name": "tn::message::sdm::TrackPointImage",
+            "advertised_component": "Slam",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 8388608,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 3,
+            "img_count": 1
+        },
+        {
+            "topic_name": "TrackLineImage",
+            "msg_type_name": "tn.message.sdm.FrontViewCameraFrame",
+            "channel_id": "62017",
+            "channel_name": "tn::message::sdm::TrackLineImage",
+            "advertised_component": "Slam",
+            "use_share_memory": true,
+            "queue_size": 10,
+            "max_msg_size": 8388608,
+            "use_extra_data": true,
+            "is_image": true,
+            "pix_fmt": 3,
+            "img_count": 1
+        },
+        {
+            "topic_name": "VectorMap",
+            "msg_type_name": "tn.message.VectorMap",
+            "channel_id": "62002",
+            "channel_name": "tn::message::VectorMap",
+            "advertised_component": "Slam",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "VectorMapPersist",
+            "msg_type_name": "tn.message.VectorMap",
+            "channel_id": "62003",
+            "channel_name": "tn::message::VectorMapPersist",
+            "advertised_component": "MapManager",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "MapDataRequest",
+            "msg_type_name": "tn.message.MapDataRequest",
+            "channel_id": "63001",
+            "channel_name": "tn::message::MapDataRequest",
+            "advertised_component": "MapManager",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "MapDataResponse",
+            "msg_type_name": "tn.message.MapDataResponse",
+            "channel_id": "63002",
+            "channel_name": "tn::message::MapDataResponse",
+            "advertised_component": "MapManager",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "LaunchToHmiCmd",
+            "msg_type_name": "tn.message.launcher.LaunchCmdMsg",
+            "channel_id": "31011",
+            "channel_name": "tn::message::launcher::LaunchCmdMsg",
+            "advertised_component": "HMI",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "HmiToLaunchCmd",
+            "msg_type_name": "tn.message.launcher.LaunchCmdMsg",
+            "channel_id": "31012",
+            "channel_name": "tn::message::launcher::LaunchCmdMsg",
+            "advertised_component": "HMI",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "PhoneLaunchMsg",
+            "msg_type_name": "tn.message.launcher.PhoneLaunchMsg",
+            "channel_id": "31013",
+            "channel_name": "tn::message::launcher::PhoneLaunchMsg",
+            "advertised_component": "EUIM",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "SumVersionList",
+            "msg_type_name": "",
+            "channel_id": "71001",
+            "channel_name": "tn::message::sum::SumVersionList",
+            "advertised_component": "Sum",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "SumDownloadReponse",
+            "msg_type_name": "",
+            "channel_id": "71002",
+            "channel_name": "tn::message::sum::SumDownloadReponse",
+            "advertised_component": "Sum",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "SumDownloadInfo",
+            "msg_type_name": "",
+            "channel_id": "71003",
+            "channel_name": "tn::message::sum::SumDownloadInfo",
+            "advertised_component": "Sum",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "SumUpdateResonse",
+            "msg_type_name": "",
+            "channel_id": "71004",
+            "channel_name": "tn::message::sum::SumUpdateResonse",
+            "advertised_component": "Sum",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "SegFeature",
+            "msg_type_name": "tn.message.seg.SegFeature",
+            "channel_id": "20301",
+            "channel_name": "tn::message::seg::SegFeature",
+            "advertised_component": "SegTracker",
+            "use_share_memory": true
+        },
+        {
+            "topic_name": "CameraParkingSpaceTracked",
+            "msg_type_name": "tn.message.ParkingSpaceResult",
+            "channel_id": "20010",
+            "channel_name": "tn::message::CameraParkingSpaceTracked",
+            "advertised_component": "PSTracker",
+            "use_share_memory": false
+        },
+        {
+            "topic_name": "DetectedObjectTracked",
+            "msg_type_name": "tn.message.mod.DetectedObjectResult",
+            "channel_id": "20009",
+            "channel_name": "tn::message::mod:DetectedObjectTracked",
+            "advertised_component": "DetectedObjectTracker",
+            "use_share_memory": false
+        }
+    ]
+}

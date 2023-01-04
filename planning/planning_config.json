@@ -1,0 +1,414 @@
+{
+    "version": "0.0.1",
+    "vehicle_info_file": "config/common/car_info.json",
+	"log_config": {
+		"log_level": 3
+ 	 },	
+    "car_info" : {
+        "car_width" : 1.845,
+        "car_length" : 4.765,
+        "wheel_radius" : 0.332284,
+        "front_overhang" : 0.99,
+        "rear_overhang" : 1.075,
+        "min_turn_radius" : 4.19,
+        "wheel_base" : 2.7,
+        "max_steering_wheel_angle" : 8.726,
+        "has_wheel_counter" : true,
+        "wheel_reset_position" : 1023,
+        "counts_per_circle" : 96,
+        "use_ratios_lut" : false
+    },
+    "planning" : {
+        "persistency_path": "./log/planning",
+        "rs_cost_params" : {
+            "rs_motion_cost_lut_path" : "./resource/planning/rs_cost_0-2.bin",
+            "rs_motion_cost_h_lut_path" : "./resource/planning/rs_cost_0-2.bin",
+            "motion_cost_resolution" : 0.2,
+            "motion_cost_high_resolution" : 0.02,
+            "vpa_rs_motion_cost_lut_path" : "./resource/planning/rs_cost_0-4.bin",
+            "vpa_motion_cost_resolution" : 0.4
+        },
+        "diagnostic_setting": {
+            "planning_info_cache_path": "./planning_dtc",
+            "planning_data_folder": "planning_data",
+            "planning_info_file_name": "planning_info.bin",
+            "max_cache_file_count": 3,
+            "persist_file_keywords": [
+                "kParkingSpaces",
+                "kDetectedObject",
+                "kStartPose",
+                "kTargetParkingSpace",
+                "kPlanType",
+                "kUSSPoints",
+                "before_clear_grid_cost",
+                "hybrid_cost_grid_cost",
+                "collision_check_grid_cost"
+            ],
+            "max_data_file_count": 10
+        },
+        "car_boundary_extend_distance": {
+            "ResumeClearPSCollision": {
+                "side": 0.3,
+                "side_front": 0.3,
+                "head" : 0,
+                "tail" : 0
+            },
+            "MoveOutsidePSCollision": {
+                "side": 0.1,
+                "side_front": 0.1,
+                "head" : 0,
+                "tail" : 0
+            },
+            "MoveNormalPSCollision": {
+                "side": 0,
+                "side_front": 0,
+                "head" : 0,
+                "tail" : 0
+            },
+            "SpeedAdjustCollision": {
+                "side": 0.2,
+                "side_front": 0.2,
+                "head" : 0,
+                "tail" : 0
+            },
+            "ParkingSpaceMainArea": {
+                "side": -0.4,
+                "side_front": -0.4,
+                "head" : -0.2,
+                "tail" : -0.2
+            },
+            "MechanicalMainArea": {
+                "side": -0.4,
+                "side_front": -0.4,
+                "head" : -0.4,
+                "tail" : -0.4
+            },
+            "VPACollision": {
+                "side": 0.1,
+                "side_front": 0.1,
+                "head" : 0,
+                "tail" : 0
+            },
+            "MoveOutsidePSPlanning": {
+                "side": 0,
+                "side_front": 0.1,
+                "head" : 0.1,
+                "tail" : 0
+            }
+        },
+        "_comment_log_mode": "0:tnlog 1:terminallog 2:both",
+        "log_mode" : 0,
+        "apa" : {
+            "resolution_params" :{
+                "high":{
+                    "resolution" : 0.05,
+                    "area_size" : 10.0,
+                    "theta_number" : 360
+                },
+                "middle":{
+                    "resolution" : 0.10,
+                    "area_size" : 12.0,
+                    "theta_number" : 240
+                },
+                "low":{
+                    "resolution" : 0.15,
+                    "area_size" : 18.0,
+                    "theta_number" : 240
+                }
+            },
+            "parking_out_pose" : {
+                "_comment_goal_pose" : "head_out or tail_out means the pose of vehicle in parking space, left or right means the direction of vehicle heading after parking out",
+                "vertical_head_out_to_left":{
+                    "x" : 2.2,
+                    "y" : 4.2,
+                    "theta" : 1.5708
+                },
+                "vertical_head_out_to_right":{
+                    "x" : 2.2,
+                    "y" : -4.2,
+                    "theta" : -1.5708
+                },
+                "vertical_tail_out_to_left":{
+                    "x" : 2.4,
+                    "y" : 3.6,
+                    "theta" : 1.5708
+                },
+                "vertical_tail_out_to_right":{
+                    "x" : 2.4,
+                    "y" : -3.6,
+                    "theta" : -1.5708
+                },
+                "parallel_to_left":{
+                    "x" : 2.0,
+                    "y" : 6.5,
+                    "theta" : 1.5708
+                },
+                "parallel_to_right":{
+                    "x" : 2.0,
+                    "y" : -6.5,
+                    "theta" : -1.5708
+                },
+                "slant_head_out_to_left":{
+                    "x" : 2.0,
+                    "y" : 4.6,
+                    "theta" : 1.5708
+                },
+                "slant_head_out_to_right":{
+                    "x" : 2.0,
+                    "y" : -4.6,
+                    "theta" : -1.5708
+                },
+                "slant_tail_out_to_left":{
+                    "x" : 2.1,
+                    "y" : 0,
+                    "theta" : 1.5708
+                },
+                "slant_tail_out_to_right":{
+                    "x" : 2.1,
+                    "y" : 0,
+                    "theta" : -1.5708
+                }
+            },
+            "static_trajectory_distance":{
+                "tailin_pi":{
+                    "vertical":{
+                        "limited_distance_to_entrance" : 0.5,
+                        "straight_distance_borrow_space" : 2.0,
+                        "straight_distance" : 2.5,
+                        "curve_distance" : 0
+                    },
+                    "parallel":{
+                        "limited_distance_to_entrance" : 0,
+                        "straight_distance_borrow_space" : 0,
+                        "straight_distance" : 0,
+                        "curve_distance" : 0
+                    },
+                    "angle":{
+                        "limited_distance_to_entrance" : -0.5,
+                        "straight_distance_borrow_space" : 2.0,
+                        "straight_distance" : 2.5,
+                        "curve_distance" : 0
+                    },
+                    "mechanical":{
+                        "limited_distance_to_entrance" : 0,
+                        "straight_distance_borrow_space" : 4.4,
+                        "straight_distance" : 4.4,
+                        "curve_distance" : 0
+                    }
+                },
+                "tailin_po":{
+                    "vertical":{
+                        "limited_distance_to_entrance" : 0,
+                        "straight_distance_borrow_space" : 0.0,
+                        "straight_distance" : 0,
+                        "curve_distance" : 0
+                    },
+                    "parallel":{
+                        "limited_distance_to_entrance" : 0,
+                        "straight_distance_borrow_space" : 0,
+                        "straight_distance" : 0,
+                        "curve_distance" : 0
+                    },
+                    "angle":{
+                        "limited_distance_to_entrance" : 0,
+                        "straight_distance_borrow_space" : 0,
+                        "straight_distance" : 0,
+                        "curve_distance" : 0
+                    },
+                    "mechanical":{
+                        "limited_distance_to_entrance" : 0,
+                        "straight_distance_borrow_space" : 4.65,
+                        "straight_distance" : 4.65,
+                        "curve_distance" : 0
+                    }
+                },
+                "headin_pi":{
+                    "vertical":{
+                        "limited_distance_to_entrance" : 0.5,
+                        "straight_distance_borrow_space" : 2.0,
+                        "straight_distance" : 4.5,
+                        "curve_distance" : 0
+                    },
+                    "angle":{
+                        "limited_distance_to_entrance" : -0.5,
+                        "straight_distance_borrow_space" : 2.0,
+                        "straight_distance" : 4.0,
+                        "curve_distance" : 0
+                    }
+                },
+                "headin_po":{
+                    "vertical":{
+                        "limited_distance_to_entrance" : 0,
+                        "straight_distance_borrow_space" : 0,
+                        "straight_distance" : 0,
+                        "curve_distance" : 0
+                    },
+                    "angle":{
+                        "limited_distance_to_entrance" : 0,
+                        "straight_distance_borrow_space" : 0,
+                        "straight_distance" : 0,
+                        "curve_distance" : 0
+                    }
+                }
+            },
+            "planning_turn_ratio" : 1.0658,
+            "search_gui" : false,
+            "enable_lut_cost" : true,
+            "lut_cost_ratio" : 1.0,
+            "search_gui_boundary" : false,
+            "collision_gui" : false,
+            "enable_rs" : false,
+            "enable_rs_cost" : false,
+            "brake_ratio" : 0.8,
+            "apa_speed" : 0.3,
+            "apa_closed_to_brake_speed" : 0.3,
+            "zero_speed_thresh" : 0.001,
+            "collision_wait_time" : 10,
+            "reach_goal_distance_tolerance" : 0.10,
+            "reach_goal_theta_tolerance" : 0.05,
+            "runtime_reach_goal_distance_tolerance_x" : 0.20,
+            "runtime_reach_goal_distance_tolerance_y" : 0.45,
+            "runtime_reach_goal_theta_tolerance" : 0.05,
+            "runtime_reach_PO_goal_theta_tolerance" : 0.2,
+            "resolution" : 0.15,
+            "area_size" : 18.0,
+            "cost_distance" : 2.0,
+            "obstacle_cost" : 0.5,
+            "theta_resolution" : 0.025,
+            "theta_number" : 240,
+            "safe_distance" : 0.20,
+            "safe_side_distance" : 0.05,
+            "backward_cost" : 0.1,
+            "g_step_cost_" : 7.0,
+            "h_step_cost_" : 0,
+            "theta_cost" : 0.0,
+            "rs_motion_cost" : 1.0,
+            "switch_direction_cost" : 20,
+            "collision_trigger" : 200,
+            "switch_direction_cost_when_short_distance" : 20,
+            "expand_step_factor" : 3.0,
+            "_comment_center_to_vehicle_axis": "4765/2 - 1075 = 1307",
+            "center_to_vehicle_axis" : 1.3075,
+            "dis_to_rear_line_parallel" : 1.5,
+            "dis_to_rear_line_vertical" : 1.4,
+            "dis_to_rear_line_vertical_mechanical" : 1.3,
+            "dis_to_rear_line_slant" : 1.6,
+            "dis_to_front_line_vertical" : 1.5,
+            "dis_to_front_line_slant" : 1.6,
+            "parallel_out_x_offset" : 2.0,
+            "parallel_out_y_offset" : 3.5,
+            "slant_out_x_offset" : 2.0,
+            "slant_out_y_offset" : 3.2,
+            "headin_slant_out_x_offset" : 2.1,
+            "headin_slant_out_y_offset" : 0.0,
+            "vertical_out_x_offset" : 4.0,
+            "vertical_out_y_offset" : 4.0,
+            "headin_vertical_out_x_offset" : 2.4,
+            "headin_vertical_out_y_offset" : 2.2,
+            "mechanical_out_offset" : 0.0,
+            "default_parking_width" : 2.6,
+            "default_v_parking_depth" : 5.4,
+            "parking_head_in_angle" : 1.39626,
+            "allow_cover_entrance_line" : true,
+            "allow_cover_distance" : 0.5,
+            "target_ps_allow_cover_distance" : -0.1,
+            "target_angle_allow_cover_distance": 0.2,
+            "target_parallel_allow_cover_distance" : -0.2,
+            "target_parallel_dynamic_distance" : 0.6,
+            "min_suggest_parallel_length" : 6.9,
+            "min_suggest_parallel_length_PO" : 7.2,
+            "min_suggest_parallel_depth" : 2.85,
+            "min_suggest_vertical_width" : 3.0,
+            "min_suggest_vertical_depth" : 6.0,
+            "min_suggest_mechanical_vertical_width" : 2.5,
+            "min_suggest_mechanical_vertical_depth" : 5.2,
+            "min_suggest_slant_width" : 3.2,
+            "min_suggest_slant_depth" : 6.5,
+            "enable_car_polygon" : true,
+            "unify_resolution" : false,
+            "min_valid_parkingspace_wid" : 2.0,
+            "min_valid_parkingspace_len" : 4.0,
+            "uss_range" : 0.8,
+            "head_cut_wid" : 0.2,
+            "head_cut_hei" : 0.2,
+            "tail_cut_wid" : 0.2,
+            "tail_cut_hei" : 0.3,
+            "uss_safe_cicle_head_tail" : 0.3,
+            "uss_safe_cicle_corner" : 0.15,
+            "uss_safe_cicle_front_corner" : 0.25,
+            "uss_safe_cicle_two_side" : 0.1,
+            "uss_vertical_ps_width" : 4.0,
+            "uss_vertical_ps_depth" : 6.2,
+            "collision_distance" : 0.3,
+            "collision_closed_distance" : 1.0,
+            "apa_block_duration" : 30,
+            "slant_up_wall" : 5.0,
+            "vertical_up_wall" : 6.0,
+            "vertical_up_wall_mechanical" : 6.2,
+            "vertical_up_wall_headin" : 6.8,
+            "vertical_down_wall" : 0.2,
+            "parallel_up_wall" : 4.2,
+            "parallel_up_wall_closed" : 1.0,
+            "parallel_up_wall_similar" : 1.0,
+            "parallel_down_wall" : 0.0,
+            "fast_reached_distance" : 0.5,
+            "enable_half_max_wheel" : true,
+            "searching_timeout" : 30000,
+            "block_timeout" : 10000,
+            "replan_max_times" : 10000,
+            "follow_trajectory_replan_theta_trigger" : 0.5236,
+            "follow_trajectory_replan_offset_trigger" : 0.30,
+            "follow_trajectory_replan_theta_trigger_in_entrance" : 0.2,
+            "follow_trajectory_replan_offset_trigger_in_entrance" : 0.2,
+            "min_trajectory_mileage" : 0.5,
+            "min_trajectory_mileage_in_ps" : 0.3,
+            "fast_plan_distance_vertical" : 2.5,
+            "fast_plan_distance_mechanical" : 4.4,
+            "fast_plan_distance_when_enable_fast_parking" : 2.0,
+            "limited_distance_when_enable_fast_parking" : 4.0,
+            "limited_distance_when_enable_fast_parking_out" : 3.0,
+            "replan_error_distance" : 0.2,
+            "replan_error_theta" : 0.2,
+            "mechanical_extend_wall" : 0.3,
+            "mechanical_extend_wall_closed" : 0.2,
+            "check_deviate_dis_start" :0.5,
+            "check_deviate_dis_end" : 1.5,
+            "check_deviate_theta" : 0.15,
+            "check_deviate_horiz" : 0.15,
+            "check_deviate_dis_start_entrance" :0.0,
+            "check_deviate_dis_end_entrance" : 0.5,
+            "check_deviate_theta_entrance" : 0.1,
+            "check_deviate_horiz_entrance" : 0.1,
+
+            "mechanical_forbid_replan_dis" : 1.0,
+            "skip_planning_trigger" : 0.5,
+            "skip_planning_trigger_mechanical" : 0,
+            "replan_mechanical_theta" : 0.0555,
+            "replan_mechanical_offset" : 0.1,
+            "target_parkingspace_dynamic_max_y" : 0.3,
+            "align_uss_in_mechanical_entrance" : true,
+            "align_uss_error_in_mechanical_entrance" : 1.0,
+            "enable_freespace" : false,
+            "pillar_extend" : 0.2,
+            "pillar_extend_m" : 1.5,
+            "pillar_size" : 0.8,
+            "pillar_detect_trigger" : 0.5
+        },
+        "vpa":{
+            "vpa_step" : 0.1,
+            "vpa_speed" : 1.0,
+            "clothoid_distance" : 8.0,
+            "arc_ratio" : 0.8,
+            "radius_ratio" : 1.0,
+            "offset_to_right" : 0.8,
+            "road_double_channel_width" : 4.0,
+            "enable_dynamic_speed" : false,
+            "cost_distance" : 4.0,
+            "g_step_cost" : 1.5,
+            "h_step_cost" : 3.5,
+            "vpa_lut_cost_ratio" : 0.1,
+            "vpa_mask_cost_distance" : 2.0,
+            "vpa_mask_cost" : 20
+        }
+    }
+}

@@ -32,9 +32,8 @@
                                 "type": "kAPAScan"
                             }
                         }
-
                     ],
-                    "sleep_afterward_ms": 4000
+                    "sleep_afterward_ms": 2000
                 }
             ],
             "expectation": [
@@ -43,14 +42,6 @@
                     "messages": [
                         {
                             "text":{"tmq_header":{"tmq_stamp":"1672811632437"},"timestamp":"1672811632437","mode":"kAPAMode","status":"kPreparing"},
-                            "ignore_keys_lower": [
-                                "tmq_stamp",
-                                "timestamp"
-                            ]
-                        },
-
-                        {
-                            "text":{"tmq_header":{"tmq_stamp":"1672811632437"},"timestamp":"1672811632437","mode":"kAPAMode","status":"kStandby"},
                             "ignore_keys_lower": [
                                 "tmq_stamp",
                                 "timestamp"
@@ -1122,6 +1113,2630 @@
                     "messages": [
                         {
                             "text": {"tmq_header":{"tmq_stamp":"1672818818027"},"timestamp":"1672818818027","mode":"kAPAMode","status":"kSearchingFailure","search_failure_type":"kFailureDoorOpen"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-8328",
+                "Description": "Test StrategyStatus ParkingInPreparing",
+                "Test Case ID": "8",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Strategy+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Strategy+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kStop" }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+                {
+                    "topic_name": "SensorStatusList",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kCamera"
+                                    },
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kUSS"
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kVehicle"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "ComponentStatusList",
+                    "messages": [
+                        {
+                            "text": {"tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971",
+                                "component_status_list": [
+                                    {
+                                        "component_name": "sdm",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "usdm",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "euim",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "vehicle_control",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "vehicle_control_standby",
+                                        "type": "kRunning"
+                                    },
+
+
+                                    {
+                                        "component_name": "strategy",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "stitching",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "perception",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "lam",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "slam",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "planning",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "hmi",
+                                        "type": "kRunning"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+
+
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "type": "kAPAScan"
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "parkingspaces": [
+                                    {
+                                        "p0": {
+                                            "x": 13.55483870967742,
+                                            "y": 1.821103811264038
+                                        },
+                                        "p1": {
+                                            "x": 13.55483870967742,
+                                            "y": 2.9211039543151855
+                                        },
+                                        "p2": {
+                                            "x": 7.55483870967742,
+                                            "y": 2.9211039543151855
+                                        },
+                                        "p3": {
+                                            "x": 7.55483870967742,
+                                            "y": 1.821103811264038
+                                        },
+                                        "valid": true,
+                                        "confidence": 0.9,
+                                        "sensor_source": "kFromCamera",
+                                        "timestamp": "1658227458725613094"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+
+                {
+                    "topic_name": "SensorStatusList",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kCamera"
+                                    },
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kUSS"
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kVehicle"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "DoorInfo",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": "Closed",
+                                "front_right": "Closed",
+                                "rear_left": "Closed",
+                                "rear_right": "Closed",
+                                "trunk": "Closed",
+                                "hood": "Closed"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "WheelSpeed",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": 0,
+                                "front_right": 0,
+                                "rear_left": 0,
+                                "rear_right": 0
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 4000
+                },
+
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                },
+
+                {
+                    "topic_name": "AutoParkingRequest",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "current_parking_space": {
+                                    "p0": {
+                                      "x": 13.5548391,
+                                      "y": 1.82110381
+                                    },
+                                    "p1": {
+                                      "x": 13.5548391,
+                                      "y": 2.92110395
+                                    },
+                                    "p2": {
+                                      "x": 7.55483866,
+                                      "y": 2.92110395
+                                    },
+                                    "p3": {
+                                      "x": 7.55483866,
+                                      "y": 1.82110381
+                                    },
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "timestamp": "1658227343756626971",
+                                    "mechanical": false
+                                  },
+                                  "plan_type": "kParkingInTail"
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                },
+
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kParkingStart" }
+                        }
+                    ]
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "StrategyStatus",
+                    "messages": [
+                        {
+                            "text": {"tmq_header": {"tmq_stamp":"1672971438321"},"timestamp":"1672971438321","mode":"kAPAMode","status":"kParkingInPreparing","parking_prepare_type":"kReleaseBrake"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-8328",
+                "Description": "Test StrategyStatus ParkingInRunning",
+                "Test Case ID": "9",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Strategy+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Strategy+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kStop" }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+                {
+                    "topic_name": "SensorStatusList",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kCamera"
+                                    },
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kUSS"
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kVehicle"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "ComponentStatusList",
+                    "messages": [
+                        {
+                            "text": {"tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971",
+                                "component_status_list": [
+                                    {
+                                        "component_name": "sdm",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "usdm",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "euim",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "vehicle_control",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "vehicle_control_standby",
+                                        "type": "kRunning"
+                                    },
+
+
+                                    {
+                                        "component_name": "strategy",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "stitching",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "perception",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "lam",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "slam",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "planning",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "hmi",
+                                        "type": "kRunning"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+
+
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "type": "kAPAScan"
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "parkingspaces": [
+                                    {
+                                        "p0": {
+                                            "x": 13.55483870967742,
+                                            "y": 1.821103811264038
+                                        },
+                                        "p1": {
+                                            "x": 13.55483870967742,
+                                            "y": 2.9211039543151855
+                                        },
+                                        "p2": {
+                                            "x": 7.55483870967742,
+                                            "y": 2.9211039543151855
+                                        },
+                                        "p3": {
+                                            "x": 7.55483870967742,
+                                            "y": 1.821103811264038
+                                        },
+                                        "valid": true,
+                                        "confidence": 0.9,
+                                        "sensor_source": "kFromCamera",
+                                        "timestamp": "1658227458725613094"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+
+                {
+                    "topic_name": "SensorStatusList",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kCamera"
+                                    },
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kUSS"
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kVehicle"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "DoorInfo",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": "Closed",
+                                "front_right": "Closed",
+                                "rear_left": "Closed",
+                                "rear_right": "Closed",
+                                "trunk": "Closed",
+                                "hood": "Closed"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "WheelSpeed",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": 0,
+                                "front_right": 0,
+                                "rear_left": 0,
+                                "rear_right": 0
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 4000
+                },
+
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                },
+                
+                {
+                    "topic_name": "AutoParkingRequest",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "current_parking_space": {
+                                    "p0": {
+                                      "x": 13.5548391,
+                                      "y": 1.82110381
+                                    },
+                                    "p1": {
+                                      "x": 13.5548391,
+                                      "y": 2.92110395
+                                    },
+                                    "p2": {
+                                      "x": 7.55483866,
+                                      "y": 2.92110395
+                                    },
+                                    "p3": {
+                                      "x": 7.55483866,
+                                      "y": 1.82110381
+                                    },
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "timestamp": "1658227343756626971",
+                                    "mechanical": false
+                                  },
+                                  "plan_type": "kParkingInTail"
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                },
+
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kParkingStart" }
+                        }
+                    ],
+                    "sleep_afterward_ms": 3000
+                },
+
+
+                {
+                    "topic_name": "HumanIntervention",
+                    "messages": [
+                        {
+                           "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_intervention": false,
+                                "is_steer_wheel_intervention": false,
+                                "is_brake_intervention": true,
+                                "is_gear_intervention": false,
+                                "is_throttle_intervention": false,
+                                "is_rearview_intervention": false
+                            },
+                            "sleep_afterward_ms": 2000
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "AutoDriveStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_enable": true
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "HumanIntervention",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_intervention": false,
+                                "is_steer_wheel_intervention": false,
+                                "is_brake_intervention": false,
+                                "is_gear_intervention": false,
+                                "is_throttle_intervention": false,
+                                "is_rearview_intervention": false
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "StrategyStatus",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1672973251133"},"timestamp":"1672973251133","mode":"kAPAMode","status":"kParkingInRunning"},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-8328",
+                "Description": "Test StrategyStatus ParkingIn kEmergencyStop Door Open",
+                "Test Case ID": "10",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Strategy+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Strategy+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kStop" }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+                {
+                    "topic_name": "SensorStatusList",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kCamera"
+                                    },
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kUSS"
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kVehicle"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "ComponentStatusList",
+                    "messages": [
+                        {
+                            "text": {"tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971",
+                                "component_status_list": [
+                                    {
+                                        "component_name": "sdm",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "usdm",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "euim",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "vehicle_control",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "vehicle_control_standby",
+                                        "type": "kRunning"
+                                    },
+
+
+                                    {
+                                        "component_name": "strategy",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "stitching",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "perception",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "lam",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "slam",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "planning",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "hmi",
+                                        "type": "kRunning"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+
+
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "type": "kAPAScan"
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "parkingspaces": [
+                                    {
+                                        "p0": {
+                                            "x": 13.55483870967742,
+                                            "y": 1.821103811264038
+                                        },
+                                        "p1": {
+                                            "x": 13.55483870967742,
+                                            "y": 2.9211039543151855
+                                        },
+                                        "p2": {
+                                            "x": 7.55483870967742,
+                                            "y": 2.9211039543151855
+                                        },
+                                        "p3": {
+                                            "x": 7.55483870967742,
+                                            "y": 1.821103811264038
+                                        },
+                                        "valid": true,
+                                        "confidence": 0.9,
+                                        "sensor_source": "kFromCamera",
+                                        "timestamp": "1658227458725613094"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+
+                {
+                    "topic_name": "SensorStatusList",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kCamera"
+                                    },
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kUSS"
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kVehicle"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "DoorInfo",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": "Closed",
+                                "front_right": "Closed",
+                                "rear_left": "Closed",
+                                "rear_right": "Closed",
+                                "trunk": "Closed",
+                                "hood": "Closed"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "WheelSpeed",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": 0,
+                                "front_right": 0,
+                                "rear_left": 0,
+                                "rear_right": 0
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 4000
+                },
+
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                },
+                
+                {
+                    "topic_name": "AutoParkingRequest",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "current_parking_space": {
+                                    "p0": {
+                                      "x": 13.5548391,
+                                      "y": 1.82110381
+                                    },
+                                    "p1": {
+                                      "x": 13.5548391,
+                                      "y": 2.92110395
+                                    },
+                                    "p2": {
+                                      "x": 7.55483866,
+                                      "y": 2.92110395
+                                    },
+                                    "p3": {
+                                      "x": 7.55483866,
+                                      "y": 1.82110381
+                                    },
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "timestamp": "1658227343756626971",
+                                    "mechanical": false
+                                  },
+                                  "plan_type": "kParkingInTail"
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                },
+
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kParkingStart" }
+                        }
+                    ],
+                    "sleep_afterward_ms": 3000
+                },
+
+
+                {
+                    "topic_name": "HumanIntervention",
+                    "messages": [
+                        {
+                           "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_intervention": false,
+                                "is_steer_wheel_intervention": false,
+                                "is_brake_intervention": true,
+                                "is_gear_intervention": false,
+                                "is_throttle_intervention": false,
+                                "is_rearview_intervention": false
+                            },
+                            "sleep_afterward_ms": 2000
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "AutoDriveStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_enable": true
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "HumanIntervention",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_intervention": false,
+                                "is_steer_wheel_intervention": false,
+                                "is_brake_intervention": false,
+                                "is_gear_intervention": false,
+                                "is_throttle_intervention": false,
+                                "is_rearview_intervention": false
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 3000
+                },
+               
+               
+                {
+                    "topic_name": "DoorInfo",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": "Open",
+                                "front_right": "Closed",
+                                "rear_left": "Closed",
+                                "rear_right": "Closed",
+                                "trunk": "Closed",
+                                "hood": "Closed"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "StrategyCmd",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1672973251133"},"timestamp":"1672973251133",
+                                "strategy_cmd_type": "kEmergencyStop"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "VehicleStop",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1672973251133"},"timestamp":"1672973251133",
+                                "stop_method": "kStopByEmergencyStop"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-8328",
+                "Description": "Test StrategyStatus ParkingIn kEmergencyStop Trunk Open",
+                "Test Case ID": "11",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Strategy+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Strategy+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kStop" }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+                {
+                    "topic_name": "SensorStatusList",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kCamera"
+                                    },
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kUSS"
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kVehicle"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "ComponentStatusList",
+                    "messages": [
+                        {
+                            "text": {"tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971",
+                                "component_status_list": [
+                                    {
+                                        "component_name": "sdm",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "usdm",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "euim",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "vehicle_control",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "vehicle_control_standby",
+                                        "type": "kRunning"
+                                    },
+
+
+                                    {
+                                        "component_name": "strategy",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "stitching",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "perception",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "lam",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "slam",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "planning",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "hmi",
+                                        "type": "kRunning"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+
+
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "type": "kAPAScan"
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "parkingspaces": [
+                                    {
+                                        "p0": {
+                                            "x": 13.55483870967742,
+                                            "y": 1.821103811264038
+                                        },
+                                        "p1": {
+                                            "x": 13.55483870967742,
+                                            "y": 2.9211039543151855
+                                        },
+                                        "p2": {
+                                            "x": 7.55483870967742,
+                                            "y": 2.9211039543151855
+                                        },
+                                        "p3": {
+                                            "x": 7.55483870967742,
+                                            "y": 1.821103811264038
+                                        },
+                                        "valid": true,
+                                        "confidence": 0.9,
+                                        "sensor_source": "kFromCamera",
+                                        "timestamp": "1658227458725613094"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+
+                {
+                    "topic_name": "SensorStatusList",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kCamera"
+                                    },
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kUSS"
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kVehicle"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "DoorInfo",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": "Closed",
+                                "front_right": "Closed",
+                                "rear_left": "Closed",
+                                "rear_right": "Closed",
+                                "trunk": "Closed",
+                                "hood": "Closed"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "WheelSpeed",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": 0,
+                                "front_right": 0,
+                                "rear_left": 0,
+                                "rear_right": 0
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 4000
+                },
+
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                },
+                
+                {
+                    "topic_name": "AutoParkingRequest",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "current_parking_space": {
+                                    "p0": {
+                                      "x": 13.5548391,
+                                      "y": 1.82110381
+                                    },
+                                    "p1": {
+                                      "x": 13.5548391,
+                                      "y": 2.92110395
+                                    },
+                                    "p2": {
+                                      "x": 7.55483866,
+                                      "y": 2.92110395
+                                    },
+                                    "p3": {
+                                      "x": 7.55483866,
+                                      "y": 1.82110381
+                                    },
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "timestamp": "1658227343756626971",
+                                    "mechanical": false
+                                  },
+                                  "plan_type": "kParkingInTail"
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                },
+
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kParkingStart" }
+                        }
+                    ],
+                    "sleep_afterward_ms": 3000
+                },
+
+
+                {
+                    "topic_name": "HumanIntervention",
+                    "messages": [
+                        {
+                           "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_intervention": false,
+                                "is_steer_wheel_intervention": false,
+                                "is_brake_intervention": true,
+                                "is_gear_intervention": false,
+                                "is_throttle_intervention": false,
+                                "is_rearview_intervention": false
+                            },
+                            "sleep_afterward_ms": 2000
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "AutoDriveStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_enable": true
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "HumanIntervention",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_intervention": false,
+                                "is_steer_wheel_intervention": false,
+                                "is_brake_intervention": false,
+                                "is_gear_intervention": false,
+                                "is_throttle_intervention": false,
+                                "is_rearview_intervention": false
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 3000
+                },
+               
+               
+                {
+                    "topic_name": "DoorInfo",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": "Closed",
+                                "front_right": "Closed",
+                                "rear_left": "Closed",
+                                "rear_right": "Closed",
+                                "trunk": "Open",
+                                "hood": "Closed"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "StrategyCmd",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1672973251133"},"timestamp":"1672973251133",
+                                "strategy_cmd_type": "kEmergencyStop"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "VehicleStop",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1672973251133"},"timestamp":"1672973251133",
+                                "stop_method": "kStopByEmergencyStop"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-8328",
+                "Description": "Test StrategyStatus ParkingIn kEmergencyStop Door Open Then Closed Resume",
+                "Test Case ID": "12",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Strategy+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Strategy+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kStop" }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+                {
+                    "topic_name": "SensorStatusList",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kCamera"
+                                    },
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kUSS"
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kVehicle"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "ComponentStatusList",
+                    "messages": [
+                        {
+                            "text": {"tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971",
+                                "component_status_list": [
+                                    {
+                                        "component_name": "sdm",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "usdm",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "euim",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "vehicle_control",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "vehicle_control_standby",
+                                        "type": "kRunning"
+                                    },
+
+
+                                    {
+                                        "component_name": "strategy",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "stitching",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "perception",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "lam",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "slam",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "planning",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "hmi",
+                                        "type": "kRunning"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+
+
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "type": "kAPAScan"
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "parkingspaces": [
+                                    {
+                                        "p0": {
+                                            "x": 13.55483870967742,
+                                            "y": 1.821103811264038
+                                        },
+                                        "p1": {
+                                            "x": 13.55483870967742,
+                                            "y": 2.9211039543151855
+                                        },
+                                        "p2": {
+                                            "x": 7.55483870967742,
+                                            "y": 2.9211039543151855
+                                        },
+                                        "p3": {
+                                            "x": 7.55483870967742,
+                                            "y": 1.821103811264038
+                                        },
+                                        "valid": true,
+                                        "confidence": 0.9,
+                                        "sensor_source": "kFromCamera",
+                                        "timestamp": "1658227458725613094"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+
+                {
+                    "topic_name": "SensorStatusList",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kCamera"
+                                    },
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kUSS"
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kVehicle"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "DoorInfo",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": "Closed",
+                                "front_right": "Closed",
+                                "rear_left": "Closed",
+                                "rear_right": "Closed",
+                                "trunk": "Closed",
+                                "hood": "Closed"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "WheelSpeed",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": 0,
+                                "front_right": 0,
+                                "rear_left": 0,
+                                "rear_right": 0
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 4000
+                },
+
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                },
+                
+                {
+                    "topic_name": "AutoParkingRequest",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "current_parking_space": {
+                                    "p0": {
+                                      "x": 13.5548391,
+                                      "y": 1.82110381
+                                    },
+                                    "p1": {
+                                      "x": 13.5548391,
+                                      "y": 2.92110395
+                                    },
+                                    "p2": {
+                                      "x": 7.55483866,
+                                      "y": 2.92110395
+                                    },
+                                    "p3": {
+                                      "x": 7.55483866,
+                                      "y": 1.82110381
+                                    },
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "timestamp": "1658227343756626971",
+                                    "mechanical": false
+                                  },
+                                  "plan_type": "kParkingInTail"
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                },
+
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kParkingStart" }
+                        }
+                    ],
+                    "sleep_afterward_ms": 3000
+                },
+
+
+                {
+                    "topic_name": "HumanIntervention",
+                    "messages": [
+                        {
+                           "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_intervention": false,
+                                "is_steer_wheel_intervention": false,
+                                "is_brake_intervention": true,
+                                "is_gear_intervention": false,
+                                "is_throttle_intervention": false,
+                                "is_rearview_intervention": false
+                            },
+                            "sleep_afterward_ms": 2000
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "AutoDriveStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_enable": true
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "HumanIntervention",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_intervention": false,
+                                "is_steer_wheel_intervention": false,
+                                "is_brake_intervention": false,
+                                "is_gear_intervention": false,
+                                "is_throttle_intervention": false,
+                                "is_rearview_intervention": false
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 3000
+                },
+               
+               
+                {
+                    "topic_name": "DoorInfo",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": "Open",
+                                "front_right": "Closed",
+                                "rear_left": "Closed",
+                                "rear_right": "Closed",
+                                "trunk": "Closed",
+                                "hood": "Closed"
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 2000
+                },
+
+
+                {
+                    "topic_name": "DoorInfo",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": "Closed",
+                                "front_right": "Closed",
+                                "rear_left": "Closed",
+                                "rear_right": "Closed",
+                                "trunk": "Closed",
+                                "hood": "Closed"
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kResume" }
+                        }
+                    ],
+                    "sleep_afterward_ms": 3000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "StrategyCmd",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1672973251133"},"timestamp":"1672973251133",
+                                "strategy_cmd_type": "kExecutingParkingIn"
+                            },
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-8328",
+                "Description": "Test StrategyStatus ParkingIn kEmergencyStop Trunk Open Then Closed Resume",
+                "Test Case ID": "13",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Strategy+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Strategy+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kStop" }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+                {
+                    "topic_name": "SensorStatusList",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kCamera"
+                                    },
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kUSS"
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kVehicle"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "ComponentStatusList",
+                    "messages": [
+                        {
+                            "text": {"tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971",
+                                "component_status_list": [
+                                    {
+                                        "component_name": "sdm",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "usdm",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "euim",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "vehicle_control",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "vehicle_control_standby",
+                                        "type": "kRunning"
+                                    },
+
+
+                                    {
+                                        "component_name": "strategy",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "stitching",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "perception",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "lam",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "slam",
+                                        "type": "kRunning"
+                                    },
+
+                                    {
+                                        "component_name": "planning",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "hmi",
+                                        "type": "kRunning"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+
+
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "type": "kAPAScan"
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "parkingspaces": [
+                                    {
+                                        "p0": {
+                                            "x": 13.55483870967742,
+                                            "y": 1.821103811264038
+                                        },
+                                        "p1": {
+                                            "x": 13.55483870967742,
+                                            "y": 2.9211039543151855
+                                        },
+                                        "p2": {
+                                            "x": 7.55483870967742,
+                                            "y": 2.9211039543151855
+                                        },
+                                        "p3": {
+                                            "x": 7.55483870967742,
+                                            "y": 1.821103811264038
+                                        },
+                                        "valid": true,
+                                        "confidence": 0.9,
+                                        "sensor_source": "kFromCamera",
+                                        "timestamp": "1658227458725613094"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 1000
+                },
+
+
+                {
+                    "topic_name": "SensorStatusList",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kCamera"
+                                    },
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kUSS"
+                                    }
+                                ]
+                            }
+                        },
+
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", 
+                                "sensor_status_list": [
+                                    {
+                                        "timestamp": "1672813492658",
+                                        "status": "kSensorRunning",
+                                        "type": "kVehicle"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "DoorInfo",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": "Closed",
+                                "front_right": "Closed",
+                                "rear_left": "Closed",
+                                "rear_right": "Closed",
+                                "trunk": "Closed",
+                                "hood": "Closed"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "topic_name": "WheelSpeed",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": 0,
+                                "front_right": 0,
+                                "rear_left": 0,
+                                "rear_right": 0
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 4000
+                },
+
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                },
+                
+                {
+                    "topic_name": "AutoParkingRequest",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "current_parking_space": {
+                                    "p0": {
+                                      "x": 13.5548391,
+                                      "y": 1.82110381
+                                    },
+                                    "p1": {
+                                      "x": 13.5548391,
+                                      "y": 2.92110395
+                                    },
+                                    "p2": {
+                                      "x": 7.55483866,
+                                      "y": 2.92110395
+                                    },
+                                    "p3": {
+                                      "x": 7.55483866,
+                                      "y": 1.82110381
+                                    },
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "timestamp": "1658227343756626971",
+                                    "mechanical": false
+                                  },
+                                  "plan_type": "kParkingInTail"
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text":{
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 0,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                },
+
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kParkingStart" }
+                        }
+                    ],
+                    "sleep_afterward_ms": 3000
+                },
+
+
+                {
+                    "topic_name": "HumanIntervention",
+                    "messages": [
+                        {
+                           "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_intervention": false,
+                                "is_steer_wheel_intervention": false,
+                                "is_brake_intervention": true,
+                                "is_gear_intervention": false,
+                                "is_throttle_intervention": false,
+                                "is_rearview_intervention": false
+                            },
+                            "sleep_afterward_ms": 2000
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "AutoDriveStatus",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_enable": true
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "HumanIntervention",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "is_intervention": false,
+                                "is_steer_wheel_intervention": false,
+                                "is_brake_intervention": false,
+                                "is_gear_intervention": false,
+                                "is_throttle_intervention": false,
+                                "is_rearview_intervention": false
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 3000
+                },
+               
+               
+                {
+                    "topic_name": "DoorInfo",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": "Closed",
+                                "front_right": "Closed",
+                                "rear_left": "Closed",
+                                "rear_right": "Closed",
+                                "trunk": "Open",
+                                "hood": "Closed"
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 2000
+                },
+
+
+                {
+                    "topic_name": "DoorInfo",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "front_left": "Closed",
+                                "front_right": "Closed",
+                                "rear_left": "Closed",
+                                "rear_right": "Closed",
+                                "trunk": "Closed",
+                                "hood": "Closed"
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kResume" }
+                        }
+                    ],
+                    "sleep_afterward_ms": 3000
+                }
+            ],
+            "expectation": [
+                {
+                    "topic_name": "StrategyCmd",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1672973251133"},"timestamp":"1672973251133",
+                                "strategy_cmd_type": "kExecutingParkingIn"
+                            },
                             "ignore_keys_lower": [
                                 "tmq_stamp",
                                 "timestamp"

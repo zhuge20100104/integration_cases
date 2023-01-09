@@ -3,8 +3,8 @@
         {
             "descriptions": {
                 "JIRA ID": "XW-8328",
-                "Description": "Test StrategyStatus ParkingIn kEmergencyStop Trunk Open Then Closed Resume",
-                "Test Case ID": "14",
+                "Description": "Test StrategyStatus HMI Pause then Resume in ParkingOut Status",
+                "Test Case ID": "26",
                 "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
                 "Pass Criteria": "1, Output message's content and number are as expected.",
                 "Design Document": "https://spaces.telenav.com:8443/display/TC/Strategy+-+Software+Detailed+Design",
@@ -158,22 +158,7 @@
                                 },
                                 "parkingspaces": [
                                     {
-                                        "p0": {
-                                            "x": 13.55483870967742,
-                                            "y": 1.821103811264038
-                                        },
-                                        "p1": {
-                                            "x": 13.55483870967742,
-                                            "y": 2.9211039543151855
-                                        },
-                                        "p2": {
-                                            "x": 7.55483870967742,
-                                            "y": 2.9211039543151855
-                                        },
-                                        "p3": {
-                                            "x": 7.55483870967742,
-                                            "y": 1.821103811264038
-                                        },
+                                        "p0":{"x": 3.580645161290322,"y": -1.3051948051948052 },"p1": {"x": 3.580645161290322,"y": 1.0948051948051947 },"p2":{"x": -2.419354838709678,"y": 1.0948051948051947},"p3": {"x": -2.419354838709678,"y": -1.3051948051948052},
                                         "valid": true,
                                         "confidence": 0.9,
                                         "sensor_source": "kFromCamera",
@@ -271,7 +256,7 @@
                                 "pose": {
                                     "x": 0,
                                     "y": 0,
-                                    "theta": 0
+                                    "theta": 3.1415926
                                 }
                             }
                         }
@@ -289,28 +274,13 @@
                                 },
                                 "timestamp": "1658227343756626971",
                                 "current_parking_space": {
-                                    "p0": {
-                                      "x": 13.5548391,
-                                      "y": 1.82110381
-                                    },
-                                    "p1": {
-                                      "x": 13.5548391,
-                                      "y": 2.92110395
-                                    },
-                                    "p2": {
-                                      "x": 7.55483866,
-                                      "y": 2.92110395
-                                    },
-                                    "p3": {
-                                      "x": 7.55483866,
-                                      "y": 1.82110381
-                                    },
+                                    "p0":{"x": 3.580645161290322,"y": -1.3051948051948052 },"p1": {"x": 3.580645161290322,"y": 1.0948051948051947 },"p2":{"x": -2.419354838709678,"y": 1.0948051948051947},"p3": {"x": -2.419354838709678,"y": -1.3051948051948052},
                                     "valid": true,
                                     "confidence": 0.9,
                                     "timestamp": "1658227343756626971",
                                     "mechanical": false
                                   },
-                                  "plan_type": "kParkingInTail"
+                                  "plan_type": "kTailInParkingOutToRight"
                             }
                         }
                     ]
@@ -328,7 +298,7 @@
                                 "pose": {
                                     "x": 0,
                                     "y": 0,
-                                    "theta": 0
+                                    "theta": 3.1415926
                                 }
                             }
                         }
@@ -403,37 +373,33 @@
                     ],
                     "sleep_afterward_ms": 6000
                 },
-
-
                 {
-                    "topic_name": "HumanIntervention",
+                    "topic_name": "UserRequest",
                     "messages": [
                         {
-                           "text": {
-                                "tmq_header": {
-                                    "tmq_stamp": "1658216905424"
-                                },
-                                "timestamp": "1658227343756626971",
-                                "is_intervention": true,
-                                "is_steer_wheel_intervention": false,
-                                "is_brake_intervention": true,
-                                "is_gear_intervention": false,
-                                "is_throttle_intervention": false,
-                                "is_rearview_intervention": false
-                            },
-                            "sleep_afterward_ms": 2000
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kPause" }
                         }
-                    ]
-                }
+                    ],
+                    "sleep_afterward_ms": 3000
+                },
 
+                {
+                    "topic_name": "UserRequest",
+                    "messages": [
+                        {
+                            "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kResume" }
+                        }
+                    ],
+                    "sleep_afterward_ms": 3000
+                }
             ],
             "expectation": [
                 {
                     "topic_name": "StrategyCmd",
                     "messages": [
                         {
-                            "text": {"tmq_header":{"tmq_stamp":"1672973251133"},"timestamp":"1672973251133",
-                                "strategy_cmd_type": "kExecutingParkingIn"
+                            "text": {"tmq_header":{"tmq_stamp":"1673231676595"},"timestamp":"1673231676595",
+                                "strategy_cmd_type": "kResumeParking"
                             },
                             "ignore_keys_lower": [
                                 "tmq_stamp",

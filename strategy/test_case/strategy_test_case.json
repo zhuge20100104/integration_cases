@@ -172,6 +172,10 @@
                                     {
                                         "component_name": "hmi",
                                         "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "diagnostic",
+                                        "type": "kRunning"
                                     }
                                 ]
                             }
@@ -330,6 +334,10 @@
                                     {
                                         "component_name": "hmi",
                                         "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "diagnostic",
+                                        "type": "kRunning"
                                     }
                                 ]
                             }
@@ -487,6 +495,10 @@
                                     },
                                     {
                                         "component_name": "hmi",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "diagnostic",
                                         "type": "kRunning"
                                     }
                                 ]
@@ -667,6 +679,10 @@
                                     },
                                     {
                                         "component_name": "hmi",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "diagnostic",
                                         "type": "kRunning"
                                     }
                                 ]
@@ -849,6 +865,10 @@
                                     {
                                         "component_name": "hmi",
                                         "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "diagnostic",
+                                        "type": "kRunning"
                                     }
                                 ]
                             }
@@ -1029,6 +1049,10 @@
                                     {
                                         "component_name": "hmi",
                                         "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "diagnostic",
+                                        "type": "kRunning"
                                     }
                                 ]
                             }
@@ -1104,7 +1128,7 @@
                             }
                         }
                     ],
-                    "sleep_afterward_ms": 4000
+                    "sleep_afterward_ms": 9000
                 }
             ],
             "expectation": [
@@ -1242,6 +1266,10 @@
                                     {
                                         "component_name": "hmi",
                                         "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "diagnostic",
+                                        "type": "kRunning"
                                     }
                                 ]
                             }
@@ -1462,7 +1490,8 @@
                         {
                             "text": { "tmq_header": { "tmq_stamp": "1658216905424" }, "timestamp": "1658227343756626971", "type": "kParkingStart" }
                         }
-                    ]
+                    ],
+                    "sleep_afterward_ms": 9000
                 }
             ],
             "expectation": [
@@ -1470,7 +1499,7 @@
                     "topic_name": "StrategyStatus",
                     "messages": [
                         {
-                            "text": {"tmq_header": {"tmq_stamp":"1672971438321"},"timestamp":"1672971438321","mode":"kAPAMode","status":"kParkingInPreparing","parking_prepare_type":"kReleaseBrake"},
+                            "text":{"tmq_header": {"tmq_stamp":"1673230654202"},"timestamp":"1673230654202","mode":"kAPAMode","status":"kParkingInPreparing","parking_prepare_type":"kApplyBrake"},
                             "ignore_keys_lower": [
                                 "tmq_stamp",
                                 "timestamp"
@@ -1599,6 +1628,10 @@
                                     },
                                     {
                                         "component_name": "hmi",
+                                        "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "diagnostic",
                                         "type": "kRunning"
                                     }
                                 ]
@@ -1834,7 +1867,7 @@
                                     "tmq_stamp": "1658216905424"
                                 },
                                 "timestamp": "1658227343756626971",
-                                "is_intervention": false,
+                                "is_intervention": true,
                                 "is_steer_wheel_intervention": false,
                                 "is_brake_intervention": true,
                                 "is_gear_intervention": false,
@@ -1878,7 +1911,8 @@
                                 "is_rearview_intervention": false
                             }
                         }
-                    ]
+                    ],
+                    "sleep_afterward_ms": 9000
                 }
             ],
             "expectation": [
@@ -2015,6 +2049,10 @@
                                     {
                                         "component_name": "hmi",
                                         "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "diagnostic",
+                                        "type": "kRunning"
                                     }
                                 ]
                             }
@@ -2249,7 +2287,7 @@
                                     "tmq_stamp": "1658216905424"
                                 },
                                 "timestamp": "1658227343756626971",
-                                "is_intervention": false,
+                                "is_intervention": true,
                                 "is_steer_wheel_intervention": false,
                                 "is_brake_intervention": true,
                                 "is_gear_intervention": false,
@@ -2469,6 +2507,10 @@
                                     {
                                         "component_name": "hmi",
                                         "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "diagnostic",
+                                        "type": "kRunning"
                                     }
                                 ]
                             }
@@ -2703,7 +2745,7 @@
                                     "tmq_stamp": "1658216905424"
                                 },
                                 "timestamp": "1658227343756626971",
-                                "is_intervention": false,
+                                "is_intervention": true,
                                 "is_steer_wheel_intervention": false,
                                 "is_brake_intervention": true,
                                 "is_gear_intervention": false,
@@ -2923,6 +2965,10 @@
                                     {
                                         "component_name": "hmi",
                                         "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "diagnostic",
+                                        "type": "kRunning"
                                     }
                                 ]
                             }
@@ -3157,7 +3203,7 @@
                                     "tmq_stamp": "1658216905424"
                                 },
                                 "timestamp": "1658227343756626971",
-                                "is_intervention": false,
+                                "is_intervention": true,
                                 "is_steer_wheel_intervention": false,
                                 "is_brake_intervention": true,
                                 "is_gear_intervention": false,
@@ -3263,9 +3309,7 @@
                     "topic_name": "StrategyCmd",
                     "messages": [
                         {
-                            "text": {"tmq_header":{"tmq_stamp":"1672973251133"},"timestamp":"1672973251133",
-                                "strategy_cmd_type": "kExecutingParkingIn"
-                            },
+                            "text": {"tmq_header":{"tmq_stamp":"1673229425381"},"timestamp":"1673229425381","strategy_cmd_type":"kResumeParking"},
                             "ignore_keys_lower": [
                                 "tmq_stamp",
                                 "timestamp"
@@ -3394,6 +3438,10 @@
                                     {
                                         "component_name": "hmi",
                                         "type": "kRunning"
+                                    },
+                                    {
+                                        "component_name": "diagnostic",
+                                        "type": "kRunning"
                                     }
                                 ]
                             }
@@ -3628,7 +3676,7 @@
                                     "tmq_stamp": "1658216905424"
                                 },
                                 "timestamp": "1658227343756626971",
-                                "is_intervention": false,
+                                "is_intervention": true,
                                 "is_steer_wheel_intervention": false,
                                 "is_brake_intervention": true,
                                 "is_gear_intervention": false,
@@ -3734,9 +3782,7 @@
                     "topic_name": "StrategyCmd",
                     "messages": [
                         {
-                            "text": {"tmq_header":{"tmq_stamp":"1672973251133"},"timestamp":"1672973251133",
-                                "strategy_cmd_type": "kExecutingParkingIn"
-                            },
+                            "text": {"tmq_header":{"tmq_stamp":"1673229461390"},"timestamp":"1673229461390","strategy_cmd_type":"kResumeParking"},
                             "ignore_keys_lower": [
                                 "tmq_stamp",
                                 "timestamp"

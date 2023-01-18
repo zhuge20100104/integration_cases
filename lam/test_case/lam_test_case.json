@@ -1,0 +1,513 @@
+{
+    "sequences": [
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Generate Location_Rectified",
+                "Test Case ID": "1",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "LamNotifyMsg",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "notify_msg": "kMsgPause"
+                            },
+                            "sleep_afterward_ms": 500
+                        },
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "notify_msg": "kMsgScan"
+                            },
+                            "sleep_afterward_ms": 5000
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                },
+                {
+                    "topic_name": "GearData",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626973",
+                                "gear": "kDrive"
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 500
+                },
+
+
+                {
+                    "topic_name": "WheelPulse",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576964",
+                                "front_left": 67,
+                                "front_right": 941,
+                                "rear_left": 214,
+                                "rear_right": 863
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                },
+
+
+                {
+                    "topic_name": "WheelSpeed",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576967",
+                                "front_left": 0,
+                                "front_right": 0,
+                                "rear_left": 0,
+                                "rear_right": 0
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 500
+                },
+
+
+                {
+                    "topic_name": "SteerAngle",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576968",
+                                "angle": 0.244346097
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 500
+                },
+
+
+
+                {
+                    "topic_name": "Acceleration",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576969",
+                                "axes_type": "kAccThreeAxis",
+                                "acceleration_x": -0.043110352,
+                                "acceleration_y": -0.675395489,
+                                "acceleration_z": 9.64234829
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 500
+                },
+
+
+                {
+                    "topic_name": "AngularRate",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658227772828"
+                                },
+                                "timestamp": "1658227772828576971",
+                                "axes_type": "kGyroThreeAxis",
+                                "angular_rate_x": 0.06666,
+                                "angular_rate_y": -0.218,
+                                "angular_rate_z": 0.156
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 5000
+                }
+
+
+
+
+            ],
+            "expectation": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1673855131900"},"timestamp":"1658227772828576964","pose":{"x":0,"y":0,"theta":0}},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "Generate ParkingSpace_Fusioned",
+                "Test Case ID": "2",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 3,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 500
+                },
+                {
+                    "topic_name": "CameraParkingSpaceResult",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626973",
+                                "parkingspaces": [{
+                                    "timestamp": "1658227343756626973",
+                                    "p0": {
+                                      "x": -1.2,
+                                      "y": -2.5
+                                    },
+                                    "p1": {
+                                      "x": -1.2,
+                                      "y": -7.9
+                                    },
+                                    "p2": {
+                                      "x": 1.2,
+                                      "y": -7.9
+                                    },
+                                    "p3": {
+                                      "x": 1.2,
+                                      "y": -2.5
+                                    },
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera"
+                                  }]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms":500
+                }
+
+            ],
+            "expectation": [
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1673856354859"},"parkingspaces":[{"p0":{"x":-1.15,"y":-2.425},"p1":{"x":-1.14999974,"y":-7.82499933},"p2":{"x":1.15000021,"y":-7.82499933},"p3":{"x":1.15,"y":-2.425},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","id":"1","timestamp":"1658227343686626973","mechanical":false,"handicap":false,"persist":false,"precision":"kParkingSpacePrecisionNormal","avaiable_type":"kAvaiable","depth":5.55000067,"ob_in_left_side":false,"ob_in_right_side":false}]},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "ParkingResult and CameraDetectedObject Generate ParkingSpace_Fusioned",
+                "Test Case ID": "3",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "LamNotifyMsg",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "notify_msg": "kMsgPause"
+                            }
+                        },
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "notify_msg": "kMsgScan"
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 500
+                },
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 3,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 500
+                },
+                {
+                    "topic_name": "CameraParkingSpaceResult",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626973",
+                                "parkingspaces": [{
+                                    "timestamp": "1658227343756626973",
+                                    "p0": {
+                                      "x": -1.2,
+                                      "y": -2.5
+                                    },
+                                    "p1": {
+                                      "x": -1.2,
+                                      "y": -7.9
+                                    },
+                                    "p2": {
+                                      "x": 1.2,
+                                      "y": -7.9
+                                    },
+                                    "p3": {
+                                      "x": 1.2,
+                                      "y": -2.5
+                                    },
+                                    "valid": true,
+                                    "confidence": 0.9,
+                                    "sensor_source": "kFromCamera"
+                                  }]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms":500
+                },
+
+                {
+                    "topic_name": "CameraDetectedObject",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "objects": [{
+                                    "points": [{
+                                      "x": -0.2,
+                                      "y": -0.5
+                                    },
+                                    {
+                                      "x": -0.2,
+                                      "y": -0.9
+                                    },
+                                    {
+                                      "x": 0.2,
+                                      "y": -0.9
+                                    },
+                                    {
+                                      "x": 0.2,
+                                      "y": -0.5
+                                    }],
+                                    "classification": "kCone",
+                                    "confidence": 0.9,
+                                    "timestamp": "1658227343756626971",
+                                    "id": 1,
+                                    "precision": "kDetectedObjectPrecisionNormal"
+                                  }
+                                ]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 6000
+                }
+
+            ],
+            "expectation": [
+                {
+                    "topic_name": "ParkingSpace_Fusioned",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1673919870776"},"parkingspaces":[{"p0":{"x":-1.15,"y":-2.425},"p1":{"x":-1.14999974,"y":-7.825},"p2":{"x":1.15000021,"y":-7.825},"p3":{"x":1.15,"y":-2.425},"valid":true,"confidence":0.9,"sensor_source":"kFromCamera","id":"1","timestamp":"1658227343686626973","mechanical":false,"handicap":false,"persist":false,"precision":"kParkingSpacePrecisionNormal","avaiable_type":"kAvaiable","depth":5.55,"ob_in_left_side":false,"ob_in_right_side":false}]},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "descriptions": {
+                "JIRA ID": "XW-6513",
+                "Description": "USSDataList Generate UltraSoundPoint",
+                "Test Case ID": "4",
+                "Test Method": "Interface test and requirement test(3 TMQ interfaces simulation)",
+                "Pass Criteria": "1, Output message's content and number are as expected.",
+                "Design Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design",
+                "Call Coverage": "",
+                "Calls": "",
+                "Data Flow Verification": "Pass",
+                "Data Flow Document": "https://spaces.telenav.com:8443/pages/viewpage.action?pageId=189015770",
+                "Control Flow Verification": "Pass",
+                "Control Flow Document": "https://spaces.telenav.com:8443/display/TC/Planning+-+Software+Detailed+Design"
+            },
+            "input": [
+                {
+                    "topic_name": "LamNotifyMsg",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "notify_msg": "kMsgPark"
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 500
+                },
+                {
+                    "topic_name": "Location_Rectified",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "pose": {
+                                    "x": 0,
+                                    "y": 3,
+                                    "theta": 0
+                                }
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 500
+                },
+                {
+                    "topic_name": "USSDataList",
+                    "messages": [
+                        {
+                            "text": {
+                                "tmq_header": {
+                                    "tmq_stamp": "1658216905424"
+                                },
+                                "timestamp": "1658227343756626971",
+                                "uss_data_list":[
+                                    {
+                                        "idx_type": "FRONT_LEFT_MIDDLE",
+                                        "timestamp": "1658227343756626972",
+                                        "status": "NO_RETURN",
+                                        "distance": 1,
+                                        "preprocessed_status": "OK",
+                                        "preprocessed_distance": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "sleep_afterward_ms": 6000
+                }
+
+            ],
+            "expectation": [
+                {
+                    "topic_name": "UltrasoundPoints",
+                    "messages": [
+                        {
+                            "text": {"tmq_header":{"tmq_stamp":"1673920557188"},"pose":{"x":0,"y":0,"theta":0}},
+                            "ignore_keys_lower": [
+                                "tmq_stamp",
+                                "timestamp"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
